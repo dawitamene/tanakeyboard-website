@@ -2,13 +2,11 @@
   'use strict';
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ===== 7.2 Nav scroll state ===== */
+  /* ===== 7.2 Nav scroll state: dark bar at top, theme bar after scrolling ===== */
   function updateNav(){
     var nav = document.getElementById('siteNav');
     if(!nav) return;
-    var isHome = document.body.getAttribute('data-page') === 'home';
-    var atTop = window.scrollY <= 20;
-    nav.classList.toggle('nav-solid', !(isHome && atTop));
+    nav.classList.toggle('nav-solid', window.scrollY > 20);
   }
   window.addEventListener('scroll', updateNav, {passive:true});
   updateNav();
