@@ -1,7 +1,7 @@
-# Deploying tanakeyboard-website to Cloudflare Pages
+# Deploying addiyonkeyboard-website to Cloudflare Pages
 
 This guide covers deploying the static site to **Cloudflare Pages** and pointing the
-**`tanakeyboard.addiyon.com`** subdomain at it.
+**`addiyonkeyboard.addiyon.com`** subdomain at it.
 
 Your `addiyon.com` domain is already managed in Cloudflare, which makes the subdomain
 step trivial — no external DNS provider to touch.
@@ -16,7 +16,7 @@ step trivial — no external DNS provider to touch.
 1. Get the site into a GitHub repo (recommended) — or deploy the folder directly.
 2. Create a Cloudflare Pages project.
 3. Deploy — you'll get a free `*.pages.dev` URL.
-4. Add `tanakeyboard.addiyon.com` as a custom domain (Cloudflare auto-creates the DNS record).
+4. Add `addiyonkeyboard.addiyon.com` as a custom domain (Cloudflare auto-creates the DNS record).
 5. Verify HTTPS and the live site.
 
 Pick **Option A (Git)** or **Option B (Direct upload)** for steps 1–3, then everyone
@@ -40,12 +40,12 @@ Git deploys give you automatic redeploys on every push and a full history of ver
 
 ### A1. Initialize the repo locally
 
-From the project root (`/Users/dev/code/tanakeyboard-website`):
+From the project root (`/Users/dev/code/addiyonkeyboard-website`):
 
 ```bash
 git init
 git add .
-git commit -m "Initial commit: tanakeyboard marketing site"
+git commit -m "Initial commit: addiyonkeyboard marketing site"
 ```
 
 Add a `.gitignore` so macOS junk doesn't get committed:
@@ -59,12 +59,12 @@ git commit -m "Ignore .DS_Store"
 
 ### A2. Push to GitHub
 
-Create an empty repo on GitHub named `tanakeyboard-website` (no README/license, so it
+Create an empty repo on GitHub named `addiyonkeyboard-website` (no README/license, so it
 stays empty), then:
 
 ```bash
 git branch -M main
-git remote add origin git@github.com:<your-username>/tanakeyboard-website.git
+git remote add origin git@github.com:<your-username>/addiyonkeyboard-website.git
 git push -u origin main
 ```
 
@@ -75,7 +75,7 @@ keys set up.)
 
 1. Go to the [Cloudflare dashboard](https://dash.cloudflare.com) → left sidebar
    **Workers & Pages** → **Create** → **Pages** tab → **Connect to Git**.
-2. Authorize GitHub and select the `tanakeyboard-website` repo.
+2. Authorize GitHub and select the `addiyonkeyboard-website` repo.
 3. On the **Set up builds and deployments** screen, use these settings:
 
    | Field | Value |
@@ -90,7 +90,7 @@ keys set up.)
    > There is no build, so the build command stays blank.
 
 4. Click **Save and Deploy**. Cloudflare uploads the files and, after ~30–60 seconds,
-   gives you a live URL like `https://tanakeyboard-website.pages.dev`.
+   gives you a live URL like `https://addiyonkeyboard-website.pages.dev`.
 
 Every future `git push` to `main` now redeploys automatically. Pushes to other branches
 create preview deployments with their own URLs.
@@ -114,7 +114,7 @@ wrangler login
 ### B2. Create the project (first time only)
 
 ```bash
-wrangler pages project create tanakeyboard-website --production-branch main
+wrangler pages project create addiyonkeyboard-website --production-branch main
 ```
 
 ### B3. Deploy the folder
@@ -122,10 +122,10 @@ wrangler pages project create tanakeyboard-website --production-branch main
 From the project root:
 
 ```bash
-wrangler pages deploy . --project-name tanakeyboard-website
+wrangler pages deploy . --project-name addiyonkeyboard-website
 ```
 
-This uploads the current directory and returns your `https://tanakeyboard-website.pages.dev`
+This uploads the current directory and returns your `https://addiyonkeyboard-website.pages.dev`
 URL. Re-run this same command any time you want to push updates.
 
 > Tip: add a `.assetsignore` or just accept that `.DS_Store` gets uploaded — harmless,
@@ -135,24 +135,24 @@ URL. Re-run this same command any time you want to push updates.
 
 ## Steps 4–5 apply to both options
 
-### 4. Add the `tanakeyboard.addiyon.com` custom domain
+### 4. Add the `addiyonkeyboard.addiyon.com` custom domain
 
 Because `addiyon.com` is on the **same Cloudflare account**, Cloudflare creates the DNS
 record for you automatically — you do **not** manually add a CNAME.
 
-1. In the dashboard: **Workers & Pages** → open your **tanakeyboard-website** project.
+1. In the dashboard: **Workers & Pages** → open your **addiyonkeyboard-website** project.
 2. Go to the **Custom domains** tab → **Set up a custom domain**.
 3. Enter:
 
    ```
-   tanakeyboard.addiyon.com
+   addiyonkeyboard.addiyon.com
    ```
 
 4. Click **Continue** → **Activate domain**.
 
 Cloudflare will:
 - Detect that `addiyon.com` is a zone you control.
-- Automatically create a **CNAME** record: `tanakeyboard` → `tanakeyboard-website.pages.dev`,
+- Automatically create a **CNAME** record: `addiyonkeyboard` → `addiyonkeyboard-website.pages.dev`,
   set to **Proxied** (orange cloud).
 - Provision an SSL certificate for the subdomain.
 
@@ -170,23 +170,23 @@ You normally don't need to, but if the auto-record didn't appear:
    | Field | Value |
    |-------|-------|
    | Type | `CNAME` |
-   | Name | `tanakeyboard` |
-   | Target | `tanakeyboard-website.pages.dev` |
+   | Name | `addiyonkeyboard` |
+   | Target | `addiyonkeyboard-website.pages.dev` |
    | Proxy status | **Proxied** (orange cloud) |
    | TTL | Auto |
 
 3. Save. Then re-run the **Set up a custom domain** step above so Pages issues the cert.
 
-> ⚠️ Don't point this subdomain at your Kubernetes cluster's ingress. The `tanakeyboard`
+> ⚠️ Don't point this subdomain at your Kubernetes cluster's ingress. The `addiyonkeyboard`
 > record is independent of whatever `addiyon.com` / `www` / app records feed your k8s
 > app, so this won't affect Addiyon at all.
 
 ### 5. Verify
 
-- Visit **https://tanakeyboard.addiyon.com** — you should see the site over HTTPS with a
+- Visit **https://addiyonkeyboard.addiyon.com** — you should see the site over HTTPS with a
   valid padlock.
 - Also test the sub-pages: `/features.html`, `/privacy.html`.
-- Check `https://tanakeyboard-website.pages.dev` still works (it always will; it's the
+- Check `https://addiyonkeyboard-website.pages.dev` still works (it always will; it's the
   canonical Pages URL).
 
 If the browser shows a cert warning right after setup, wait a few minutes for the
@@ -210,7 +210,7 @@ unknown paths.
 ### Redirect the apex or www (not needed here)
 
 Not required for a subdomain deploy. Only relevant if you later want
-`www.tanakeyboard...` style hosts.
+`www.addiyonkeyboard...` style hosts.
 
 ### Cache / headers
 
@@ -230,7 +230,7 @@ Cloudflare Pages applies it on the next deploy.
 ## Updating the site later
 
 - **Option A (Git):** edit files → `git commit` → `git push`. Auto-redeploys.
-- **Option B (Wrangler):** edit files → `wrangler pages deploy . --project-name tanakeyboard-website`.
+- **Option B (Wrangler):** edit files → `wrangler pages deploy . --project-name addiyonkeyboard-website`.
 
 ---
 
@@ -238,9 +238,9 @@ Cloudflare Pages applies it on the next deploy.
 
 | Thing | Value |
 |-------|-------|
-| Pages project name | `tanakeyboard-website` |
+| Pages project name | `addiyonkeyboard-website` |
 | Build command | *(none)* |
 | Output directory | `/` |
-| Free Pages URL | `https://tanakeyboard-website.pages.dev` |
-| Custom domain | `tanakeyboard.addiyon.com` |
-| DNS record | CNAME `tanakeyboard` → `tanakeyboard-website.pages.dev` (Proxied) |
+| Free Pages URL | `https://addiyonkeyboard-website.pages.dev` |
+| Custom domain | `addiyonkeyboard.addiyon.com` |
+| DNS record | CNAME `addiyonkeyboard` → `addiyonkeyboard-website.pages.dev` (Proxied) |
