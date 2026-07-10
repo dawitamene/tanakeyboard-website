@@ -21,7 +21,7 @@ body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',
 a{color:var(--lake);text-decoration:none}
 a:hover{color:var(--aqua)}
 ::selection{background:var(--lake);color:#FFF6F0}
-img{max-width:100%}
+img{max-width:100%;height:auto}
 .eth{font-family:'Noto Sans Ethiopic','Nyala','Abyssinica SIL',system-ui,sans-serif}
 
 /* ===== Keyframes ===== */
@@ -170,7 +170,7 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .tilt-wrap{perspective:1000px}
 .phone-card{background:#17150F;border-radius:34px;padding:8px;box-shadow:var(--shadow);max-width:340px;margin:0 auto;
   transition:transform .25s ease;transform-style:preserve-3d}
-.phone-card img{width:100%;display:block;border-radius:27px}
+.phone-card img{width:100%;height:auto;display:block;border-radius:27px}
 .order-2{order:2}
 .order-1{order:1}
 
