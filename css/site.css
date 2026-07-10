@@ -171,6 +171,8 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .phone-card{background:#17150F;border-radius:34px;padding:8px;box-shadow:var(--shadow);max-width:340px;margin:0 auto;
   transition:transform .25s ease;transform-style:preserve-3d}
 .phone-card img{width:100%;height:auto;display:block;border-radius:27px}
+.layout-card{aspect-ratio:4 / 3;display:flex;align-items:center;justify-content:center}
+.layout-card img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
 .order-2{order:2}
 .order-1{order:1}
 
