@@ -2,6 +2,15 @@
   'use strict';
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ===== 7.0 Navbar scroll state ===== */
+  var siteNav = document.getElementById('siteNav');
+  function syncNavState(){
+    if(!siteNav) return;
+    siteNav.classList.toggle('is-scrolled', window.scrollY > 12);
+  }
+  syncNavState();
+  window.addEventListener('scroll', syncNavState, { passive:true });
+
   /* ===== 7.1 Theme toggle ===== */
   var themeBtn = document.getElementById('themeToggle');
   function applyGlyph(){
