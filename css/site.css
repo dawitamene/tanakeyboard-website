@@ -24,6 +24,10 @@ a{color:var(--lake);text-decoration:none}
 a:hover{color:var(--aqua)}
 ::selection{background:var(--lake);color:#FFF6F0}
 img{max-width:100%;height:auto}
+.theme-shot{width:100%;height:auto}
+.theme-shot.dark-shot{display:none}
+[data-theme="dark"] .theme-shot.light-shot{display:none}
+[data-theme="dark"] .theme-shot.dark-shot{display:block}
 .eth{font-family:'Noto Sans Ethiopic','Nyala','Abyssinica SIL',system-ui,sans-serif}
 
 /* ===== Keyframes ===== */
@@ -199,7 +203,7 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .features-section{max-width:1180px;margin:0 auto;padding:76px 22px 26px}
 .section-intro{text-align:center;max-width:640px;margin:0 auto 52px}
 .eyebrow{color:var(--lake);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
-.section-intro h2, .showcase-intro h2{font-size:clamp(30px,4.5vw,46px);letter-spacing:-.03em;font-weight:900;line-height:1.05;margin:0}
+.section-intro h2{font-size:clamp(30px,4.5vw,46px);letter-spacing:-.03em;font-weight:900;line-height:1.05;margin:0}
 .feature-block{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;margin-bottom:76px}
 .feature-block:last-child{margin-bottom:0}
 .feature-icon{width:46px;height:46px;border-radius:13px;background:var(--grad);color:#fff;font-size:22px;
@@ -215,8 +219,6 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .phone-card img{width:100%;height:auto;display:block;border-radius:27px}
 .keyboard-shot-card{aspect-ratio:1.22 / 1;display:flex;align-items:center;justify-content:center;max-width:420px}
 .keyboard-shot-card img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
-.layout-card{aspect-ratio:4 / 3;display:flex;align-items:center;justify-content:center}
-.layout-card img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
 .order-2{order:2}
 .order-1{order:1}
 
@@ -230,15 +232,6 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .secondary-card h3{font-size:18px;font-weight:800;margin:0 0 8px}
 .secondary-card p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0}
 
-/* ===== Showcase ===== */
-.showcase-section{max-width:1180px;margin:0 auto;padding:76px 22px}
-.showcase-intro{text-align:center;max-width:600px;margin:0 auto 56px}
-.showcase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;align-items:end}
-.showcase-fig{margin:0;perspective:1000px}
-.showcase-fig figcaption{text-align:center;margin-top:16px;font-weight:700;font-size:15px}
-.showcase-fig figcaption .sub{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:3px}
-.showcase-fig.raised figcaption{margin-top:-8px}
-
 /* ===== Keyboard themes ===== */
 .themes-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .themes-inner{max-width:1180px;margin:0 auto;padding:72px 22px}
@@ -248,9 +241,7 @@ footer{background:var(--ink);color:#CAC5B8;border-top:1px solid rgba(255,255,255
 .themes-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .theme-card{margin:0;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden}
 .theme-media{aspect-ratio:4 / 3;background:var(--surface-2);overflow:hidden}
-.theme-media object{display:block;width:100%;height:100%;object-fit:cover}
-.theme-fallback{width:100%;height:100%;display:grid;place-items:center;color:var(--muted);
-  font-size:13px;font-weight:700;letter-spacing:.02em;background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+.theme-media img{display:block;width:100%;height:100%;object-fit:cover}
 .theme-card figcaption{padding:14px 16px 16px;text-align:center;font-size:15px;font-weight:800;color:var(--text)}
 
 /* ===== How it works ===== */
@@ -350,7 +341,7 @@ main{min-height:50vh}
   .features-section{padding:60px 18px 20px}
   .seo-intro-inner{padding:56px 18px}
   .section-intro{margin-bottom:42px}
-  .secondary-inner,.showcase-section{padding:56px 18px}
+  .secondary-inner{padding:56px 18px}
   .themes-inner{padding:56px 18px}
   .themes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .faq-inner{padding:56px 18px}
