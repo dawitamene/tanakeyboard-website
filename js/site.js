@@ -81,9 +81,8 @@
   /* ===== 7.5 Live transliteration demo ===== */
   var tlLatin = document.getElementById('tlLatin');
   var tlFidel = document.getElementById('tlFidel');
-  var tlChip = document.getElementById('tlChip');
   var tlCaret = document.getElementById('tlCaret');
-  if(tlLatin && tlFidel && tlChip){
+  if(tlLatin && tlFidel){
     var pairs = [
       { l:'amarigna', f:'አማርኛ' },
       { l:'kelebet',  f:'ቀለበት' }
@@ -95,9 +94,6 @@
       tlFidel.textContent = pairs[0].f;
       tlFidel.style.opacity = '1';
       tlFidel.style.transform = 'none';
-      tlChip.textContent = pairs[0].f;
-      tlChip.style.opacity = '1';
-      tlChip.style.transform = 'none';
     } else {
       var alive = true;
       function sleep(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
@@ -110,9 +106,6 @@
           tlFidel.textContent = pair.f;
           tlFidel.style.opacity = '0';
           tlFidel.style.transform = 'translateY(6px)';
-          tlChip.textContent = pair.f;
-          tlChip.style.opacity = '0';
-          tlChip.style.transform = 'translateY(6px)';
           await sleep(260);
           if(!alive) return;
           for(var c = 0; c < pair.l.length; c++){
@@ -124,14 +117,9 @@
           await sleep(160);
           tlFidel.style.opacity = '1';
           tlFidel.style.transform = 'none';
-          await sleep(420);
-          if(!alive) return;
-          tlChip.style.opacity = '1';
-          tlChip.style.transform = 'none';
-          await sleep(1500);
+          await sleep(1900);
           if(!alive) return;
           tlFidel.style.opacity = '0';
-          tlChip.style.opacity = '0';
           await sleep(360);
         }
       }
