@@ -14,7 +14,7 @@ const SRC = join(ROOT, 'src', 'pages');
 const BASE_PATH = '/keyboard';
 const ORIGIN = `https://addiyon.com${BASE_PATH}`;
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
-const ASSET_VERSION = '20261013';
+const ASSET_VERSION = '20261013b';
 // Set to the GA4 web stream ID (G-XXXXXXX) to turn on website analytics; empty keeps the site analytics-free.
 const GA_MEASUREMENT_ID = '';
 
