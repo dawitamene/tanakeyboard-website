@@ -10,7 +10,7 @@
   "description": "ነጻ የአማርኛ መጻፊያ። በእንግሊዝኛ ፊደል ይጻፉ (selam → ሰላም)፣ ከዚያ አማርኛውን ገልብጠው በዎርድ፣ በፌስቡክ፣ በቴሌግራም ወይም በኢሜል ይለጥፉ። ምንም መጫን አያስፈልግም።",
   "updated": "2026-10-13",
   "bodyPage": "tool",
-  "scripts": ["/js/fidel.js", "/js/typing.js"],
+  "scripts": ["/js/fidel.js", "/js/suggest.js", "/js/typing.js"],
   "breadcrumbs": [["አማርኛ መጻፊያ", null]],
   "faq": [
     ["በኦንላይን አማርኛ እንዴት እጽፋለሁ?", "በግራ በኩል ባለው ሳጥን ውስጥ ድምፁን በእንግሊዝኛ ፊደል ይጻፉ። አማርኛው በቀኝ በኩል ወዲያው ይታያል። <strong>አማርኛውን ገልብጥ</strong> የሚለውን ተጭነው በፈለጉት ቦታ ይለጥፉ።"],
@@ -28,7 +28,7 @@
     <h1 class="eth">አማርኛ በኦንላይን መጻፊያ</h1>
     <p class="standfirst">ድምፁን በእንግሊዝኛ ፊደል ይጻፉ፤ አማርኛው ወዲያው ይወጣል፦ <code>selam</code> → <span class="eth">ሰላም</span>። ገልብጠው በፈለጉት ሰነድ፣ ቻት ወይም ፖስት ላይ ይለጥፉ። ነጻ ነው፤ ምንም ነገር ወደ ሌላ ቦታ አይላክም።</p>
 
-    <section class="tool" aria-label="የአማርኛ መጻፊያ">
+    <section class="tool" data-engine="{{ENGINE_WORKER}}" aria-label="የአማርኛ መጻፊያ">
       <div class="tool-panes">
         <div class="tool-pane">
           <label class="tool-label" for="latinIn"><span>በእንግሊዝኛ ፊደል</span></label>
@@ -47,6 +47,7 @@
         </div>
       </div>
     </section>
+    <p class="tool-note">የቃላት ጥቆማዎቹ አዲዮን ኪቦርድ የሚጠቀምበትን የአማርኛ መዝገበ ቃላት ይጠቀማሉ። መጀመሪያ ሲጽፉ ከበስተጀርባ ይጫናሉ (8 ሜባ ገደማ)፤ ከዚያ በብራውዘርዎ ውስጥ ይቀመጣሉ።</p>
 
     <div class="prose lead-block">
       <h2>ምሳሌዎችን ይሞክሩ</h2>

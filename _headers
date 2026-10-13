@@ -23,3 +23,15 @@
 # The pages.dev host is only the Worker's origin; addiyon.com/keyboard is the public site.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
+
+/engine/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/engine/*.mjs
+  Content-Type: text/javascript; charset=utf-8
+
+/engine/*.wasm
+  Content-Type: application/wasm
+
+/engine/*.gz
+  Content-Type: application/octet-stream

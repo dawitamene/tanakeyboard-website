@@ -470,3 +470,5 @@ footer{background:var(--panel);color:var(--panel-text)}
 .foot-top{grid-template-columns:1.4fr 1fr 1fr 1fr}
 @media (max-width: 900px){ .foot-top{grid-template-columns:1fr 1fr} }
 @media (max-width: 600px){ .foot-top{grid-template-columns:1fr} }
+.tool-note{font-size:13.5px;line-height:1.6;color:var(--muted);margin:12px 2px 0;max-width:72ch}
+.alts-label{white-space:nowrap}

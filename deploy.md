@@ -6,7 +6,9 @@
 > `keyboard.addiyon.com/*`) proxies `/keyboard/*` to Pages and 301-redirects the old
 > `keyboard.addiyon.com` URLs. Deploy it with `npx wrangler deploy` from `worker/` and test it with `node worker/test.mjs`.
 > Pages are generated from `src/pages/` with `node tools/build.mjs`; preview locally with `node tools/serve.mjs`
-> (http://127.0.0.1:3311/keyboard/). The rest of this guide describes the original subdomain setup.
+> (http://127.0.0.1:3311/keyboard/). The typing tool's word suggestions come from `engine/<hash>/`, which
+> `node tools/sync-engine.mjs` fills from the preener repo's `android/web-engine` build (see its README).
+> The rest of this guide describes the original subdomain setup.
 
 
 This guide covers deploying the static site to **Cloudflare Pages** and pointing the

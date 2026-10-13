@@ -384,8 +384,18 @@ function renderNumbers100() {
   return `<div class="num-grid num-100">${cells.join('')}</div>`;
 }
 
+function engineWorkerPath() {
+  const versionFile = join(ROOT, 'engine', 'VERSION');
+  try {
+    return `${BASE_PATH}/engine/${readFileSync(versionFile, 'utf8').trim()}/worker.mjs`;
+  } catch {
+    return '';
+  }
+}
+
 function expandBody(page, byPath) {
   return page.body
+    .replace(/\{\{ENGINE_WORKER\}\}/g, () => engineWorkerPath())
     .replace(/<!--cta-->/g, () => renderCta(page.meta.lang))
     .replace(/<!--faq-->/g, () => renderFaq(page))
     .replace(/<!--play-->/g, () => renderPlayButton(page.meta.lang))

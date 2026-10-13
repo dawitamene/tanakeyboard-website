@@ -10,7 +10,7 @@
   "description": "Free online Amharic keyboard. Type Amharic with English letters (selam → ሰላም) and copy the Fidel into Word, Facebook, Telegram or email. No download needed.",
   "updated": "2026-10-13",
   "bodyPage": "tool",
-  "scripts": ["/js/fidel.js", "/js/typing.js"],
+  "scripts": ["/js/fidel.js", "/js/suggest.js", "/js/typing.js"],
   "breadcrumbs": [["Type Amharic online", null]],
   "schema": [
     {
@@ -42,7 +42,7 @@
     <h1>Type Amharic online</h1>
     <p class="standfirst">Type the sound with English letters and get Amharic Fidel instantly: <code>selam</code> becomes <span class="eth">ሰላም</span>. Copy it into any document, chat or post. Free, and nothing is uploaded.</p>
 
-    <section class="tool" aria-label="Amharic typing tool">
+    <section class="tool" data-engine="{{ENGINE_WORKER}}" aria-label="Amharic typing tool">
       <div class="tool-panes">
         <div class="tool-pane">
           <label class="tool-label" for="latinIn"><span>English letters</span></label>
@@ -61,6 +61,7 @@
         </div>
       </div>
     </section>
+    <p class="tool-note">Word suggestions use the same Amharic dictionary and spelling engine as Addiyon Keyboard. They load in the background the first time you type (about 8 MB), then stay in your browser.</p>
 
     <div class="prose lead-block">
       <h2>Try an example</h2>
