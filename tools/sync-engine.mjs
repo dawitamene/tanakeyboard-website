@@ -7,7 +7,9 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gzipSync } from 'node:zlib';
+import { createRequire } from 'node:module';
+import { brotliCompressSync, constants } from 'node:zlib';
+import { encodeBundle } from '../src/engine/dictionary-bundle.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ANDROID = process.env.ADDIYON_ANDROID || '/Users/dev/code/preener/android';
@@ -16,6 +18,28 @@ const DATABASE = join(ANDROID, 'language/amharic/build/generated/dictionaryAsset
 const ASSETS = join(ANDROID, 'language/amharic/src/main/assets');
 const VENDOR = join(ROOT, 'src/engine/vendor/sql.js');
 const OUT_ROOT = join(ROOT, 'engine');
+const BROTLI = join(ROOT, 'src/engine/vendor/brotli');
+
+function brotli(bytes) {
+  return brotliCompressSync(bytes, {
+    params: {
+      [constants.BROTLI_PARAM_QUALITY]: 11,
+      [constants.BROTLI_PARAM_LGWIN]: 24,
+      [constants.BROTLI_PARAM_SIZE_HINT]: bytes.length
+    }
+  });
+}
+
+async function dictionaryBundle() {
+  const initSqlJs = createRequire(import.meta.url)(join(VENDOR, 'sql-wasm.js'));
+  const SQL = await initSqlJs({ locateFile: (file) => join(VENDOR, file) });
+  const database = new SQL.Database(readFileSync(requireFile(DATABASE)));
+  try {
+    return encodeBundle(database);
+  } finally {
+    database.close();
+  }
+}
 
 function requireFile(path) {
   if (!existsSync(path)) throw new Error(`Missing ${path}. Build it first (see the header of tools/sync-engine.mjs).`);
@@ -28,10 +52,12 @@ if (!engineFiles.includes('addiyon-amharic-engine.mjs')) throw new Error(`No add
 const outputs = new Map();
 for (const name of engineFiles) outputs.set(name, readFileSync(join(ENGINE_JS, name)));
 outputs.set('worker.mjs', readFileSync(join(ROOT, 'src/engine/worker.mjs')));
+outputs.set('dictionary-bundle.mjs', readFileSync(join(ROOT, 'src/engine/dictionary-bundle.mjs')));
+outputs.set('brotli-decode.mjs', readFileSync(requireFile(join(BROTLI, 'decode.min.js'))));
 outputs.set('sql-wasm.mjs', Buffer.concat([Buffer.from('var module;\n'), readFileSync(requireFile(join(VENDOR, 'sql-wasm.js'))), Buffer.from('\nexport default initSqlJs;\n')]));
 outputs.set('sql-wasm.wasm', readFileSync(requireFile(join(VENDOR, 'sql-wasm.wasm'))));
-outputs.set('amharic.db.gz', gzipSync(readFileSync(requireFile(DATABASE)), { level: 9 }));
-outputs.set('amharic_verbs.ahrf.gz', gzipSync(readFileSync(requireFile(join(ASSETS, 'amharic_verbs.ahrf'))), { level: 9 }));
+outputs.set('amharic-dictionary.txt.br', brotli(await dictionaryBundle()));
+outputs.set('amharic_verbs.ahrf.br', brotli(readFileSync(requireFile(join(ASSETS, 'amharic_verbs.ahrf')))));
 outputs.set('amharic_verb_stems.dat.gz', readFileSync(requireFile(join(ASSETS, 'amharic_verb_stems.dat'))));
 outputs.set('NOTICE.txt', Buffer.from([
   'Addiyon Keyboard web suggestion engine',
@@ -40,6 +66,8 @@ outputs.set('NOTICE.txt', Buffer.from([
   '',
   'sql.js 1.13.0, MIT license:',
   readFileSync(join(VENDOR, 'LICENSE'), 'utf8'),
+  'Brotli JavaScript decoder (Google), MIT license:',
+  readFileSync(join(BROTLI, 'LICENSE'), 'utf8'),
   readFileSync(join(ASSETS, 'leipzig_corpora_NOTICE.txt'), 'utf8'),
   'Amharic verb morphology data is derived from HornMorpho (https://github.com/hltdi/HornMorpho),',
   'licensed under the GNU General Public License version 3:',
