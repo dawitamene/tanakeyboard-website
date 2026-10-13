@@ -1,21 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://keyboard.addiyon.com/</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://addiyon.com/keyboard/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/"/>
   </url>
   <url>
-    <loc>https://keyboard.addiyon.com/features.html</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://addiyon.com/keyboard/am/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/"/>
   </url>
   <url>
-    <loc>https://keyboard.addiyon.com/privacy.html</loc>
+    <loc>https://addiyon.com/keyboard/am/amharic-alphabet</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/amharic-alphabet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/amharic-alphabet"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/am/amharic-typing</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/amharic-typing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/amharic-typing"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/am/geez-numbers</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/geez-numbers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/geez-numbers"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/amharic-alphabet</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/amharic-alphabet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/amharic-alphabet"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/amharic-typing</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/amharic-typing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/amharic-typing"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/compare/</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/compare/addiyon-vs-gboard</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/compare/addiyon-vs-keyman</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/features</loc>
     <lastmod>2026-10-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/geez-numbers</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/geez-numbers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/geez-numbers"/>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-keyboard-for-pc</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-keyboard-for-telegram</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-keyboard-for-whatsapp</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-keyboard-samsung</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-keyboard-tecno-infinix</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/amharic-typing-rules</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/guides/how-to-type-amharic-on-android</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyon.com/keyboard/privacy</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>

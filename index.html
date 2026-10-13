@@ -3,41 +3,46 @@
 <head>
 <script>
 (function(){
-  var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var t = null;
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  t = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', t);
 })();
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Amharic Keyboard - Type Amharic with Addiyon Keyboard</title>
-<meta name="description" content="Addiyon Keyboard is an Amharic keyboard for Android with live Latin to Fidel transliteration, swipe typing, Ge'ez numbers, offline Amharic suggestions, and AI quick edits like Fix grammar and Shorten.">
-<meta name="keywords" content="Amharic keyboard, Addiyon keyboard, Amharic typing, Ethiopian keyboard, Geez keyboard, Fidel keyboard, አማርኛ ኪቦርድ">
-<link rel="canonical" href="https://keyboard.addiyon.com/">
+<meta name="description" content="Addiyon Keyboard is a free Amharic keyboard for Android. Type with English letters and get Fidel as you type (selam → ሰላም), with offline suggestions and AI edits.">
+<link rel="canonical" href="https://addiyon.com/keyboard/">
+<link rel="alternate" hreflang="am" href="https://addiyon.com/keyboard/am/">
+<link rel="alternate" hreflang="en" href="https://addiyon.com/keyboard/">
+<link rel="alternate" hreflang="x-default" href="https://addiyon.com/keyboard/">
 <meta property="og:title" content="Amharic Keyboard - Type Amharic with Addiyon Keyboard">
-<meta property="og:description" content="A fast, private Amharic keyboard for Android with live Latin to Fidel transliteration, complete Ge'ez script support, offline suggestions, and AI quick edits when you want them.">
+<meta property="og:description" content="Addiyon Keyboard is a free Amharic keyboard for Android. Type with English letters and get Fidel as you type (selam → ሰላም), with offline suggestions and AI edits.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://keyboard.addiyon.com/">
-<meta property="og:image" content="https://keyboard.addiyon.com/img/feature-graphic-v2.webp">
+<meta property="og:url" content="https://addiyon.com/keyboard/">
+<meta property="og:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
 <meta property="og:site_name" content="Addiyon Keyboard">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Amharic Keyboard - Type Amharic with Addiyon Keyboard">
-<meta name="twitter:description" content="Type Amharic on Android with Addiyon Keyboard: live Latin to Fidel transliteration, Ge'ez numbers, offline suggestions, and AI quick edits.">
-<meta name="twitter:image" content="https://keyboard.addiyon.com/img/feature-graphic-v2.webp">
-<link rel="icon" href="img/logo.svg?v=20261009" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="twitter:description" content="Addiyon Keyboard is a free Amharic keyboard for Android. Type with English letters and get Fidel as you type (selam → ሰላም), with offline suggestions and AI edits.">
+<meta name="twitter:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
+<link rel="icon" href="/keyboard/img/logo.svg?v=20261009" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/keyboard/img/apple-touch-icon.png">
 <meta name="theme-color" content="#00717D">
-<link rel="stylesheet" href="css/site.css?v=20261009b">
-<script src="js/site.js?v=20260917" defer></script>
+<link rel="stylesheet" href="/keyboard/css/site.css?v=20261013">
+<script src="/keyboard/js/site.js?v=20261013" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://keyboard.addiyon.com/#organization",
+      "@id": "https://addiyon.com/keyboard/#organization",
       "name": "Addiyon Keyboard",
-      "url": "https://keyboard.addiyon.com/",
-      "logo": "https://keyboard.addiyon.com/img/logo.svg?v=20261009",
+      "url": "https://addiyon.com/keyboard/",
+      "logo": "https://addiyon.com/keyboard/img/logo.svg?v=20261009",
       "sameAs": [
         "https://t.me/addiyonkeyboard",
         "https://play.google.com/store/apps/details?id=com.addiyon.keyboard"
@@ -45,22 +50,28 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://keyboard.addiyon.com/#website",
+      "@id": "https://addiyon.com/keyboard/#website",
       "name": "Addiyon Keyboard",
-      "url": "https://keyboard.addiyon.com/",
-      "inLanguage": ["en", "am"],
+      "url": "https://addiyon.com/keyboard/",
+      "inLanguage": [
+        "en",
+        "am"
+      ],
       "publisher": {
-        "@id": "https://keyboard.addiyon.com/#organization"
+        "@id": "https://addiyon.com/keyboard/#organization"
       }
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://keyboard.addiyon.com/#app",
+      "@id": "https://addiyon.com/keyboard/#app",
       "name": "Addiyon Keyboard",
-      "alternateName": ["Amharic Keyboard", "አዲዮን ኪቦርድ"],
+      "alternateName": [
+        "Amharic Keyboard",
+        "አዲዮን ኪቦርድ"
+      ],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android",
-      "url": "https://keyboard.addiyon.com/",
+      "url": "https://addiyon.com/keyboard/",
       "downloadUrl": "https://play.google.com/store/apps/details?id=com.addiyon.keyboard",
       "description": "Addiyon Keyboard is an Android Amharic keyboard with live Latin to Fidel transliteration, complete Ge'ez script support, Ethiopic numerals, swipe typing, offline suggestions, and optional AI quick edits such as Fix grammar, Professional, Shorten and Summarize.",
       "offers": {
@@ -69,51 +80,82 @@
         "priceCurrency": "USD"
       },
       "publisher": {
-        "@id": "https://keyboard.addiyon.com/#organization"
+        "@id": "https://addiyon.com/keyboard/#organization"
       }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://keyboard.addiyon.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "What is Addiyon Keyboard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Addiyon Keyboard is an Android keyboard for typing Amharic in the Ge'ez or Fidel script. It supports live Latin to Fidel transliteration, Ge'ez numbers, Amharic punctuation, and offline suggestions."
+            "text": "A free Android keyboard for typing Amharic in the Ge’ez (Fidel) script. It turns Latin letters into Fidel as you type, and includes Ethiopic numerals, Amharic punctuation, offline suggestions, swipe typing and an English QWERTY layout."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I type Amharic from Latin letters?",
+          "name": "How do I type Amharic with English letters?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Addiyon Keyboard lets you type the sound in Latin letters and preview the matching Amharic Fidel text before you commit it."
+            "text": "Type the sound in Latin letters, like selam, and Addiyon shows ሰላም as you go. Tap a suggestion or press space to commit it. The spelling rules cover the letters that need Shift, like T for ጠ."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Addiyon Keyboard work offline?",
+          "name": "Does it work offline?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Typing, transliteration and suggestions run on the device without sending typed text to a server. Only the optional AI quick edits need a connection, and only when you tap one."
+            "text": "Yes. Typing, transliteration and suggestions run on your phone with no connection. Only the optional AI quick edits need the internet, and only when you tap one."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Addiyon Keyboard support Ge'ez numbers?",
+          "name": "Does it support Ge’ez numbers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Addiyon Keyboard includes Ethiopic numerals such as ፩, ፲, ፻, and ፼, plus Amharic punctuation and special characters."
+            "text": "Yes: ፩ ፪ ፫ ፲ ፻ ፼, plus Amharic punctuation such as ። ፣ ፤ ፧. You can also convert any number to Ge’ez online."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Addiyon Keyboard have AI?",
+          "name": "Is Addiyon Keyboard private?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. An optional bar above the keys offers Fix grammar, Casual, Humanize, Professional, Formal, Friendly, Shorten and Summarize for Amharic or English text. It is free with a daily allowance and needs a one-time sign-in the first time you use it."
+            "text": "Yes. Typing, transliteration and suggestions stay on your device. Text is sent only when you tap an AI edit, and only the text being edited. Nothing is learned in password fields."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work in WhatsApp, Telegram and Facebook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. As a system keyboard, Addiyon works anywhere Android lets you type: chats, social apps, search, notes and documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not to type. You sign in with Google or an email code only the first time you use an AI edit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the AI free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with a daily allowance that resets each day. Where Google Play offers it, Addiyon Pro gives about 10,000 AI edits a month and the Pro themes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an iPhone or computer version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Addiyon Keyboard is for Android. On a computer you can use the free online Amharic typing tool and copy the text."
           }
         }
       ]
@@ -126,14 +168,16 @@
 
 <nav id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
+    <a href="/keyboard/" class="nav-brand">
+      <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
       <span class="nav-wordmark">Addiyon Keyboard</span>
     </a>
     <div class="nav-spacer"></div>
     <div class="nav-right">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="/keyboard/amharic-typing" class="nav-link">Type online</a>
+      <a href="/keyboard/amharic-alphabet" class="nav-link">Alphabet</a>
+      <a href="/keyboard/guides/" class="nav-link">Guides</a>
+      <a href="/keyboard/am/" class="nav-link nav-lang" hreflang="am" lang="am" title="ይህን ገጽ በአማርኛ ያንብቡ">አማ</a>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
       <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener" class="nav-cta" aria-label="Get Addiyon Keyboard on Google Play">Get the app</a>
     </div>
@@ -144,8 +188,8 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Type Amharic with Latin letters.</h1>
-    <p class="hero-sub">Addiyon turns Latin letters into <span class="eth">ፊደል</span> as you type, with the full Ge&#8217;ez script, Ethiopic numerals, suggestions that never leave your phone, and AI quick edits when you want them.</p>
+    <h1>Type Amharic with English letters.</h1>
+    <p class="hero-sub">Addiyon is a free Amharic keyboard for Android. It turns English letters into <span class="eth">ፊደል</span> as you type, with the full Ge&#8217;ez script, Ethiopic numerals, suggestions that never leave your phone, and AI quick edits when you want them.</p>
     <div class="hero-cta-row">
       <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener" class="btn btn-solid">
         <svg width="17" height="18" viewBox="30 336.7 120.9 129.2" aria-hidden="true">
@@ -156,7 +200,7 @@
         </svg>
         Get it on Google Play
       </a>
-      <a href="features.html" class="hero-link">See typing features →</a>
+      <a href="/keyboard/features" class="hero-link">See typing features →</a>
     </div>
     <ul class="hero-meta">
       <li>Full Ge&#8217;ez syllabary</li>
@@ -173,8 +217,8 @@
         <p class="cap">Type the sound in Latin letters. Addiyon re-reads the whole word on every keystroke and previews the Fidel before you commit.</p>
       </div>
       <figure class="demo-fig">
-        <img class="theme-shot light-shot" src="img/texting-light.webp?v=20261009" width="1080" height="1150" alt="Addiyon Keyboard light layout showing Amharic suggestions while texting" fetchpriority="high">
-        <img class="theme-shot dark-shot" src="img/texting-dark.webp?v=20261009" width="1080" height="1150" alt="Addiyon Keyboard dark layout showing Amharic suggestions while texting" fetchpriority="high">
+        <img class="theme-shot light-shot" src="/keyboard/img/texting-light.webp?v=20261009" width="1080" height="1150" alt="Addiyon Keyboard light layout showing Amharic suggestions while texting" fetchpriority="high">
+        <img class="theme-shot dark-shot" src="/keyboard/img/texting-dark.webp?v=20261009" width="1080" height="1150" alt="Addiyon Keyboard dark layout showing Amharic suggestions while texting" fetchpriority="high">
         <figcaption>Addiyon suggestions, inline in any app</figcaption>
       </figure>
     </div>
@@ -239,16 +283,16 @@
         <p>Every Fidel letter across all seven orders, including special characters and labialized forms. The full syllabary with nothing missing.</p>
       </div>
       <figure class="shot">
-        <img class="theme-shot light-shot" src="img/complete-amharic-light.webp?v=20261009" alt="Addiyon Keyboard light theme turning mesa into Amharic suggestions" loading="lazy">
-        <img class="theme-shot dark-shot" src="img/complete-amharic-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme turning mesa into Amharic suggestions" loading="lazy">
+        <img class="theme-shot light-shot" src="/keyboard/img/complete-amharic-light.webp?v=20261009" alt="Addiyon Keyboard light theme turning mesa into Amharic suggestions" loading="lazy">
+        <img class="theme-shot dark-shot" src="/keyboard/img/complete-amharic-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme turning mesa into Amharic suggestions" loading="lazy">
         <figcaption>Fidel suggestions as you type · light / dark</figcaption>
       </figure>
     </div>
 
     <div class="feat-row">
       <figure class="shot">
-        <img class="theme-shot light-shot" src="img/geez-numbers-light.webp?v=20261009" alt="Addiyon Keyboard light theme showing Ge'ez numerals and symbols" loading="lazy">
-        <img class="theme-shot dark-shot" src="img/geez-numbers-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme showing Ge'ez numerals and symbols" loading="lazy">
+        <img class="theme-shot light-shot" src="/keyboard/img/geez-numbers-light.webp?v=20261009" alt="Addiyon Keyboard light theme showing Ge'ez numerals and symbols" loading="lazy">
+        <img class="theme-shot dark-shot" src="/keyboard/img/geez-numbers-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme showing Ge'ez numerals and symbols" loading="lazy">
         <figcaption>Ethiopic numerals + punctuation</figcaption>
       </figure>
       <div>
@@ -263,8 +307,8 @@
         <p>Tap the microphone and dictate through Android&#8217;s speech-recognition service without leaving the keyboard.</p>
       </div>
       <figure class="shot">
-        <img class="theme-shot light-shot" src="img/voice-light.webp?v=20261009" alt="Addiyon Keyboard light theme listening for voice typing" loading="lazy">
-        <img class="theme-shot dark-shot" src="img/voice-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme listening for voice typing" loading="lazy">
+        <img class="theme-shot light-shot" src="/keyboard/img/voice-light.webp?v=20261009" alt="Addiyon Keyboard light theme listening for voice typing" loading="lazy">
+        <img class="theme-shot dark-shot" src="/keyboard/img/voice-dark.webp?v=20261009" alt="Addiyon Keyboard dark theme listening for voice typing" loading="lazy">
         <figcaption>Voice typing · light / dark</figcaption>
       </figure>
     </div>
@@ -295,7 +339,7 @@
       <div class="ruled-cell">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <h3>Private by design</h3>
-        <p>Typing stays on your device. Text leaves it only when you tap an AI edit, and never from password fields. <a href="privacy.html">Read the policy</a>.</p>
+        <p>Typing stays on your device. Text leaves it only when you tap an AI edit, and never from password fields. <a href="/keyboard/privacy">Read the policy</a>.</p>
       </div>
     </div>
   </div>
@@ -303,42 +347,63 @@
 
 <section class="section" id="faq">
   <div class="wrap section-pad">
-    <div class="sec-head single">
-      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;margin:0">Common questions.</h2>
+    <section class="faq-block">
+      <h2 class="faq-title">Common questions.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What is Addiyon Keyboard?</h3>
+          <p>A free Android keyboard for typing Amharic in the Ge&#8217;ez (Fidel) script. It turns Latin letters into Fidel as you type, and includes Ethiopic numerals, Amharic punctuation, offline suggestions, swipe typing and an English QWERTY layout.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I type Amharic with English letters?</h3>
+          <p>Type the sound in Latin letters, like <code>selam</code>, and Addiyon shows <span class="eth">ሰላም</span> as you go. Tap a suggestion or press space to commit it. The <a href="/keyboard/guides/amharic-typing-rules">spelling rules</a> cover the letters that need Shift, like <code>T</code> for <span class="eth">ጠ</span>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work offline?</h3>
+          <p>Yes. Typing, transliteration and suggestions run on your phone with no connection. Only the optional AI quick edits need the internet, and only when you tap one.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it support Ge&#8217;ez numbers?</h3>
+          <p>Yes: <span class="eth">፩ ፪ ፫ ፲ ፻ ፼</span>, plus Amharic punctuation such as <span class="eth">። ፣ ፤ ፧</span>. You can also <a href="/keyboard/geez-numbers">convert any number to Ge&#8217;ez online</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Addiyon Keyboard private?</h3>
+          <p>Yes. Typing, transliteration and suggestions stay on your device. Text is sent only when you tap an AI edit, and only the text being edited. Nothing is learned in password fields.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work in WhatsApp, Telegram and Facebook?</h3>
+          <p>Yes. As a system keyboard, Addiyon works anywhere Android lets you type: chats, social apps, search, notes and documents.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I need an account?</h3>
+          <p>Not to type. You sign in with Google or an email code only the first time you use an AI edit.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is the AI free?</h3>
+          <p>Yes, with a daily allowance that resets each day. Where Google Play offers it, Addiyon Pro gives about 10,000 AI edits a month and the Pro themes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there an iPhone or computer version?</h3>
+          <p>Not yet. Addiyon Keyboard is for Android. On a computer you can use the free <a href="/keyboard/amharic-typing">online Amharic typing tool</a> and copy the text.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <div class="wrap section-pad">
+    <div class="sec-head">
+      <div>
+        <h2>Free Amharic tools, no app needed.</h2>
+      </div>
+      <p class="lede">On a computer or someone else&#8217;s phone? These run in your browser with the same spelling rules as the keyboard.</p>
     </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What is Addiyon Keyboard?</h3>
-        <p>An Android keyboard with Latin-to-Fidel transliteration, autocomplete, Ethiopic numerals, punctuation, and English QWERTY.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do I type Amharic from Latin letters?</h3>
-        <p>Type a sound like <code>selam</code>. Preview <span class="eth">ሰላም</span>, then tap to commit it.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Does it support Ge&#8217;ez numbers?</h3>
-        <p>Yes: <span class="eth">፩ ፪ ፫ ፲ ፻ ፼</span>, plus Amharic punctuation and special characters.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is Addiyon Keyboard private?</h3>
-        <p>Yes. Typing, transliteration and suggestions run on your device. Text is sent only when you tap an AI edit, and only the text being edited.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Can I use it in other apps?</h3>
-        <p>Yes. As a system keyboard, Addiyon works anywhere Android lets you type.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is this the same as an online typing tool?</h3>
-        <p>No. Unlike a website tool, Addiyon works directly across Android apps, even offline.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do I need an account?</h3>
-        <p>Not to type. You sign in with Google or an email code only the first time you use an AI edit.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is the AI free?</h3>
-        <p>Yes, with a daily allowance that resets each day. Where Google Play offers it, Addiyon Pro gives about 10,000 AI edits a month and the Pro themes.</p>
-      </div>
+    <div class="rel-grid">
+      <a class="rel-card" href="/keyboard/amharic-typing"><span class="rel-t">Type Amharic online</span><span class="rel-d">Type <code>selam</code>, get <span class="eth">ሰላም</span>. Copy the Fidel into any app or document.</span></a>
+      <a class="rel-card" href="/keyboard/amharic-alphabet"><span class="rel-t">Amharic alphabet chart</span><span class="rel-d">Every Fidel letter in all seven orders, with the keys that type it. Tap a letter to copy it.</span></a>
+      <a class="rel-card" href="/keyboard/geez-numbers"><span class="rel-t">Ge&#8217;ez number converter</span><span class="rel-d">Turn 2019 into <span class="eth">፳፻፲፱</span>, with a chart of every Ethiopic numeral.</span></a>
+      <a class="rel-card" href="/keyboard/guides/"><span class="rel-t">How-to guides</span><span class="rel-d">Set up an Amharic keyboard on Samsung, Tecno or Infinix and type Amharic in WhatsApp and Telegram.</span></a>
     </div>
   </div>
 </section>
@@ -353,19 +418,19 @@
     </div>
     <div class="theme-grid">
       <figure class="theme-card">
-        <div class="tm"><img src="img/theme1.webp?v=20261009" alt="Addiyon Keyboard Teal color with Classic keys" loading="lazy"></div>
+        <div class="tm"><img src="/keyboard/img/theme1.webp?v=20261009" alt="Addiyon Keyboard Teal color with Classic keys" loading="lazy"></div>
         <figcaption><span>Teal · Classic</span><span>Light</span></figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="img/theme2.webp?v=20261009" alt="Addiyon Keyboard Purple color with Keycap keys" loading="lazy"></div>
+        <div class="tm"><img src="/keyboard/img/theme2.webp?v=20261009" alt="Addiyon Keyboard Purple color with Keycap keys" loading="lazy"></div>
         <figcaption><span>Purple · Keycap</span><span>Dark</span></figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="img/theme3.webp?v=20261009" alt="Addiyon Keyboard Mocha color with Typewriter keys" loading="lazy"></div>
+        <div class="tm"><img src="/keyboard/img/theme3.webp?v=20261009" alt="Addiyon Keyboard Mocha color with Typewriter keys" loading="lazy"></div>
         <figcaption><span>Mocha · Typewriter</span><span>Light</span></figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="img/theme4.webp?v=20261009" alt="Addiyon Keyboard Pink color with Neon keys" loading="lazy"></div>
+        <div class="tm"><img src="/keyboard/img/theme4.webp?v=20261009" alt="Addiyon Keyboard Pink color with Neon keys" loading="lazy"></div>
         <figcaption><span>Pink · Neon</span><span>Dark</span></figcaption>
       </figure>
     </div>
@@ -414,7 +479,7 @@
             </svg>
             Get it on Google Play
           </a>
-          <a href="features.html" class="btn btn-ghost" style="color:var(--panel-text);border-color:var(--panel-line)">Explore features</a>
+          <a href="/keyboard/features" class="btn btn-ghost" style="color:var(--panel-text);border-color:var(--panel-line)">Explore features</a>
         </div>
       </div>
     </div>
@@ -428,24 +493,39 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand">
-          <img src="img/logo.svg?v=20261009" width="30" height="30" alt="">
+          <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="">
           Addiyon Keyboard
         </div>
         <p class="foot-desc">The fast, private way to type Amharic in the Ge&#8217;ez script.</p>
+        <div class="foot-contact" style="margin-top:22px">
+          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
+          <span class="em">keyboard [at] addiyon.com</span>
+        </div>
       </div>
       <div>
         <p class="foot-h">Product</p>
         <div class="foot-links">
-          <a href="features.html">Features</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="/keyboard/features">Features</a>
+          <a href="/keyboard/privacy">Privacy Policy</a>
           <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
       <div>
-        <p class="foot-h">Contact</p>
-        <div class="foot-contact">
-          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
-          <span class="em">keyboard [at] addiyon.com</span>
+        <p class="foot-h">Free tools</p>
+        <div class="foot-links">
+          <a href="/keyboard/amharic-typing">Type Amharic online</a>
+          <a href="/keyboard/amharic-alphabet">Amharic alphabet chart</a>
+          <a href="/keyboard/geez-numbers">Ge&#8217;ez number converter</a>
+          <a href="/keyboard/am/">በአማርኛ</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-h">Guides</p>
+        <div class="foot-links">
+          <a href="/keyboard/guides/how-to-type-amharic-on-android">Type Amharic on Android</a>
+          <a href="/keyboard/guides/amharic-typing-rules">Amharic spelling rules</a>
+          <a href="/keyboard/guides/amharic-keyboard-for-whatsapp">Amharic on WhatsApp</a>
+          <a href="/keyboard/compare/">Compare keyboards</a>
         </div>
       </div>
     </div>

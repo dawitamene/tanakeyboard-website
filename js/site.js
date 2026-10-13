@@ -29,14 +29,56 @@
     });
   }
 
+
+  /* ===== Copy buttons (alphabet chart, numerals, tool output) ===== */
+  var toast = null, toastTimer = null;
+  function showToast(text){
+    if(!toast){
+      toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.setAttribute('role', 'status');
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-on'); }, 1400);
+  }
+  function copyText(text){
+    var lang = document.documentElement.lang;
+    var done = function(){ showToast((lang === 'am' ? 'ተቀድቷል፦ ' : 'Copied ') + (text.length > 24 ? '' : text)); };
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  }
+  function fallbackCopy(text){
+    var area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(area);
+  }
+  window.AddiyonCopy = copyText;
+  document.addEventListener('click', function(event){
+    var button = event.target.closest ? event.target.closest('[data-copy]') : null;
+    if(button) copyText(button.getAttribute('data-copy'));
+  });
+
   /* ===== Live transliteration demo ===== */
   var tlLatin = document.getElementById('tlLatin');
   var tlFidel = document.getElementById('tlFidel');
   var tlCaret = document.getElementById('tlCaret');
   if(tlLatin && tlFidel){
     var pairs = [
-      { l:'amarigna', f:'አማርኛ' },
-      { l:'kelebet',  f:'ቀለበት' }
+      { l:'amargna', f:'አማርኛ' },
+      { l:'qelebet',  f:'ቀለበት' }
     ];
 
     if(reduced){

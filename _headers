@@ -19,3 +19,7 @@
 /robots.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
+
+# The pages.dev host is only the Worker's origin; addiyon.com/keyboard is the public site.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

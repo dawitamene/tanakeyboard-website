@@ -1,0 +1,9 @@
+name = "addiyon-keyboard-router"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+account_id = "d50a581cd772ce7dca2545ff1a9acdce"
+workers_dev = false
+routes = [
+  { pattern = "addiyon.com/keyboard*", zone_name = "addiyon.com" },
+  { pattern = "keyboard.addiyon.com/*", zone_name = "addiyon.com" }
+]

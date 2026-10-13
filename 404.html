@@ -3,7 +3,9 @@
 <head>
 <script>
 (function(){
-  var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var t = null;
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  t = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', t);
 })();
 </script>
@@ -12,25 +14,37 @@
 <title>Page Not Found - Addiyon Keyboard</title>
 <meta name="description" content="This Addiyon Keyboard page could not be found. Return to the Amharic keyboard homepage or explore Addiyon Keyboard features.">
 <meta name="robots" content="noindex">
-<link rel="canonical" href="https://keyboard.addiyon.com/404.html">
-<link rel="icon" href="img/logo.svg?v=20261009" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:title" content="Page Not Found - Addiyon Keyboard">
+<meta property="og:description" content="This Addiyon Keyboard page could not be found. Return to the Amharic keyboard homepage or explore Addiyon Keyboard features.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://addiyon.com/keyboard/404">
+<meta property="og:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
+<meta property="og:site_name" content="Addiyon Keyboard">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Not Found - Addiyon Keyboard">
+<meta name="twitter:description" content="This Addiyon Keyboard page could not be found. Return to the Amharic keyboard homepage or explore Addiyon Keyboard features.">
+<meta name="twitter:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
+<link rel="icon" href="/keyboard/img/logo.svg?v=20261009" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/keyboard/img/apple-touch-icon.png">
 <meta name="theme-color" content="#00717D">
-<link rel="stylesheet" href="css/site.css?v=20261009b">
-<script src="js/site.js?v=20260917" defer></script>
+<link rel="stylesheet" href="/keyboard/css/site.css?v=20261013">
+<script src="/keyboard/js/site.js?v=20261013" defer></script>
 </head>
-<body data-page="not-found">
+<body data-page="404">
 
 <nav id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
+    <a href="/keyboard/" class="nav-brand">
+      <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
       <span class="nav-wordmark">Addiyon Keyboard</span>
     </a>
     <div class="nav-spacer"></div>
     <div class="nav-right">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="/keyboard/amharic-typing" class="nav-link">Type online</a>
+      <a href="/keyboard/amharic-alphabet" class="nav-link">Alphabet</a>
+      <a href="/keyboard/guides/" class="nav-link">Guides</a>
+      <a href="/keyboard/am/" class="nav-link nav-lang" hreflang="am" lang="am" title="ይህን ገጽ በአማርኛ ያንብቡ">አማ</a>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
       <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener" class="nav-cta" aria-label="Get Addiyon Keyboard on Google Play">Get the app</a>
     </div>
@@ -42,7 +56,7 @@
     <h1>Page not found</h1>
     <p class="privacy-meta">The page you opened is not available, but this site is still here.</p>
     <div class="privacy-body">
-      <p>Go back to the <a href="index.html">homepage</a>, explore <a href="features.html">typing features</a>, or read the <a href="privacy.html">privacy policy</a>.</p>
+      <p>Go back to the <a href="/keyboard/">homepage</a>, explore <a href="/keyboard/features">typing features</a>, or read the <a href="/keyboard/privacy">privacy policy</a>.</p>
     </div>
   </section>
 </main>
@@ -52,24 +66,39 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand">
-          <img src="img/logo.svg?v=20261009" width="30" height="30" alt="">
+          <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="">
           Addiyon Keyboard
         </div>
         <p class="foot-desc">The fast, private way to type Amharic in the Ge&#8217;ez script.</p>
+        <div class="foot-contact" style="margin-top:22px">
+          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
+          <span class="em">keyboard [at] addiyon.com</span>
+        </div>
       </div>
       <div>
         <p class="foot-h">Product</p>
         <div class="foot-links">
-          <a href="features.html">Features</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="/keyboard/features">Features</a>
+          <a href="/keyboard/privacy">Privacy Policy</a>
           <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
       <div>
-        <p class="foot-h">Contact</p>
-        <div class="foot-contact">
-          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
-          <span class="em">keyboard [at] addiyon.com</span>
+        <p class="foot-h">Free tools</p>
+        <div class="foot-links">
+          <a href="/keyboard/amharic-typing">Type Amharic online</a>
+          <a href="/keyboard/amharic-alphabet">Amharic alphabet chart</a>
+          <a href="/keyboard/geez-numbers">Ge&#8217;ez number converter</a>
+          <a href="/keyboard/am/">በአማርኛ</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-h">Guides</p>
+        <div class="foot-links">
+          <a href="/keyboard/guides/how-to-type-amharic-on-android">Type Amharic on Android</a>
+          <a href="/keyboard/guides/amharic-typing-rules">Amharic spelling rules</a>
+          <a href="/keyboard/guides/amharic-keyboard-for-whatsapp">Amharic on WhatsApp</a>
+          <a href="/keyboard/compare/">Compare keyboards</a>
         </div>
       </div>
     </div>

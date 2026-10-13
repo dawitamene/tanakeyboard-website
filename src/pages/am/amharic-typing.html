@@ -1,0 +1,87 @@
+<!--meta
+{
+  "path": "/am/amharic-typing",
+  "lang": "am",
+  "translationKey": "typing",
+  "title": "አማርኛ መጻፊያ በኦንላይን – ነጻ የአማርኛ ኪቦርድ",
+  "h1": "አማርኛ በኦንላይን መጻፊያ",
+  "cardTitle": "አማርኛ በኦንላይን መጻፊያ",
+  "cardText": "በእንግሊዝኛ ፊደል ይጻፉ፣ አማርኛውን ይገልብጡ።",
+  "description": "ነጻ የአማርኛ መጻፊያ። በእንግሊዝኛ ፊደል ይጻፉ (selam → ሰላም)፣ ከዚያ አማርኛውን ገልብጠው በዎርድ፣ በፌስቡክ፣ በቴሌግራም ወይም በኢሜል ይለጥፉ። ምንም መጫን አያስፈልግም።",
+  "updated": "2026-10-13",
+  "bodyPage": "tool",
+  "scripts": ["/js/fidel.js", "/js/typing.js"],
+  "breadcrumbs": [["አማርኛ መጻፊያ", null]],
+  "faq": [
+    ["በኦንላይን አማርኛ እንዴት እጽፋለሁ?", "በግራ በኩል ባለው ሳጥን ውስጥ ድምፁን በእንግሊዝኛ ፊደል ይጻፉ። አማርኛው በቀኝ በኩል ወዲያው ይታያል። <strong>አማርኛውን ገልብጥ</strong> የሚለውን ተጭነው በፈለጉት ቦታ ይለጥፉ።"],
+    ["<code>bet</code> ስጽፍ ለምን <span class=\"eth\">በት</span> ይወጣል?", "<code>e</code> የመጀመሪያውን ቤት (<span class=\"eth\">በ</span>)፣ <code>ie</code> ደግሞ አምስተኛውን ቤት (<span class=\"eth\">ቤ</span>) ይጽፋል። <code>biet</code> ብለው ይጻፉ፣ ወይም ከታች <em>ሌላ አጻጻፍ</em> ላይ <span class=\"eth\">ቤት</span>ን ይምረጡ።"],
+    ["ሳድስ (<span class=\"eth\">ስ</span>፣ <span class=\"eth\">ም</span>) እንዴት እጽፋለሁ?", "ተነባቢውን ብቻውን ይጻፉ። <code>sm</code> → <span class=\"eth\">ስም</span>፣ <code>yqrta</code> → <span class=\"eth\">ይቅርታ</span>።"],
+    ["<span class=\"eth\">ጠ</span>፣ <span class=\"eth\">ጨ</span>፣ <span class=\"eth\">ጰ</span> እንዴት እጽፋለሁ?", "በትልቅ ፊደል፦ <code>T</code> → <span class=\"eth\">ጥ</span>፣ <code>C</code> → <span class=\"eth\">ጭ</span>፣ <code>P</code> → <span class=\"eth\">ጵ</span>። <span class=\"eth\">ቀ</span> ደግሞ <code>q</code> ነው።"],
+    ["የምጽፈው ይቀመጣል ወይም ይላካል?", "አይላክም። ሁሉም ነገር በብራውዘርዎ ውስጥ ይሠራል። ገጹን እንደገና ቢከፍቱት እንዳይጠፋብዎ የመጨረሻው ጽሑፍዎ በዚሁ ብራውዘር ውስጥ ብቻ ይቀመጣል።"]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1 class="eth">አማርኛ በኦንላይን መጻፊያ</h1>
+    <p class="standfirst">ድምፁን በእንግሊዝኛ ፊደል ይጻፉ፤ አማርኛው ወዲያው ይወጣል፦ <code>selam</code> → <span class="eth">ሰላም</span>። ገልብጠው በፈለጉት ሰነድ፣ ቻት ወይም ፖስት ላይ ይለጥፉ። ነጻ ነው፤ ምንም ነገር ወደ ሌላ ቦታ አይላክም።</p>
+
+    <section class="tool" aria-label="የአማርኛ መጻፊያ">
+      <div class="tool-panes">
+        <div class="tool-pane">
+          <label class="tool-label" for="latinIn"><span>በእንግሊዝኛ ፊደል</span></label>
+          <textarea id="latinIn" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="selam, endiet neh?"></textarea>
+        </div>
+        <div class="tool-pane">
+          <label class="tool-label" for="fidelOut"><span>አማርኛ</span></label>
+          <textarea id="fidelOut" class="tool-out" readonly placeholder="ሰላም፣ እንዴት ነህ፧"></textarea>
+        </div>
+      </div>
+      <div class="tool-bar">
+        <div id="alts" class="alts" aria-live="polite"></div>
+        <div class="tool-actions">
+          <button type="button" id="clearIn" class="tool-btn ghost">አጽዳ</button>
+          <button type="button" id="copyOut" class="tool-btn">አማርኛውን ገልብጥ</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>ምሳሌዎችን ይሞክሩ</h2>
+      <ul class="cheat examples">
+        <li><button type="button" class="alt-chip" data-example="selam">selam</button><span class="eth">ሰላም</span></li>
+        <li><button type="button" class="alt-chip" data-example="endiet neh?">endiet neh?</button><span class="eth">እንዴት ነህ፧</span></li>
+        <li><button type="button" class="alt-chip" data-example="Tiena ysTlN">Tiena ysTlN</button><span class="eth">ጤና ይስጥልኝ</span></li>
+        <li><button type="button" class="alt-chip" data-example="yqrta">yqrta</button><span class="eth">ይቅርታ</span></li>
+        <li><button type="button" class="alt-chip" data-example="melkam ldet">melkam ldet</button><span class="eth">መልካም ልደት</span></li>
+        <li><button type="button" class="alt-chip" data-example="enkWan aderesachu">enkWan aderesachu</button><span class="eth">እንኳን አደረሳቹ</span></li>
+      </ul>
+
+      <h2>እንዴት ይሠራል?</h2>
+      <p>እያንዳንዱ የአማርኛ ፊደል ተነባቢና አናባቢ ነው። መጀመሪያ ተነባቢውን፣ ከዚያ አናባቢውን ይጻፉ፦</p>
+      <table>
+        <thead><tr><th>ከተነባቢው በኋላ</th><th>ቤት</th><th>ምሳሌ</th></tr></thead>
+        <tbody>
+          <tr><td><code>e</code></td><td>ግዕዝ (1ኛ)</td><td><code>le</code> → <span class="eth">ለ</span></td></tr>
+          <tr><td><code>u</code></td><td>ካዕብ (2ኛ)</td><td><code>lu</code> → <span class="eth">ሉ</span></td></tr>
+          <tr><td><code>i</code></td><td>ሣልስ (3ኛ)</td><td><code>li</code> → <span class="eth">ሊ</span></td></tr>
+          <tr><td><code>a</code></td><td>ራብዕ (4ኛ)</td><td><code>la</code> → <span class="eth">ላ</span></td></tr>
+          <tr><td><code>ie</code></td><td>ኀምስ (5ኛ)</td><td><code>lie</code> → <span class="eth">ሌ</span></td></tr>
+          <tr><td>ምንም</td><td>ሳድስ (6ኛ)</td><td><code>l</code> → <span class="eth">ል</span></td></tr>
+          <tr><td><code>o</code></td><td>ሳብዕ (7ኛ)</td><td><code>lo</code> → <span class="eth">ሎ</span></td></tr>
+        </tbody>
+      </table>
+      <p>በትልቅ ፊደል የሚጻፉት፦ <code>T</code> <span class="eth">ጥ</span>፣ <code>C</code> <span class="eth">ጭ</span>፣ <code>P</code> <span class="eth">ጵ</span>፣ <code>H</code> <span class="eth">ሕ</span>፣ <code>S</code> <span class="eth">ሥ</span>፣ <code>N</code> <span class="eth">ኝ</span>። ሁሉንም ፊደላት በ<a href="/am/amharic-alphabet">የአማርኛ ፊደል ገበታ</a> ላይ ያገኛሉ።</p>
+
+      <h2>በስልክዎ ይጽፋሉ?</h2>
+      <p><strong>አዲዮን ኪቦርድ</strong> ይህንኑ አጻጻፍ በዋትስአፕ፣ በቴሌግራም፣ በፌስቡክና በሌሎች መተግበሪያዎች ሁሉ ውስጥ የሚጠቀም ነጻ የአንድሮይድ ኪቦርድ ነው። ሙሉ ቃላትንም ስለሚጠቁም ደንቦቹን ማስታወስ ብዙም አያስፈልግዎትም።</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/am/amharic-alphabet,/am/geez-numbers,/am/-->
+    <!--cta-->
+  </div>
+</div>
+</main>

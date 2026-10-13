@@ -3,46 +3,52 @@
 <head>
 <script>
 (function(){
-  var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var t = null;
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  t = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', t);
 })();
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy - Addiyon Keyboard</title>
-<meta name="description" content="Addiyon Keyboard privacy policy: typing, transliteration and suggestions run on-device. Text is sent only when you tap an AI quick edit, which needs a sign-in. Anonymous usage analytics can be turned off in Preferences.">
-<link rel="canonical" href="https://keyboard.addiyon.com/privacy.html">
+<meta name="description" content="Addiyon Keyboard privacy policy: typing and suggestions run on-device. Text is sent only when you tap an AI quick edit. Analytics can be turned off.">
+<link rel="canonical" href="https://addiyon.com/keyboard/privacy">
 <meta property="og:title" content="Privacy Policy - Addiyon Keyboard">
-<meta property="og:description" content="Typing runs on-device. Text is sent only when you tap an AI quick edit. Anonymous usage analytics can be turned off in Preferences.">
+<meta property="og:description" content="Addiyon Keyboard privacy policy: typing and suggestions run on-device. Text is sent only when you tap an AI quick edit. Analytics can be turned off.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://keyboard.addiyon.com/privacy.html">
-<meta property="og:image" content="https://keyboard.addiyon.com/img/feature-graphic-v2.webp">
+<meta property="og:url" content="https://addiyon.com/keyboard/privacy">
+<meta property="og:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
 <meta property="og:site_name" content="Addiyon Keyboard">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Privacy Policy - Addiyon Keyboard">
-<meta name="twitter:description" content="Addiyon Keyboard processes Amharic typing on your device. Text is sent only when you tap an AI quick edit.">
-<meta name="twitter:image" content="https://keyboard.addiyon.com/img/feature-graphic-v2.webp">
-<link rel="icon" href="img/logo.svg?v=20261009" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="twitter:description" content="Addiyon Keyboard privacy policy: typing and suggestions run on-device. Text is sent only when you tap an AI quick edit. Analytics can be turned off.">
+<meta name="twitter:image" content="https://addiyon.com/keyboard/img/feature-graphic-v2.webp">
+<link rel="icon" href="/keyboard/img/logo.svg?v=20261009" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/keyboard/img/apple-touch-icon.png">
 <meta name="theme-color" content="#00717D">
-<link rel="stylesheet" href="css/site.css?v=20261009b">
-<script src="js/site.js?v=20260917" defer></script>
+<link rel="stylesheet" href="/keyboard/css/site.css?v=20261013">
+<script src="/keyboard/js/site.js?v=20261013" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Addiyon Keyboard",
-      "item": "https://keyboard.addiyon.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Privacy Policy",
-      "item": "https://keyboard.addiyon.com/privacy.html"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Addiyon Keyboard",
+          "item": "https://addiyon.com/keyboard/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy"
+        }
+      ]
     }
   ]
 }
@@ -52,14 +58,16 @@
 
 <nav id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
+    <a href="/keyboard/" class="nav-brand">
+      <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="Addiyon Keyboard logo">
       <span class="nav-wordmark">Addiyon Keyboard</span>
     </a>
     <div class="nav-spacer"></div>
     <div class="nav-right">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="privacy.html" class="nav-link" aria-current="page">Privacy</a>
+      <a href="/keyboard/amharic-typing" class="nav-link">Type online</a>
+      <a href="/keyboard/amharic-alphabet" class="nav-link">Alphabet</a>
+      <a href="/keyboard/guides/" class="nav-link">Guides</a>
+      <a href="/keyboard/am/" class="nav-link nav-lang" hreflang="am" lang="am" title="ይህን ገጽ በአማርኛ ያንብቡ">አማ</a>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
       <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener" class="nav-cta" aria-label="Get Addiyon Keyboard on Google Play">Get the app</a>
     </div>
@@ -222,24 +230,39 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand">
-          <img src="img/logo.svg?v=20261009" width="30" height="30" alt="">
+          <img src="/keyboard/img/logo.svg?v=20261009" width="30" height="30" alt="">
           Addiyon Keyboard
         </div>
         <p class="foot-desc">The fast, private way to type Amharic in the Ge&#8217;ez script.</p>
+        <div class="foot-contact" style="margin-top:22px">
+          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
+          <span class="em">keyboard [at] addiyon.com</span>
+        </div>
       </div>
       <div>
         <p class="foot-h">Product</p>
         <div class="foot-links">
-          <a href="features.html">Features</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="/keyboard/features">Features</a>
+          <a href="/keyboard/privacy">Privacy Policy</a>
           <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
       <div>
-        <p class="foot-h">Contact</p>
-        <div class="foot-contact">
-          <a href="https://t.me/addiyonkeyboard" target="_blank" rel="noopener">Join our Telegram group</a>
-          <span class="em">keyboard [at] addiyon.com</span>
+        <p class="foot-h">Free tools</p>
+        <div class="foot-links">
+          <a href="/keyboard/amharic-typing">Type Amharic online</a>
+          <a href="/keyboard/amharic-alphabet">Amharic alphabet chart</a>
+          <a href="/keyboard/geez-numbers">Ge&#8217;ez number converter</a>
+          <a href="/keyboard/am/">በአማርኛ</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-h">Guides</p>
+        <div class="foot-links">
+          <a href="/keyboard/guides/how-to-type-amharic-on-android">Type Amharic on Android</a>
+          <a href="/keyboard/guides/amharic-typing-rules">Amharic spelling rules</a>
+          <a href="/keyboard/guides/amharic-keyboard-for-whatsapp">Amharic on WhatsApp</a>
+          <a href="/keyboard/compare/">Compare keyboards</a>
         </div>
       </div>
     </div>

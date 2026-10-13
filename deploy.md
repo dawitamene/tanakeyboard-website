@@ -1,5 +1,14 @@
 # Deploying addiyonkeyboard-website to Cloudflare Pages
 
+> **Current setup (October 2026):** the public site is **https://addiyon.com/keyboard/**. The Pages
+> project (`tanakeyboard-website`, deployed from this repo on every push to `main`) is only the origin.
+> The Worker in `worker/` (`addiyon-keyboard-router`, routes `addiyon.com/keyboard*` and
+> `keyboard.addiyon.com/*`) proxies `/keyboard/*` to Pages and 301-redirects the old
+> `keyboard.addiyon.com` URLs. Deploy it with `npx wrangler deploy` from `worker/` and test it with `node worker/test.mjs`.
+> Pages are generated from `src/pages/` with `node tools/build.mjs`; preview locally with `node tools/serve.mjs`
+> (http://127.0.0.1:3311/keyboard/). The rest of this guide describes the original subdomain setup.
+
+
 This guide covers deploying the static site to **Cloudflare Pages** and pointing the
 **`addiyonkeyboard.addiyon.com`** subdomain at it.
 

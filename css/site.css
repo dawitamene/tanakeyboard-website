@@ -347,3 +347,126 @@ footer{background:var(--panel);color:var(--panel-text)}
 }
 [data-theme="dark"] .ai-chip.is-on{color:#0C0A07}
 .f-list p strong{color:var(--ink);font-weight:650}
+
+/* ===== Shared sub-page pieces (generated pages) ===== */
+.nav-lang{font-weight:650}
+.crumbs{font-size:13.5px;color:var(--muted);margin:0 0 22px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumbs a{color:var(--muted)}
+.crumbs a:hover{color:var(--ink)}
+.crumbs .sep{opacity:.5}
+.crumbs [aria-current]{color:var(--ink-soft)}
+.page-meta{font-size:13.5px;color:var(--muted);margin:16px 0 0}
+.page .lead-block{margin-top:48px}
+.faq-block{margin-top:72px}
+.faq-title,.related-title{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:0 0 24px;letter-spacing:-.03em}
+#faq .faq-block{margin-top:0}
+.faq-item a{font-weight:600}
+.related{margin-top:72px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.rel-card{display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--card);padding:22px 22px 24px;color:var(--ink)}
+.rel-card:hover{text-decoration:none;border-color:var(--ink)}
+.rel-t{font-size:17px;font-weight:750;letter-spacing:-.01em}
+.rel-d{font-size:14px;line-height:1.6;color:var(--muted)}
+.rel-d code{font-family:var(--mono);font-size:.9em;color:var(--ink)}
+.page .cta-panel{margin:72px 0 0}
+.prose{max-width:760px}
+.prose h3{font-size:18px;font-weight:750;margin:28px 0 8px;letter-spacing:-.01em}
+.prose ol{padding-left:22px;color:var(--muted)}
+.prose ol li{margin-bottom:9px}
+.prose a{font-weight:600}
+.prose .eth{color:var(--ink)}
+.prose table{border-collapse:collapse;width:100%;margin:8px 0 22px;font-size:15px}
+.prose th,.prose td{border-bottom:1px solid var(--line);padding:10px 12px 10px 0;text-align:left;vertical-align:top}
+.prose th{font-size:12.5px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.prose td{color:var(--muted)}
+.prose td strong{color:var(--ink)}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.keys{font-family:var(--mono);font-size:.9em;color:var(--ink);background:var(--line-soft);border:1px solid var(--line);
+  border-radius:6px;padding:1px 6px;white-space:nowrap}
+.verdict{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:22px 24px;margin:28px 0}
+.verdict p:last-child{margin-bottom:0}
+.check{color:var(--accent-ink);font-weight:700}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--btn);color:var(--btn-text);
+  padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;z-index:200}
+.toast.is-on{opacity:1;transform:translate(-50%,0)}
+
+/* ===== Online typing tool ===== */
+.tool{margin-top:40px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+.tool-panes{display:grid;grid-template-columns:1fr 1fr}
+.tool-pane{display:flex;flex-direction:column;min-width:0}
+.tool-pane + .tool-pane{border-left:1px solid var(--line)}
+.tool-label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:14px 18px;border-bottom:1px solid var(--line-soft)}
+.tool textarea{flex:1;min-height:220px;border:0;resize:vertical;background:transparent;color:var(--ink);
+  font-size:19px;line-height:1.6;padding:18px;font-family:var(--mono);outline:none}
+.tool textarea:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
+.tool .tool-out{font-family:'Noto Sans Ethiopic','Nyala','Abyssinica SIL',system-ui,sans-serif;font-size:24px;line-height:1.6}
+.tool-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--line)}
+.alts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:38px}
+.alts-label{font-size:13px;color:var(--muted);margin-right:4px}
+.alt-chip{font:inherit;font-size:18px;padding:5px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);
+  color:var(--ink);cursor:pointer}
+.alt-chip:hover{border-color:var(--ink)}
+.alt-chip.is-on{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+[data-theme="dark"] .alt-chip.is-on{color:#0C0A07}
+.tool-actions{display:flex;gap:8px}
+.tool-btn{font:inherit;font-size:14px;font-weight:650;padding:9px 16px;border-radius:999px;border:1px solid var(--btn);
+  background:var(--btn);color:var(--btn-text);cursor:pointer}
+.tool-btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.tool-btn:hover{opacity:.88}
+.cheat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:18px 0 8px;padding:0;list-style:none}
+.cheat li{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cheat code{font-family:var(--mono);font-size:15px;color:var(--ink)}
+.cheat .eth{font-size:22px}
+
+/* ===== Fidel chart + numerals ===== */
+.chart-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:32px 0 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.fidel-chart{border-collapse:collapse;width:100%;min-width:720px}
+.fidel-chart th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.05em;color:var(--muted);
+  padding:12px 6px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.fidel-chart tbody th{font-size:24px;color:var(--ink);font-family:inherit;border-right:1px solid var(--line-soft);padding:0 10px}
+.fidel-chart td{padding:0;border-bottom:1px solid var(--line-soft);text-align:center}
+.fidel-chart tr.velar{background:var(--line-soft)}
+.fc,.num-cell{font:inherit;width:100%;border:0;background:transparent;color:var(--ink);cursor:pointer;padding:8px 4px 7px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;border-radius:8px}
+.fc:hover,.num-cell:hover{background:var(--line-soft)}
+.fc .eth{font-size:26px;line-height:1.2}
+.fk{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:28px 0 0}
+.num-cell{background:var(--card);border-radius:0;padding:14px 6px}
+.num-cell .eth{font-size:28px}
+.converter{margin-top:36px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:24px}
+.converter label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.converter-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.converter input{font:inherit;font-family:var(--mono);font-size:24px;width:min(100%,280px);padding:12px 16px;border-radius:12px;
+  border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.converter input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.converter-out{font-size:clamp(34px,5vw,52px);min-height:1.3em;color:var(--ink)}
+.converter-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+
+@media (max-width: 760px){
+  .tool-panes{grid-template-columns:1fr}
+  .tool-pane + .tool-pane{border-left:0;border-top:1px solid var(--line)}
+  .tool textarea{min-height:150px}
+}
+@media (max-width: 600px){
+  .nav-right .nav-link:not(.nav-lang):not(:first-child){display:none}
+}
+.converter-out.is-error{font-size:15px;color:var(--muted);font-family:var(--font)}
+.tool-btn:disabled{opacity:.4;cursor:default}
+.num-grid.num-100{grid-template-columns:repeat(10,1fr)}
+.num-cell.small{padding:10px 2px}
+.num-cell.small .eth{font-size:20px}
+@media (max-width: 600px){
+  .num-grid.num-100{grid-template-columns:repeat(5,1fr)}
+}
+.cheat.examples{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.cheat.examples .alt-chip{font-family:var(--mono);font-size:14px}
+.cheat.examples .eth{font-size:20px;text-align:right}
+.nav-link{white-space:nowrap}
+.foot-top{grid-template-columns:1.4fr 1fr 1fr 1fr}
+@media (max-width: 900px){ .foot-top{grid-template-columns:1fr 1fr} }
+@media (max-width: 600px){ .foot-top{grid-template-columns:1fr} }

@@ -1,0 +1,118 @@
+<!--meta
+{
+  "path": "/amharic-typing",
+  "lang": "en",
+  "translationKey": "typing",
+  "title": "Amharic Typing Online – Free Amharic Keyboard, English to Fidel",
+  "h1": "Type Amharic online",
+  "cardTitle": "Type Amharic online",
+  "cardText": "Type <code>selam</code>, get <span class=\"eth\">ሰላም</span>. A free Amharic keyboard in your browser.",
+  "description": "Free online Amharic keyboard. Type Amharic with English letters (selam → ሰላም) and copy the Fidel into Word, Facebook, Telegram or email. No download needed.",
+  "updated": "2026-10-13",
+  "bodyPage": "tool",
+  "scripts": ["/js/fidel.js", "/js/typing.js"],
+  "breadcrumbs": [["Type Amharic online", null]],
+  "schema": [
+    {
+      "@type": "WebApplication",
+      "name": "Addiyon online Amharic typing tool",
+      "url": "https://addiyon.com/keyboard/amharic-typing",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": ["en", "am"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@id": "https://addiyon.com/keyboard/#organization" }
+    }
+  ],
+  "faq": [
+    ["How do I type Amharic online?", "Type the Amharic sound with English letters in the left box. The Fidel appears on the right as you type. Press <strong>Copy</strong> and paste it anywhere: Word, Google Docs, Facebook, Telegram or email."],
+    ["Why does <code>bet</code> give <span class=\"eth\">በት</span> and not <span class=\"eth\">ቤት</span>?", "In this system <code>e</code> writes the first form (<span class=\"eth\">በ</span>) and <code>ie</code> writes the fifth (<span class=\"eth\">ቤ</span>). Type <code>biet</code>, or tap <span class=\"eth\">ቤት</span> under <em>Other spellings</em>."],
+    ["How do I write a letter with no vowel, like <span class=\"eth\">ስ</span> or <span class=\"eth\">ም</span>?", "Type the consonant on its own. <code>s</code> gives <span class=\"eth\">ስ</span>, so <code>sm</code> gives <span class=\"eth\">ስም</span> and <code>yqrta</code> gives <span class=\"eth\">ይቅርታ</span>."],
+    ["How do I type <span class=\"eth\">ጠ</span>, <span class=\"eth\">ጨ</span>, <span class=\"eth\">ጰ</span> and <span class=\"eth\">ቀ</span>?", "Use capitals for the ejective letters: <code>T</code> for <span class=\"eth\">ጠ</span>, <code>C</code> for <span class=\"eth\">ጨ</span>, <code>P</code> for <span class=\"eth\">ጰ</span>. <span class=\"eth\">ቀ</span> is <code>q</code>. The full list is in the <a href=\"/guides/amharic-typing-rules\">Amharic spelling rules</a>."],
+    ["Is my text saved or sent anywhere?", "No. Everything runs in your browser. Your last text is kept only in this browser so it is still there if you reload the page."],
+    ["Can I type Amharic like this on my phone?", "Yes. <a href=\"https://play.google.com/store/apps/details?id=com.addiyon.keyboard\" target=\"_blank\" rel=\"noopener\">Addiyon Keyboard</a> uses the same spelling in every Android app, and adds word suggestions from an Amharic dictionary, so <code>bet</code> offers <span class=\"eth\">ቤት</span> right away."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Type Amharic online</h1>
+    <p class="standfirst">Type the sound with English letters and get Amharic Fidel instantly: <code>selam</code> becomes <span class="eth">ሰላም</span>. Copy it into any document, chat or post. Free, and nothing is uploaded.</p>
+
+    <section class="tool" aria-label="Amharic typing tool">
+      <div class="tool-panes">
+        <div class="tool-pane">
+          <label class="tool-label" for="latinIn"><span>English letters</span></label>
+          <textarea id="latinIn" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="selam, endiet neh?"></textarea>
+        </div>
+        <div class="tool-pane">
+          <label class="tool-label" for="fidelOut"><span>Amharic (Fidel)</span></label>
+          <textarea id="fidelOut" class="tool-out" readonly placeholder="ሰላም፣ እንዴት ነህ፧"></textarea>
+        </div>
+      </div>
+      <div class="tool-bar">
+        <div id="alts" class="alts" aria-live="polite"></div>
+        <div class="tool-actions">
+          <button type="button" id="clearIn" class="tool-btn ghost">Clear</button>
+          <button type="button" id="copyOut" class="tool-btn">Copy Amharic</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>Try an example</h2>
+      <ul class="cheat examples">
+        <li><button type="button" class="alt-chip" data-example="selam">selam</button><span class="eth">ሰላም</span></li>
+        <li><button type="button" class="alt-chip" data-example="endiet neh?">endiet neh?</button><span class="eth">እንዴት ነህ፧</span></li>
+        <li><button type="button" class="alt-chip" data-example="Tiena ysTlN">Tiena ysTlN</button><span class="eth">ጤና ይስጥልኝ</span></li>
+        <li><button type="button" class="alt-chip" data-example="yqrta">yqrta</button><span class="eth">ይቅርታ</span></li>
+        <li><button type="button" class="alt-chip" data-example="melkam ldet">melkam ldet</button><span class="eth">መልካም ልደት</span></li>
+        <li><button type="button" class="alt-chip" data-example="enkWan aderesachu">enkWan aderesachu</button><span class="eth">እንኳን አደረሳቹ</span></li>
+        <li><button type="button" class="alt-chip" data-example="ewedshalehu">ewedshalehu</button><span class="eth">እወድሻለሁ</span></li>
+        <li><button type="button" class="alt-chip" data-example="ityoPya">ityoPya</button><span class="eth">ኢትዮጵያ</span></li>
+      </ul>
+
+      <h2>How it works</h2>
+      <p>Each Amharic letter is a consonant plus a vowel. Type the consonant, then the vowel, and the matching Fidel appears. The tool re-reads the whole word on every keystroke, so a later letter can still change an earlier one: <code>s</code> is <span class="eth">ስ</span>, <code>sh</code> is <span class="eth">ሽ</span>, and <code>sha</code> is <span class="eth">ሻ</span>.</p>
+      <table>
+        <thead><tr><th>Type after a consonant</th><th>You get</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>e</code></td><td>1st form</td><td><code>le</code> → <span class="eth">ለ</span></td></tr>
+          <tr><td><code>u</code></td><td>2nd form</td><td><code>lu</code> → <span class="eth">ሉ</span></td></tr>
+          <tr><td><code>i</code></td><td>3rd form</td><td><code>li</code> → <span class="eth">ሊ</span></td></tr>
+          <tr><td><code>a</code></td><td>4th form</td><td><code>la</code> → <span class="eth">ላ</span></td></tr>
+          <tr><td><code>ie</code></td><td>5th form</td><td><code>lie</code> → <span class="eth">ሌ</span></td></tr>
+          <tr><td>nothing</td><td>6th form</td><td><code>l</code> → <span class="eth">ል</span></td></tr>
+          <tr><td><code>o</code></td><td>7th form</td><td><code>lo</code> → <span class="eth">ሎ</span></td></tr>
+          <tr><td><code>ua</code></td><td>the <em>wa</em> form</td><td><code>lua</code> → <span class="eth">ሏ</span></td></tr>
+        </tbody>
+      </table>
+      <p>A vowel with no consonant before it writes the <span class="eth">አ</span> row: <code>a</code> → <span class="eth">አ</span>, <code>e</code> → <span class="eth">እ</span>, <code>i</code> → <span class="eth">ኢ</span>. A comma becomes <span class="eth">፣</span>, a full stop <span class="eth">።</span>, and a question mark <span class="eth">፧</span>.</p>
+
+      <h2>Letters that need Shift</h2>
+      <ul class="cheat">
+        <li><code>T</code><span class="eth">ጥ</span></li>
+        <li><code>C</code><span class="eth">ጭ</span></li>
+        <li><code>P</code><span class="eth">ጵ</span></li>
+        <li><code>H</code><span class="eth">ሕ</span></li>
+        <li><code>S</code><span class="eth">ሥ</span></li>
+        <li><code>Ts</code><span class="eth">ፅ</span></li>
+        <li><code>N</code> or <code>gn</code><span class="eth">ኝ</span></li>
+        <li><code>A</code><span class="eth">ዐ</span></li>
+        <li><code>W</code> + vowel<span class="eth">ቋ ጓ ኳ</span></li>
+      </ul>
+      <p>Two-letter sounds: <code>sh</code> <span class="eth">ሽ</span>, <code>ch</code> <span class="eth">ች</span>, <code>zh</code> <span class="eth">ዥ</span>, <code>kh</code> <span class="eth">ኽ</span>, <code>ts</code> <span class="eth">ጽ</span>. See every letter in the <a href="/amharic-alphabet">Amharic alphabet chart</a>, or read the full <a href="/guides/amharic-typing-rules">Amharic spelling rules</a>.</p>
+
+      <h2>Typing on a phone?</h2>
+      <p>Copying from a website gets old fast. <strong>Addiyon Keyboard</strong> is a free Android keyboard that uses exactly these spellings inside WhatsApp, Telegram, Facebook and every other app. It also suggests whole Amharic words as you type, so you rarely need the spelling rules at all, and it works offline.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/amharic-alphabet,/guides/amharic-typing-rules,/geez-numbers,/guides/how-to-type-amharic-on-android-->
+    <!--cta-->
+  </div>
+</div>
+</main>

@@ -1,0 +1,76 @@
+<!--meta
+{
+  "path": "/geez-numbers",
+  "lang": "en",
+  "translationKey": "numbers",
+  "title": "Ge'ez Numbers 1 to 100 and Converter – Ethiopic Numerals Chart",
+  "h1": "Ge&#8217;ez numbers converter",
+  "cardTitle": "Ge&#8217;ez number converter",
+  "cardText": "Turn 2019 into <span class=\"eth\">፳፻፲፱</span>, with a chart of every Ethiopic numeral.",
+  "description": "Convert any number to Ge'ez (Ethiopic) numerals, like 2019 → ፳፻፲፱. Includes Ge'ez numbers 1 to 100, a chart of ፩ to ፼, and how the system works without a zero.",
+  "updated": "2026-10-13",
+  "scripts": ["/js/fidel.js", "/js/numbers.js"],
+  "breadcrumbs": [["Ge&#8217;ez numbers", null]],
+  "article": true,
+  "faq": [
+    ["How do you write 2019 in Ge&#8217;ez numbers?", "<span class=\"eth\">፳፻፲፱</span>: twenty (<span class=\"eth\">፳</span>) hundreds (<span class=\"eth\">፻</span>), then nineteen (<span class=\"eth\">፲፱</span>). 2019 is the current year in the Ethiopian calendar, which began on <span class=\"eth\">መስከረም</span> 1 (11 September 2026)."],
+    ["Is there a zero in Ge&#8217;ez numbers?", "No. Ge&#8217;ez numerals have no zero and no place value. Empty places are simply left out, so 101 is <span class=\"eth\">፻፩</span> (hundred, one) and 2000 is <span class=\"eth\">፳፻</span>."],
+    ["How do you write 1000 in Ge&#8217;ez?", "<span class=\"eth\">፲፻</span>, ten hundreds. There is no separate sign for a thousand. The next sign up is <span class=\"eth\">፼</span>, ten thousand."],
+    ["How do you write one million?", "<span class=\"eth\">፻፼</span>, a hundred ten-thousands. Larger numbers repeat the pattern: hundreds of <span class=\"eth\">፼</span>, then <span class=\"eth\">፼፼</span> for a hundred million."],
+    ["How do I type Ge&#8217;ez numbers on my phone?", "In Addiyon Keyboard, tap <strong>123</strong> on the Amharic layout, then the <span class=\"eth\">፩፪</span> key. That page has every Ge&#8217;ez numeral plus Amharic punctuation such as <span class=\"eth\">። ፣ ፤ ፥ ፦</span>."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Ge&#8217;ez numbers converter</h1>
+    <p class="standfirst">Type a number to see it in Ge&#8217;ez (Ethiopic) numerals, then copy it. Below is a chart of every numeral and a short guide to how the system works.</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="Number converter">
+      <label for="numIn">Number</label>
+      <div class="converter-row">
+        <input id="numIn" type="text" inputmode="numeric" autocomplete="off" value="2019" aria-describedby="numNote">
+        <div id="numOut" class="converter-out eth" aria-live="polite"></div>
+        <button type="button" id="numCopy" class="tool-btn">Copy</button>
+      </div>
+      <p id="numNote" class="converter-note">Whole numbers from 1 to 999,999,999,999.</p>
+    </section>
+
+    <h2 class="faq-title" style="margin-top:64px">Ge&#8217;ez numerals chart</h2>
+    <p class="standfirst" style="margin-top:0">Tap a numeral to copy it.</p>
+    <!--numbers-->
+
+    <h2 class="faq-title" style="margin-top:64px">Ge&#8217;ez numbers 1 to 100</h2>
+    <p class="standfirst" style="margin-top:0">Every number from 1 to 100, ready to copy.</p>
+    <!--numbers100-->
+
+    <div class="prose lead-block">
+      <h2>How Ge&#8217;ez numbers work</h2>
+      <p>There are 20 numerals: one sign for each of 1 to 9 (<span class="eth">፩–፱</span>), one for each ten from 10 to 90 (<span class="eth">፲–፺</span>), one for hundred (<span class="eth">፻</span>) and one for ten thousand (<span class="eth">፼</span>). There is no zero.</p>
+      <p>To write a number, split it into pairs of digits from the right. Write each pair with a tens sign and a ones sign, and put <span class="eth">፻</span> or <span class="eth">፼</span> between the pairs:</p>
+      <table>
+        <thead><tr><th>Number</th><th>Read as</th><th>Ge&#8217;ez</th></tr></thead>
+        <tbody>
+          <tr><td>25</td><td>20 + 5</td><td><span class="eth">፳፭</span></td></tr>
+          <tr><td>365</td><td>3 × 100 + 65</td><td><span class="eth">፫፻፷፭</span></td></tr>
+          <tr><td>1,984</td><td>19 × 100 + 84</td><td><span class="eth">፲፱፻፹፬</span></td></tr>
+          <tr><td>2,019</td><td>20 × 100 + 19</td><td><span class="eth">፳፻፲፱</span></td></tr>
+          <tr><td>10,001</td><td>10,000 + 1</td><td><span class="eth">፼፩</span></td></tr>
+          <tr><td>1,000,000</td><td>100 × 10,000</td><td><span class="eth">፻፼</span></td></tr>
+        </tbody>
+      </table>
+      <p>A leading one is dropped before <span class="eth">፻</span> and <span class="eth">፼</span>: 100 is <span class="eth">፻</span>, not <span class="eth">፩፻</span>.</p>
+
+      <h2>Where they are used</h2>
+      <p>Ge&#8217;ez numerals appear in Ethiopian calendar dates, church books, chapter and verse numbers, page numbers in traditional books, and on formal documents and invitations. For prices and phone numbers, everyday Amharic writing uses the ordinary digits 0–9.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/amharic-alphabet,/amharic-typing,/am/geez-numbers-->
+    <!--cta-->
+  </div>
+</div>
+</main>
