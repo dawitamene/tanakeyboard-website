@@ -1,0 +1,26 @@
+{
+"greetings": [
+ ["Happy holiday (to everyone)","እንኳን አደረሳችሁ","enkuan aderesachhu"],
+ ["Reply: and to you too","እንኳን አብሮ አደረሰን","enkuan abro aderesen"],
+ ["Happy new year","መልካም አዲስ ዓመት","melkam adis `amet"],
+ ["Happy new year (full wish)","እንኳን ለአዲሱ ዓመት በሰላም አደረሳችሁ","enkuan leadisu `amet beselam aderesachhu"],
+ ["Happy Meskel","መልካም የመስቀል በዓል","melkam yemesqel be`al"],
+ ["Merry Christmas","መልካም ገና","melkam gena"],
+ ["Happy Timket","መልካም የጥምቀት በዓል","melkam yeTmqet be`al"],
+ ["Happy Easter","መልካም ፋሲካ","melkam fasika"],
+ ["Christ is risen","ክርስቶስ ተንሥአ እሙታን","krstos tenS'e emutan"],
+ ["Happy Eid","መልካም ዒድ","melkam `Id"],
+ ["Happy holiday","መልካም በዓል","melkam be`al"],
+ ["Wishing you a year of peace","የሰላም ዓመት ይሁንላችሁ","yeselam `amet yhunlachhu"],
+ ["Happy birthday","መልካም ልደት","melkam ldet"]
+],
+"family": [
+ ["Family","ቤተሰብ","bieteseb"],["Father","አባት","abat"],["Mother","እናት","enat"],["Brother","ወንድም","wendm"],["Sister","እህት","eht"],["Child","ልጅ","lj"],["Son","ወንድ ልጅ","wend lj"],["Daughter","ሴት ልጅ","siet lj"],["Grandparent","አያት","ayat"],["Uncle","አጎት","agot"],["Aunt","አክስት","akst"],["Husband","ባል","bal"],["Wife","ሚስት","mist"],["Baby","ሕፃን","HTsan"],["Friend","ጓደኛ","guadegna"],["Neighbour","ጎረቤት","gorebiet"]
+],
+"colors": [
+ ["Color","ቀለም","qelem"],["Red","ቀይ","qey"],["Blue","ሰማያዊ","semayawi"],["Green","አረንጓዴ","arenguadie"],["Yellow","ቢጫ","biCa"],["Black","ጥቁር","Tqur"],["White","ነጭ","neC"],["Brown","ቡናማ","bunama"],["Purple","ሐምራዊ","Hemrawi"],["Orange","ብርቱካናማ","brtukanama"],["Grey","ግራጫ","graCa"],["Pink","ሮዝ","roz"]
+],
+"food": [
+ ["Food","ምግብ","mgb"],["Injera","እንጀራ","enjera"],["Stew","ወጥ","weT"],["Chicken stew (doro wat)","ዶሮ ወጥ","doro weT"],["Shiro","ሽሮ","shro"],["Kitfo","ክትፎ","ktfo"],["Tibs","ጥብስ","Tbs"],["Firfir","ፍርፍር","frfr"],["Coffee","ቡና","buna"],["Tea","ሻይ","shay"],["Water","ውሃ","wha"],["Bread","ዳቦ","dabo"],["Meat","ሥጋ","Sga"],["Teff","ጤፍ","Tief"],["Berbere","በርበሬ","berberie"],["Butter","ቅቤ","qbie"],["Honey wine (tej)","ጠጅ","Tej"],["Onion","ሽንኩርት","shnkurt"],["Tomato","ቲማቲም","timatim"],["Salt","ጨው","Cew"],["I'm hungry","ርቦኛል","rboNal"],["It's delicious","ይጣፍጣል","yTafTal"]
+]
+}
