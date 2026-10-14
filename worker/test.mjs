@@ -17,6 +17,7 @@ async function redirectOf(url) {
 assert.equal(cleanLegacyPath('/features.html'), '/features');
 assert.equal(cleanLegacyPath('/index.html'), '/');
 assert.equal(cleanLegacyPath('/guides/index.html'), '/guides/');
+assert.equal(await redirectOf('https://addiyon.com/keyboard/guides/'), 'https://addiyonkeyboard.com/guides');
 
 assert.equal(await redirectOf('https://addiyon.com/keyboard'), 'https://addiyonkeyboard.com/');
 assert.equal(await redirectOf('https://addiyon.com/keyboard/'), 'https://addiyonkeyboard.com/');
@@ -27,7 +28,7 @@ assert.equal(await redirectOf('https://addiyon.com/keyboard/sitemap.xml'), 'http
 assert.equal(await redirectOf('https://keyboard.addiyon.com/privacy.html?x=1'), 'https://addiyonkeyboard.com/privacy?x=1');
 assert.equal(await redirectOf('https://keyboard.addiyon.com/'), 'https://addiyonkeyboard.com/');
 
-assert.equal(await redirectOf('https://www.addiyonkeyboard.com/guides/'), 'https://addiyonkeyboard.com/guides/');
+assert.equal(await redirectOf('https://www.addiyonkeyboard.com/guides/'), 'https://addiyonkeyboard.com/guides');
 
 const before = seen.length;
 const passthrough = await handleRequest(new Request('https://addiyon.com/keyboardish'), upstream);

@@ -23,11 +23,16 @@ function newPathFor(url) {
   return null;
 }
 
+// The site's URLs never end in a slash except the home page, so redirect straight to the final address.
+function withoutTrailingSlash(path) {
+  return path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path;
+}
+
 export async function handleRequest(request, fetchUpstream = fetch) {
   const url = new URL(request.url);
   const path = newPathFor(url);
   if (path === null) return fetchUpstream(request);
-  return permanentRedirect(`${SITE_ORIGIN}${path}${url.search}`);
+  return permanentRedirect(`${SITE_ORIGIN}${withoutTrailingSlash(path)}${url.search}`);
 }
 
 export default {
