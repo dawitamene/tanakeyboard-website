@@ -7,6 +7,7 @@
   "description": "Addiyon Keyboard is a free Amharic keyboard for Android. Type with English letters and get Fidel as you type (selam → ሰላም), with offline suggestions and AI edits.",
   "updated": "2026-10-13",
   "bodyPage": "home",
+  "scripts": ["/js/ai-demo.js"],
   "schema": [
     {
       "@type": "Organization",
@@ -124,7 +125,7 @@
         <div class="demo-tag"><span class="dot"></span>Live transliteration</div>
         <div class="tl-typing-row"><span id="tlLatin"></span><span id="tlCaret"></span></div>
         <div class="tl-divider"></div>
-        <div id="tlFidel" class="eth" aria-live="polite"></div>
+        <div id="tlFidel" class="eth"></div>
         <p class="cap">Type the sound in Latin letters. Addiyon re-reads the whole word on every keystroke and previews the Fidel before you commit.</p>
       </div>
       <figure class="demo-fig">
@@ -155,17 +156,26 @@
         <p>Wrote it fast? Tap <strong>Fix grammar</strong>, <strong>Professional</strong>, <strong>Friendly</strong>, <strong>Shorten</strong> or another edit, and Addiyon rewrites the text in your field, in Amharic or English. Not what you meant? Tap undo to get your own words back.</p>
         <p class="ai-note">Free every day. Sign in once with Google or an email code the first time you tap an edit. Reorder the edits or hide the bar in Settings&nbsp;›&nbsp;AI actions.</p>
       </div>
-      <figure class="shot ai-demo" aria-label="Example of the Fix grammar quick edit">
-        <div class="ai-chips" aria-hidden="true">
-          <span class="ai-chip is-on">Fix grammar</span><span class="ai-chip">Casual</span><span class="ai-chip">Humanize</span><span class="ai-chip">Professional</span><span class="ai-chip">Formal</span><span class="ai-chip">Friendly</span><span class="ai-chip">Shorten</span><span class="ai-chip">Summarize</span>
+      <figure class="shot ai-demo" id="aiDemo">
+        <div class="ai-board">
+          <div class="ai-field">
+            <p class="eth ai-msg"><mark>ዛሬ</mark> <mark>ስብሰባ</mark> ላይ መምጣት <mark>አልችልም፣</mark> <mark>ይቅርታ።</mark></p>
+            <div class="ai-status-row">
+              <span class="ai-status">Fixed 3 mistakes</span>
+              <span class="ai-undo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>Undo</span>
+            </div>
+          </div>
         </div>
-        <div class="ai-pair">
-          <div class="ai-label">You typed</div>
-          <p class="eth ai-before">ዛሪ ሰብሰባ ላይ መምጣት አልቺልም ይቅርታ</p>
-          <div class="ai-label">Fix grammar</div>
-          <p class="eth ai-after">ዛሬ ስብሰባ ላይ መምጣት አልችልም፣ ይቅርታ።</p>
+        <div class="ai-chips" role="group" aria-label="Try an AI edit">
+          <button type="button" class="ai-chip is-on" data-edit="fixGrammar" aria-pressed="true">Fix grammar</button>
+          <button type="button" class="ai-chip" data-edit="casual" aria-pressed="false">Casual</button>
+          <button type="button" class="ai-chip" data-edit="humanize" aria-pressed="false">Humanize</button>
+          <button type="button" class="ai-chip" data-edit="professional" aria-pressed="false">Professional</button>
+          <button type="button" class="ai-chip" data-edit="formal" aria-pressed="false">Formal</button>
+          <button type="button" class="ai-chip" data-edit="friendly" aria-pressed="false">Friendly</button>
+          <button type="button" class="ai-chip" data-edit="shorten" aria-pressed="false">Shorten</button>
+          <button type="button" class="ai-chip" data-edit="summarize" aria-pressed="false">Summarize</button>
         </div>
-        <figcaption>Eight quick edits · Amharic and English</figcaption>
       </figure>
     </div>
   </div>
@@ -283,26 +293,46 @@
   <div class="wrap section-pad">
     <div class="sec-head">
       <div>
-          <h2>16 colors, 9 key styles. Pick your shade.</h2>
+          <h2>Make it yours.</h2>
       </div>
-      <p class="lede">Every color has a light and a dark set and follows your phone automatically. Mix any color with any key style, or match your wallpaper.</p>
+      <p class="lede">Start with the Default theme in light or dark, or pick Tile, Pastel, Latte, Strawberry, Bubble, Lilac or Silver. Light and dark follow your phone automatically.</p>
     </div>
-    <div class="theme-grid">
+    <div class="theme-row">
       <figure class="theme-card">
-        <div class="tm"><img src="/img/theme1.webp?v=20261009" alt="Addiyon Keyboard Teal color with Classic keys" loading="lazy"></div>
-        <figcaption><span>Teal · Classic</span><span>Light</span></figcaption>
+        <img src="/img/themes/classic-light.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Default theme" loading="lazy">
+        <figcaption>Default</figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="/img/theme2.webp?v=20261009" alt="Addiyon Keyboard Purple color with Keycap keys" loading="lazy"></div>
-        <figcaption><span>Purple · Keycap</span><span>Dark</span></figcaption>
+        <img src="/img/themes/classic-dark.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Default dark theme" loading="lazy">
+        <figcaption>Default dark</figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="/img/theme3.webp?v=20261009" alt="Addiyon Keyboard Mocha color with Typewriter keys" loading="lazy"></div>
-        <figcaption><span>Mocha · Typewriter</span><span>Light</span></figcaption>
+        <img src="/img/themes/tile-neutral.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Tile theme" loading="lazy">
+        <figcaption>Tile</figcaption>
       </figure>
       <figure class="theme-card">
-        <div class="tm"><img src="/img/theme4.webp?v=20261009" alt="Addiyon Keyboard Pink color with Neon keys" loading="lazy"></div>
-        <figcaption><span>Pink · Neon</span><span>Dark</span></figcaption>
+        <img src="/img/themes/puffy-pastel.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Pastel theme" loading="lazy">
+        <figcaption>Pastel</figcaption>
+      </figure>
+      <figure class="theme-card">
+        <img src="/img/themes/doodle-latte.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Latte theme" loading="lazy">
+        <figcaption>Latte</figcaption>
+      </figure>
+      <figure class="theme-card">
+        <img src="/img/themes/puffy-strawberry.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Strawberry theme" loading="lazy">
+        <figcaption>Strawberry</figcaption>
+      </figure>
+      <figure class="theme-card">
+        <img src="/img/themes/jelly-bubble.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Bubble theme" loading="lazy">
+        <figcaption>Bubble</figcaption>
+      </figure>
+      <figure class="theme-card">
+        <img src="/img/themes/jelly-lilac.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Lilac theme" loading="lazy">
+        <figcaption>Lilac</figcaption>
+      </figure>
+      <figure class="theme-card">
+        <img src="/img/themes/chunky-silver.webp?v=20261014" width="1080" height="844" alt="Addiyon Keyboard Silver theme" loading="lazy">
+        <figcaption>Silver</figcaption>
       </figure>
     </div>
     <div class="pro-strip">
