@@ -1,0 +1,103 @@
+<!--meta
+{
+  "path": "/amharic-name",
+  "lang": "en",
+  "title": "Your Name in Amharic – Write Any Name in Fidel",
+  "h1": "Write your name in Amharic",
+  "cardTitle": "Your name in Amharic",
+  "cardText": "Type a name and see it in Fidel, with the usual Amharic spelling of common names.",
+  "description": "See your name written in Amharic (Fidel). Type it as it sounds, or pick from common names like Daniel ዳንኤል, Michael ሚካኤል and Sara ሳራ. Tap to copy.",
+  "updated": "2026-10-14",
+  "scripts": ["/js/fidel.js", "/js/amharic-name.js"],
+  "breadcrumbs": [["Your name in Amharic", null]],
+  "article": true,
+  "faq": [
+    ["How do I write my name in Amharic?", "Type it the way it sounds, one syllable at a time: <code>selam</code> → <span class=\"eth\">ሰላም</span>. Amharic spells by sound, so <em>Michael</em> is <span class=\"eth\">ሚካኤል</span>, not a letter-for-letter copy of the English."],
+    ["Why does my name look different from the English spelling?", "Fidel writes syllables, not single letters, and many names have a traditional Amharic form. <em>John</em> is usually <span class=\"eth\">ዮሐንስ</span> and <em>Peter</em> is <span class=\"eth\">ጴጥሮስ</span>, from the Ge&#8217;ez Bible."],
+    ["How do I type the ኤ in names like ዳንኤል?", "Put an apostrophe before <code>ie</code> when it follows a consonant: <code>dan&#39;iel</code> → <span class=\"eth\">ዳንኤል</span>. At the start of a word, <code>ie</code> is enough: <code>ieden</code> → <span class=\"eth\">ኤደን</span>."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Write your name in Amharic</h1>
+    <p class="standfirst">Type a name to see it in Fidel. Common names show their usual Amharic spelling; anything else is spelled by sound, and you can adjust it letter by letter.</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="Name in Amharic">
+      <label for="nameIn">Your name</label>
+      <div class="converter-row">
+        <input id="nameIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" value="Daniel" aria-describedby="nameNote">
+        <button type="button" id="nameCopy" class="tool-btn">Copy</button>
+      </div>
+      <div id="nameOut" class="converter-out eth" aria-live="polite" style="margin-top:16px"></div>
+      <p id="nameNote" class="converter-sub"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>Common names in Amharic</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Amharic (tap to copy)</th><th>Type this</th></tr></thead>
+        <tbody>
+          <tr data-name="abebe" data-am="አበበ"><td>Abebe</td><td><button type="button" class="fc phrase" data-copy="አበበ"><span class="eth">አበበ</span></button></td><td><code>abebe</code></td></tr>
+          <tr data-name="abel" data-am="አቤል"><td>Abel</td><td><button type="button" class="fc phrase" data-copy="አቤል"><span class="eth">አቤል</span></button></td><td><code>abiel</code></td></tr>
+          <tr data-name="almaz" data-am="አልማዝ"><td>Almaz</td><td><button type="button" class="fc phrase" data-copy="አልማዝ"><span class="eth">አልማዝ</span></button></td><td><code>almaz</code></td></tr>
+          <tr data-name="amanuel" data-am="አማኑኤል"><td>Amanuel</td><td><button type="button" class="fc phrase" data-copy="አማኑኤል"><span class="eth">አማኑኤል</span></button></td><td><code>amanuiel</code></td></tr>
+          <tr data-name="bethlehem" data-am="ቤተልሔም"><td>Bethlehem</td><td><button type="button" class="fc phrase" data-copy="ቤተልሔም"><span class="eth">ቤተልሔም</span></button></td><td><code>bietelHiem</code></td></tr>
+          <tr data-name="biruk" data-am="ብሩክ"><td>Biruk</td><td><button type="button" class="fc phrase" data-copy="ብሩክ"><span class="eth">ብሩክ</span></button></td><td><code>bruk</code></td></tr>
+          <tr data-name="daniel" data-am="ዳንኤል"><td>Daniel</td><td><button type="button" class="fc phrase" data-copy="ዳንኤል"><span class="eth">ዳንኤል</span></button></td><td><code>dan&#x27;iel</code></td></tr>
+          <tr data-name="dawit" data-am="ዳዊት"><td>Dawit</td><td><button type="button" class="fc phrase" data-copy="ዳዊት"><span class="eth">ዳዊት</span></button></td><td><code>dawit</code></td></tr>
+          <tr data-name="eden" data-am="ኤደን"><td>Eden</td><td><button type="button" class="fc phrase" data-copy="ኤደን"><span class="eth">ኤደን</span></button></td><td><code>ieden</code></td></tr>
+          <tr data-name="elias" data-am="ኤልያስ"><td>Elias</td><td><button type="button" class="fc phrase" data-copy="ኤልያስ"><span class="eth">ኤልያስ</span></button></td><td><code>ielyas</code></td></tr>
+          <tr data-name="esther" data-am="አስቴር"><td>Esther</td><td><button type="button" class="fc phrase" data-copy="አስቴር"><span class="eth">አስቴር</span></button></td><td><code>astier</code></td></tr>
+          <tr data-name="feven" data-am="ፌቨን"><td>Feven</td><td><button type="button" class="fc phrase" data-copy="ፌቨን"><span class="eth">ፌቨን</span></button></td><td><code>fieven</code></td></tr>
+          <tr data-name="gabriel" data-am="ገብርኤል"><td>Gabriel</td><td><button type="button" class="fc phrase" data-copy="ገብርኤል"><span class="eth">ገብርኤል</span></button></td><td><code>gebr&#x27;iel</code></td></tr>
+          <tr data-name="hanna" data-am="ሐና"><td>Hanna</td><td><button type="button" class="fc phrase" data-copy="ሐና"><span class="eth">ሐና</span></button></td><td><code>Hena</code></td></tr>
+          <tr data-name="helen" data-am="ሄለን"><td>Helen</td><td><button type="button" class="fc phrase" data-copy="ሄለን"><span class="eth">ሄለን</span></button></td><td><code>hielen</code></td></tr>
+          <tr data-name="henok" data-am="ሄኖክ"><td>Henok</td><td><button type="button" class="fc phrase" data-copy="ሄኖክ"><span class="eth">ሄኖክ</span></button></td><td><code>hienok</code></td></tr>
+          <tr data-name="jacob" data-am="ያዕቆብ"><td>Jacob</td><td><button type="button" class="fc phrase" data-copy="ያዕቆብ"><span class="eth">ያዕቆብ</span></button></td><td><code>yaEqob</code></td></tr>
+          <tr data-name="john" data-am="ዮሐንስ"><td>John</td><td><button type="button" class="fc phrase" data-copy="ዮሐንስ"><span class="eth">ዮሐንስ</span></button></td><td><code>yoHens</code></td></tr>
+          <tr data-name="joseph" data-am="ዮሴፍ"><td>Joseph</td><td><button type="button" class="fc phrase" data-copy="ዮሴፍ"><span class="eth">ዮሴፍ</span></button></td><td><code>yosief</code></td></tr>
+          <tr data-name="kidus" data-am="ቅዱስ"><td>Kidus</td><td><button type="button" class="fc phrase" data-copy="ቅዱስ"><span class="eth">ቅዱስ</span></button></td><td><code>qdus</code></td></tr>
+          <tr data-name="liya" data-am="ሊያ"><td>Liya</td><td><button type="button" class="fc phrase" data-copy="ሊያ"><span class="eth">ሊያ</span></button></td><td><code>liya</code></td></tr>
+          <tr data-name="mark" data-am="ማርቆስ"><td>Mark</td><td><button type="button" class="fc phrase" data-copy="ማርቆስ"><span class="eth">ማርቆስ</span></button></td><td><code>marqos</code></td></tr>
+          <tr data-name="martha" data-am="ማርታ"><td>Martha</td><td><button type="button" class="fc phrase" data-copy="ማርታ"><span class="eth">ማርታ</span></button></td><td><code>marta</code></td></tr>
+          <tr data-name="mary" data-am="ማርያም"><td>Mary</td><td><button type="button" class="fc phrase" data-copy="ማርያም"><span class="eth">ማርያም</span></button></td><td><code>maryam</code></td></tr>
+          <tr data-name="matthew" data-am="ማቴዎስ"><td>Matthew</td><td><button type="button" class="fc phrase" data-copy="ማቴዎስ"><span class="eth">ማቴዎስ</span></button></td><td><code>matiewos</code></td></tr>
+          <tr data-name="mekdes" data-am="መቅደስ"><td>Mekdes</td><td><button type="button" class="fc phrase" data-copy="መቅደስ"><span class="eth">መቅደስ</span></button></td><td><code>meqdes</code></td></tr>
+          <tr data-name="meron" data-am="ሜሮን"><td>Meron</td><td><button type="button" class="fc phrase" data-copy="ሜሮን"><span class="eth">ሜሮን</span></button></td><td><code>mieron</code></td></tr>
+          <tr data-name="michael" data-am="ሚካኤል"><td>Michael</td><td><button type="button" class="fc phrase" data-copy="ሚካኤል"><span class="eth">ሚካኤል</span></button></td><td><code>mikaiel</code></td></tr>
+          <tr data-name="nahom" data-am="ናሆም"><td>Nahom</td><td><button type="button" class="fc phrase" data-copy="ናሆም"><span class="eth">ናሆም</span></button></td><td><code>nahom</code></td></tr>
+          <tr data-name="natnael" data-am="ናትናኤል"><td>Natnael</td><td><button type="button" class="fc phrase" data-copy="ናትናኤል"><span class="eth">ናትናኤል</span></button></td><td><code>natnaiel</code></td></tr>
+          <tr data-name="paul" data-am="ጳውሎስ"><td>Paul</td><td><button type="button" class="fc phrase" data-copy="ጳውሎስ"><span class="eth">ጳውሎስ</span></button></td><td><code>Pawlos</code></td></tr>
+          <tr data-name="peter" data-am="ጴጥሮስ"><td>Peter</td><td><button type="button" class="fc phrase" data-copy="ጴጥሮስ"><span class="eth">ጴጥሮስ</span></button></td><td><code>PieTros</code></td></tr>
+          <tr data-name="rahel" data-am="ራሔል"><td>Rahel</td><td><button type="button" class="fc phrase" data-copy="ራሔል"><span class="eth">ራሔል</span></button></td><td><code>raHiel</code></td></tr>
+          <tr data-name="ruth" data-am="ሩት"><td>Ruth</td><td><button type="button" class="fc phrase" data-copy="ሩት"><span class="eth">ሩት</span></button></td><td><code>rut</code></td></tr>
+          <tr data-name="samuel" data-am="ሳሙኤል"><td>Samuel</td><td><button type="button" class="fc phrase" data-copy="ሳሙኤል"><span class="eth">ሳሙኤል</span></button></td><td><code>samuiel</code></td></tr>
+          <tr data-name="sara" data-am="ሳራ"><td>Sara</td><td><button type="button" class="fc phrase" data-copy="ሳራ"><span class="eth">ሳራ</span></button></td><td><code>sara</code></td></tr>
+          <tr data-name="selam" data-am="ሰላም"><td>Selam</td><td><button type="button" class="fc phrase" data-copy="ሰላም"><span class="eth">ሰላም</span></button></td><td><code>selam</code></td></tr>
+          <tr data-name="solomon" data-am="ሰሎሞን"><td>Solomon</td><td><button type="button" class="fc phrase" data-copy="ሰሎሞን"><span class="eth">ሰሎሞን</span></button></td><td><code>selomon</code></td></tr>
+          <tr data-name="tsion" data-am="ጽዮን"><td>Tsion</td><td><button type="button" class="fc phrase" data-copy="ጽዮን"><span class="eth">ጽዮን</span></button></td><td><code>tsyon</code></td></tr>
+          <tr data-name="yared" data-am="ያሬድ"><td>Yared</td><td><button type="button" class="fc phrase" data-copy="ያሬድ"><span class="eth">ያሬድ</span></button></td><td><code>yaried</code></td></tr>
+          <tr data-name="yonas" data-am="ዮናስ"><td>Yonas</td><td><button type="button" class="fc phrase" data-copy="ዮናስ"><span class="eth">ዮናስ</span></button></td><td><code>yonas</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Spelling a name by sound</h2>
+      <ul>
+        <li><strong>Each syllable is one letter.</strong> <code>ma</code> → <span class="eth">ማ</span>, <code>ri</code> → <span class="eth">ሪ</span>, <code>ya</code> → <span class="eth">ያ</span>.</li>
+        <li><strong>A consonant with no vowel</strong> takes the sixth form: <code>n</code> → <span class="eth">ን</span>, so <code>bruk</code> → <span class="eth">ብሩክ</span>.</li>
+        <li><strong>Capitals give the sharp sounds:</strong> <code>T</code> → <span class="eth">ጥ</span>, <code>P</code> → <span class="eth">ጵ</span>, <code>q</code> → <span class="eth">ቅ</span>.</li>
+        <li><strong>ie</strong> gives the <em>é</em> sound: <code>mieron</code> → <span class="eth">ሜሮን</span>.</li>
+      </ul>
+      <p>The full set of rules is in <a href="/guides/amharic-typing-rules">How to type Amharic with an English keyboard</a>, and every letter is on the <a href="/amharic-alphabet">Amharic alphabet chart</a>.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/amharic-phrases,/amharic-alphabet,/amharic-typing,/guides/amharic-typing-rules-->
+    <!--cta-->
+  </div>
+</div>
+</main>

@@ -28,7 +28,7 @@ const copy = {
     footDesc: 'The fast, private way to type Amharic in the Ge&#8217;ez script.',
     footCols: [
       ['Product', [['/features', 'Features'], ['/privacy', 'Privacy Policy'], [PLAY_URL, 'Google Play']]],
-      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/am/', 'በአማርኛ']]],
+      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/amharic-name', 'Your name in Amharic'], ['/am/', 'በአማርኛ']]],
       ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/compare/', 'Compare keyboards']]]
     ],
     contact: 'Contact',
