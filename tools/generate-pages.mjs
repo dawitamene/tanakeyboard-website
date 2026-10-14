@@ -7,8 +7,8 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
-const E = require(`${SITE}/js/ethiopic-date.js`);
-const F = require(`${SITE}/js/fidel.js`);
+const E = require(`${SITE}/public/js/ethiopic-date.js`);
+const F = require(`${SITE}/public/js/fidel.js`);
 const V = require('./vocab.json');
 const UPDATED = '2026-10-14';
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -20,7 +20,7 @@ for (const rows of Object.values(V)) for (const [, am, k] of rows) if (F.transli
 if (bad) process.exit(1);
 
 function write(path, meta, body) {
-  const file = `${SITE}/src/pages${path.endsWith('/') ? `${path}index` : path}.html`;
+  const file = `${SITE}/content/pages${path.endsWith('/') ? `${path}index` : path}.html`;
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, `<!--meta\n${JSON.stringify({ path, updated: UPDATED, ...meta }, null, 2)}\n-->\n<main>\n<div class="wrap">\n  <div class="page">\n    <!--crumbs-->\n${body}\n  </div>\n</div>\n</main>\n`);
 }

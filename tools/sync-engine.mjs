@@ -2,7 +2,7 @@
 // First build the engine and dictionary in the preener repo:
 //   /Users/dev/code/preener/android/gradlew -p /Users/dev/code/preener/android/web-engine compileProductionExecutableKotlinJs
 //   /Users/dev/code/preener/android/gradlew :language:amharic:generateAmharicDictionaryDb
-// Then run: node tools/sync-engine.mjs && node tools/build.mjs
+// Then run: node tools/sync-engine.mjs && npm run build
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -17,7 +17,7 @@ const ENGINE_JS = join(ANDROID, 'web-engine/build/compileSync/js/main/production
 const DATABASE = join(ANDROID, 'language/amharic/build/generated/dictionaryAssets/amharic.db');
 const ASSETS = join(ANDROID, 'language/amharic/src/main/assets');
 const VENDOR = join(ROOT, 'src/engine/vendor/sql.js');
-const OUT_ROOT = join(ROOT, 'engine');
+const OUT_ROOT = join(ROOT, 'public/engine');
 const BROTLI = join(ROOT, 'src/engine/vendor/brotli');
 
 function brotli(bytes) {

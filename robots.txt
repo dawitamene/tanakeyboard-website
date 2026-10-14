@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /src/
-Disallow: /tools/
-Disallow: /worker/
-
-Sitemap: https://addiyonkeyboard.com/sitemap.xml

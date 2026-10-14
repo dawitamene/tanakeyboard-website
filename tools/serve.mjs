@@ -1,13 +1,13 @@
-// Local preview server mirroring production: the site lives at the root with clean URLs (/features -> features.html).
-// Run: node tools/serve.mjs [port]
+// Serves the static export in out/ like Cloudflare Pages: clean URLs (/features -> features.html), /t/* -> theme-link.
+// Run: npm run build && node tools/serve.mjs [port]
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
+const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..', 'out');
 const PORT = Number(process.argv[2] || 3311);
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain', '.woff2': 'font/woff2', '.mjs': 'text/javascript', '.wasm': 'application/wasm', '.gz': 'application/octet-stream', '.br': 'application/octet-stream' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.woff2': 'font/woff2', '.mjs': 'text/javascript', '.wasm': 'application/wasm', '.gz': 'application/octet-stream', '.br': 'application/octet-stream' };
 
 async function isFile(path) {
   try {
@@ -28,7 +28,8 @@ async function resolvePath(urlPath) {
 }
 
 createServer(async (request, response) => {
-  const urlPath = new URL(request.url, 'http://localhost').pathname;
+  const requested = new URL(request.url, 'http://localhost').pathname;
+  const urlPath = requested.startsWith('/t/') ? '/theme-link' : requested;
   const file = await resolvePath(urlPath);
   const target = file && await isFile(file) ? file : join(ROOT, '404.html');
   const body = await readFile(target);

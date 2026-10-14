@@ -1,0 +1,9 @@
+# Hub pages used to end in a slash; their canonical URLs no longer do.
+/am/        /am        301
+/guides/    /guides    301
+/compare/   /compare   301
+/holidays/  /holidays  301
+/learn/     /learn     301
+/index.html /          301
+# Shared keyboard themes from the Addiyon app open one static page.
+/t/*        /theme-link 200

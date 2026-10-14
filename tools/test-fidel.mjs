@@ -2,7 +2,7 @@
 import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
 const require = createRequire(import.meta.url);
-const Fidel = require('../js/fidel.js');
+const Fidel = require('../public/js/fidel.js');
 const here = new URL('.', import.meta.url);
 const cases = readFileSync(new URL('fidel-cases.tsv', here), 'utf8').trim().split('\n').map((line) => line.split('\t'));
 const extra = [['selam', 'ሰላም'], ['amargna', 'አማርኛ'], ['qelebet', 'ቀለበት'], ['ityoPya', 'ኢትዮጵያ'], ['addis abeba', 'አድዲስ አበባ']];

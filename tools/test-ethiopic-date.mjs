@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const E = require('../js/ethiopic-date.js');
+const E = require('../public/js/ethiopic-date.js');
 const gregorian = (j) => { const g = E.jdnToGregorian(j); return `${g.y}-${g.m}-${g.d}`; };
 
 const knownDays = [
