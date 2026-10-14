@@ -24,6 +24,12 @@
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
 
+/theme-link
+  X-Robots-Tag: noindex
+
+/t/*
+  X-Robots-Tag: noindex
+
 /engine/*
   Cache-Control: public, max-age=31536000, immutable
 
