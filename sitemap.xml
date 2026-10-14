@@ -31,6 +31,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-calendar-converter"/>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/am/ethiopian-time</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-time"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-time"/>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/am/geez-numbers</loc>
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/geez-numbers"/>
@@ -43,7 +49,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/amharic-alphabet"/>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/amharic-days-and-months</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/amharic-name</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/amharic-numbers</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
@@ -69,6 +83,10 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/ethiopian-calendar-2019</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/ethiopian-calendar-converter</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-converter"/>
@@ -77,6 +95,8 @@
   <url>
     <loc>https://addiyonkeyboard.com/ethiopian-time</loc>
     <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-time"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-time"/>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/features</loc>

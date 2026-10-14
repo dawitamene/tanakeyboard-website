@@ -482,6 +482,21 @@ footer{background:var(--panel);color:var(--panel-text)}
 .converter-out.date{font-size:clamp(24px,3.4vw,34px);line-height:1.25}
 .converter-sub{font-size:17px;color:var(--muted);margin:6px 0 0}
 .converter + .converter{margin-top:20px}
+.month-jump{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0}
+.month-jump a{font-size:15px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink)}
+.et-month{margin-top:48px;scroll-margin-top:90px}
+.et-month h3{font-size:22px;margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.et-month h3 small{font-size:14px;font-weight:400;color:var(--muted)}
+.et-month .chart-scroll{margin-top:14px}
+.month-grid{border-collapse:collapse;width:100%;min-width:560px;table-layout:fixed}
+.month-grid th{padding:10px 4px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line)}
+.month-grid th .g-day{display:block;font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--muted)}
+.month-grid td{height:64px;vertical-align:top;padding:6px 8px;border:1px solid var(--line-soft)}
+.month-grid .et-day{display:block;font-size:19px;font-weight:650;color:var(--ink)}
+.month-grid .g-day{font-size:11.5px;color:var(--muted)}
+.month-grid .hol{display:block;font-size:11px;font-weight:600;color:var(--accent);line-height:1.2;margin-top:2px}
+.month-grid td.holiday{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+@media print{#siteNav,footer,.cta-panel,.related,.faq-block,.month-jump{display:none}.et-month{break-inside:avoid}}
 
 @media (max-width: 760px){
   .tool-panes{grid-template-columns:1fr}

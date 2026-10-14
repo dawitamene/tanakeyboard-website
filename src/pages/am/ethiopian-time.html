@@ -1,0 +1,65 @@
+<!--meta
+{
+  "path": "/am/ethiopian-time",
+  "lang": "am",
+  "translationKey": "time",
+  "title": "የኢትዮጵያ ሰዓት መቀየሪያ – ከፈረንጅ ሰዓት ወደ ኢትዮጵያ ሰዓት",
+  "h1": "የኢትዮጵያ ሰዓት መቀየሪያ",
+  "cardTitle": "የኢትዮጵያ ሰዓት",
+  "cardText": "የፈረንጅ ሰዓትን ወደ ኢትዮጵያ ሰዓት ይቀይሩ፤ ለምሳሌ 8:00 AM ከጠዋቱ 2 ሰዓት ነው።",
+  "description": "የፈረንጅ (ዓለም አቀፍ) ሰዓትን ወደ ኢትዮጵያ ሰዓት ይቀይሩ። 8:00 AM ከጠዋቱ 2 ሰዓት፣ 2:00 PM ከቀኑ 8 ሰዓት ነው። ሙሉ የ24 ሰዓት ሰንጠረዥ።",
+  "updated": "2026-10-14",
+  "scripts": ["/js/ethiopian-time.js"],
+  "breadcrumbs": [["የኢትዮጵያ ሰዓት", null]],
+  "article": true,
+  "faq": [
+    ["የፈረንጅ ሰዓትን ወደ ኢትዮጵያ ሰዓት እንዴት እቀይራለሁ?", "ከፈረንጅ ሰዓቱ 6 ሰዓት ይቀንሱ። 9:00 AM ከጠዋቱ 3 ሰዓት፣ 3:00 PM ከቀኑ 9 ሰዓት፣ 8:00 PM ደግሞ ከምሽቱ 2 ሰዓት ነው።"],
+    ["እኩለ ቀን በኢትዮጵያ ሰዓት ስንት ነው?", "እኩለ ቀን (12:00 PM) ከቀኑ 6 ሰዓት ሲሆን እኩለ ሌሊት (12:00 AM) ከሌሊቱ 6 ሰዓት ነው።"]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>የኢትዮጵያ ሰዓት መቀየሪያ</h1>
+    <p class="standfirst">ሰዓቱን ይምረጡ፤ በኢትዮጵያ አቆጣጠር እንዴት እንደሚነገር ያያሉ። የኢትዮጵያ ቀን የሚጀምረው ከጠዋቱ 12 ሰዓት (6:00 AM) ነው።</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="የሰዓት መቀየሪያ">
+      <label for="clockIn">የፈረንጅ ሰዓት</label>
+      <div class="converter-row">
+        <input id="clockIn" type="time" autocomplete="off">
+        <button type="button" id="etCopy" class="tool-btn">ቅዳ</button>
+      </div>
+      <div id="etOut" class="converter-out date" aria-live="polite" style="margin-top:16px"></div>
+      <p id="etSub" class="converter-sub"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>የሰዓት ሰንጠረዥ</h2>
+      <table>
+        <thead><tr><th>የፈረንጅ</th><th>የኢትዮጵያ</th></tr></thead>
+        <tbody>
+          <tr><td>6:00 AM</td><td>ከጠዋቱ 12 ሰዓት</td></tr>
+          <tr><td>7:00 AM</td><td>ከጠዋቱ 1 ሰዓት</td></tr>
+          <tr><td>8:00 AM</td><td>ከጠዋቱ 2 ሰዓት</td></tr>
+          <tr><td>9:00 AM</td><td>ከጠዋቱ 3 ሰዓት</td></tr>
+          <tr><td>12:00 PM</td><td>ከቀኑ 6 ሰዓት</td></tr>
+          <tr><td>2:00 PM</td><td>ከቀኑ 8 ሰዓት</td></tr>
+          <tr><td>5:00 PM</td><td>ከቀኑ 11 ሰዓት</td></tr>
+          <tr><td>6:00 PM</td><td>ከምሽቱ 12 ሰዓት</td></tr>
+          <tr><td>8:00 PM</td><td>ከምሽቱ 2 ሰዓት</td></tr>
+          <tr><td>12:00 AM</td><td>ከሌሊቱ 6 ሰዓት</td></tr>
+          <tr><td>3:00 AM</td><td>ከሌሊቱ 9 ሰዓት</td></tr>
+        </tbody>
+      </table>
+      <p>ለቀን ደግሞ <a href="/am/ethiopian-calendar-converter">የቀን መቀየሪያውን</a> ይጠቀሙ።</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/am/ethiopian-calendar-converter,/am/geez-numbers,/am/amharic-typing-->
+    <!--cta-->
+  </div>
+</div>
+</main>

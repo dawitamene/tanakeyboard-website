@@ -13,7 +13,7 @@ const SRC = join(ROOT, 'src', 'pages');
 // The site is served at the root of addiyonkeyboard.com by the Cloudflare Pages project.
 const ORIGIN = 'https://addiyonkeyboard.com';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
-const ASSET_VERSION = '20261015';
+const ASSET_VERSION = '20261015b';
 // Set to the GA4 web stream ID (G-XXXXXXX) to turn on website analytics; empty keeps the site analytics-free.
 const GA_MEASUREMENT_ID = '';
 
@@ -28,7 +28,7 @@ const copy = {
     footDesc: 'The fast, private way to type Amharic in the Ge&#8217;ez script.',
     footCols: [
       ['Product', [['/features', 'Features'], ['/privacy', 'Privacy Policy'], [PLAY_URL, 'Google Play']]],
-      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/amharic-name', 'Your name in Amharic'], ['/am/', 'በአማርኛ']]],
+      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/ethiopian-calendar-2019', 'Ethiopian calendar 2019'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/amharic-name', 'Your name in Amharic'], ['/amharic-numbers', 'Amharic numbers'], ['/amharic-days-and-months', 'Days and months'], ['/am/', 'በአማርኛ']]],
       ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/compare/', 'Compare keyboards']]]
     ],
     contact: 'Contact',
@@ -53,7 +53,7 @@ const copy = {
     footDesc: 'አማርኛን በግዕዝ ፊደል በፍጥነትና በግል ለመጻፍ።',
     footCols: [
       ['አዲዮን ኪቦርድ', [['/am/', 'መነሻ'], ['/features', 'ባህሪያት (English)'], ['/privacy', 'የግላዊነት መመሪያ (English)'], [PLAY_URL, 'Google Play']]],
-      ['ነጻ መሣሪያዎች', [['/am/amharic-typing', 'አማርኛ በኦንላይን መጻፊያ'], ['/am/amharic-alphabet', 'የአማርኛ ፊደል ገበታ'], ['/am/ethiopian-calendar-converter', 'የቀን መቀየሪያ'], ['/am/geez-numbers', 'የግዕዝ ቁጥሮች መቀየሪያ']]],
+      ['ነጻ መሣሪያዎች', [['/am/amharic-typing', 'አማርኛ በኦንላይን መጻፊያ'], ['/am/amharic-alphabet', 'የአማርኛ ፊደል ገበታ'], ['/am/ethiopian-calendar-converter', 'የቀን መቀየሪያ'], ['/am/ethiopian-time', 'የኢትዮጵያ ሰዓት'], ['/am/geez-numbers', 'የግዕዝ ቁጥሮች መቀየሪያ']]],
       ['English', [['/', 'Home'], ['/amharic-typing', 'Type Amharic online'], ['/guides/', 'Guides']]]
     ],
     contact: 'ያግኙን',
@@ -76,6 +76,52 @@ const PLAY_ICON = `<svg width="17" height="18" viewBox="30 336.7 120.9 129.2" ar
           <path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"/>
           <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"/>
         </svg>`;
+
+const ETHIOPIAN_EPOCH = 1724221;
+const ET_MONTHS = [['መስከረም', 'Meskerem'], ['ጥቅምት', 'Tikimt'], ['ኅዳር', 'Hidar'], ['ታኅሣሥ', 'Tahsas'], ['ጥር', 'Tir'], ['የካቲት', 'Yekatit'], ['መጋቢት', 'Megabit'], ['ሚያዝያ', 'Miyazya'], ['ግንቦት', 'Ginbot'], ['ሰኔ', 'Sene'], ['ሐምሌ', 'Hamle'], ['ነሐሴ', 'Nehase'], ['ጳጉሜ', 'Pagume']];
+const ET_WEEKDAYS = [['እሑድ', 'Sun'], ['ሰኞ', 'Mon'], ['ማክሰኞ', 'Tue'], ['ረቡዕ', 'Wed'], ['ሐሙስ', 'Thu'], ['ዓርብ', 'Fri'], ['ቅዳሜ', 'Sat']];
+const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+// Holidays fixed in the Ethiopian calendar, then those fixed in the Gregorian calendar.
+const ET_HOLIDAYS = { '1-1': 'Enkutatash', '1-17': 'Meskel', '5-11': 'Timket' };
+const GREGORIAN_HOLIDAYS = { '1-7': 'Genna', '3-2': 'Adwa', '5-1': 'Labour Day', '5-5': 'Patriots&#8217; Day', '5-28': 'Derg Downfall Day' };
+
+function gregorianToJdn(y, m, d) {
+  const a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+  return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+}
+function jdnToGregorian(j) {
+  const a = j + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
+  const d = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d / 4), m = Math.floor((5 * e + 2) / 153);
+  return { y: 100 * b + d - 4800 + Math.floor(m / 10), m: m + 3 - 12 * Math.floor(m / 10), d: e - Math.floor((153 * m + 2) / 5) + 1 };
+}
+const ethiopianToJdn = (y, m, d) => ETHIOPIAN_EPOCH + 365 * (y - 1) + Math.floor(y / 4) + 30 * (m - 1) + d - 1;
+
+function renderEthiopianYear(year) {
+  const months = ET_MONTHS.map(([amName, enName], index) => {
+    const month = index + 1;
+    const days = month === 13 ? (year % 4 === 3 ? 6 : 5) : 30;
+    const first = ethiopianToJdn(year, month, 1);
+    const leading = (first + 1) % 7;
+    const cells = Array.from({ length: leading }, () => '<td></td>');
+    for (let day = 1; day <= days; day++) {
+      const g = jdnToGregorian(first + day - 1);
+      const holiday = ET_HOLIDAYS[`${month}-${day}`] || GREGORIAN_HOLIDAYS[`${g.m}-${g.d}`];
+      cells.push(`<td${holiday ? ' class="holiday"' : ''}><span class="et-day">${day}</span><span class="g-day">${SHORT_MONTHS[g.m - 1]} ${g.d}</span>${holiday ? `<span class="hol">${holiday}</span>` : ''}</td>`);
+    }
+    while (cells.length % 7) cells.push('<td></td>');
+    const rows = [];
+    for (let i = 0; i < cells.length; i += 7) rows.push(`<tr>${cells.slice(i, i + 7).join('')}</tr>`);
+    const start = jdnToGregorian(first), end = jdnToGregorian(first + days - 1);
+    return `<section class="et-month" id="${enName.toLowerCase()}">
+      <h3><span class="eth">${amName}</span> ${enName} ${year}<small>${SHORT_MONTHS[start.m - 1]} ${start.d}, ${start.y} – ${SHORT_MONTHS[end.m - 1]} ${end.d}, ${end.y}</small></h3>
+      <div class="chart-scroll"><table class="month-grid">
+        <thead><tr>${ET_WEEKDAYS.map(([am, en]) => `<th scope="col"><span class="eth">${am}</span><span class="g-day">${en}</span></th>`).join('')}</tr></thead>
+        <tbody>${rows.join('')}</tbody>
+      </table></div>
+    </section>`;
+  });
+  return `<nav class="month-jump" aria-label="Months">${ET_MONTHS.map(([amName, enName]) => `<a href="#${enName.toLowerCase()}" class="eth">${amName}</a>`).join('')}</nav>\n${months.join('\n')}`;
+}
 
 function listSources(dir) {
   return readdirSync(dir).flatMap((name) => {
@@ -405,6 +451,7 @@ function expandBody(page, byPath) {
     .replace(/<!--alphabet-->/g, () => renderAlphabet(page.meta.lang))
     .replace(/<!--numbers-->/g, () => renderNumberTable())
     .replace(/<!--numbers100-->/g, () => renderNumbers100())
+    .replace(/<!--ethiopian-year:(\d+)-->/g, (_, year) => renderEthiopianYear(Number(year)))
     .replace(/<!--related:([^>]*?)-->/g, (_, list) => renderRelated(list.split(',').map((s) => s.trim()), page, byPath));
 }
 
