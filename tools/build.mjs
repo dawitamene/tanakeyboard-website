@@ -162,6 +162,8 @@ ${hreflang}
 <meta name="twitter:title" content="${escapeAttr(meta.ogTitle || meta.title)}">
 <meta name="twitter:description" content="${escapeAttr(meta.description)}">
 <meta name="twitter:image" content="${image}">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="icon" href="/img/logo.svg?v=20261009" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="theme-color" content="#00717D">
