@@ -13,7 +13,7 @@ const SRC = join(ROOT, 'src', 'pages');
 // The site is served at the root of addiyonkeyboard.com by the Cloudflare Pages project.
 const ORIGIN = 'https://addiyonkeyboard.com';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
-const ASSET_VERSION = '20261014';
+const ASSET_VERSION = '20261015';
 // Set to the GA4 web stream ID (G-XXXXXXX) to turn on website analytics; empty keeps the site analytics-free.
 const GA_MEASUREMENT_ID = '';
 
@@ -28,7 +28,7 @@ const copy = {
     footDesc: 'The fast, private way to type Amharic in the Ge&#8217;ez script.',
     footCols: [
       ['Product', [['/features', 'Features'], ['/privacy', 'Privacy Policy'], [PLAY_URL, 'Google Play']]],
-      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/am/', 'በአማርኛ']]],
+      ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/am/', 'በአማርኛ']]],
       ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/compare/', 'Compare keyboards']]]
     ],
     contact: 'Contact',
@@ -53,7 +53,7 @@ const copy = {
     footDesc: 'አማርኛን በግዕዝ ፊደል በፍጥነትና በግል ለመጻፍ።',
     footCols: [
       ['አዲዮን ኪቦርድ', [['/am/', 'መነሻ'], ['/features', 'ባህሪያት (English)'], ['/privacy', 'የግላዊነት መመሪያ (English)'], [PLAY_URL, 'Google Play']]],
-      ['ነጻ መሣሪያዎች', [['/am/amharic-typing', 'አማርኛ በኦንላይን መጻፊያ'], ['/am/amharic-alphabet', 'የአማርኛ ፊደል ገበታ'], ['/am/geez-numbers', 'የግዕዝ ቁጥሮች መቀየሪያ']]],
+      ['ነጻ መሣሪያዎች', [['/am/amharic-typing', 'አማርኛ በኦንላይን መጻፊያ'], ['/am/amharic-alphabet', 'የአማርኛ ፊደል ገበታ'], ['/am/ethiopian-calendar-converter', 'የቀን መቀየሪያ'], ['/am/geez-numbers', 'የግዕዝ ቁጥሮች መቀየሪያ']]],
       ['English', [['/', 'Home'], ['/amharic-typing', 'Type Amharic online'], ['/guides/', 'Guides']]]
     ],
     contact: 'ያግኙን',

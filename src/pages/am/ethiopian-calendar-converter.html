@@ -1,0 +1,94 @@
+<!--meta
+{
+  "path": "/am/ethiopian-calendar-converter",
+  "lang": "am",
+  "translationKey": "calendar",
+  "title": "የቀን መቀየሪያ – የኢትዮጵያና የፈረንጅ ቀን አቆጣጠር",
+  "h1": "የቀን መቀየሪያ",
+  "cardTitle": "የቀን መቀየሪያ",
+  "cardText": "የኢትዮጵያን ቀን ወደ ፈረንጅ፣ የፈረንጅን ቀን ወደ ኢትዮጵያ ይቀይሩ።",
+  "description": "የኢትዮጵያን ቀን አቆጣጠር ወደ ፈረንጅ (ግሪጎሪያን) እና ከፈረንጅ ወደ ኢትዮጵያ ይቀይሩ። የዛሬውን ቀን በዓ.ም.፣ የ13ቱን ወራት ስምና የ2019 ዓ.ም. በዓላትን ይመልከቱ።",
+  "updated": "2026-10-14",
+  "scripts": ["/js/fidel.js", "/js/calendar.js"],
+  "breadcrumbs": [["የቀን መቀየሪያ", null]],
+  "article": true,
+  "faq": [
+    ["አሁን ስንተኛ ዓመት ነው?", "2019 ዓ.ም. ነው። ዓመቱ መስከረም 1 (11 September 2026) ገብቷል፤ 2020 ዓ.ም. ደግሞ 12 September 2027 ይገባል።"],
+    ["የኢትዮጵያ ቀን አቆጣጠር ስንት ወራት አሉት?", "13 ወራት አሉት። 12ቱ ወራት እያንዳንዳቸው 30 ቀናት ሲኖራቸው ጳጉሜ 5 ቀናት፣ በዘመነ ሉቃስ ደግሞ 6 ቀናት አሏት።"],
+    ["ቀንን በስልክ በአማርኛ እንዴት እጽፋለሁ?", "በአዲዮን ኪቦርድ የወሩን ስም በእንግሊዝኛ ፊደል ይጻፉ፤ ለምሳሌ <code>Tqmt</code> ብለው ሲጽፉ <span class=\"eth\">ጥቅምት</span> ይሆናል። የግዕዝ ቁጥሮችን ደግሞ በቁጥሮች ገጽ ላይ ካለው የ<span class=\"eth\">፩፪</span> ቁልፍ ያገኛሉ።"]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>የቀን መቀየሪያ</h1>
+    <p class="standfirst">ዛሬ በኢትዮጵያ ቀን አቆጣጠር፦ <strong id="todayEt">2019 ዓ.ም.</strong> ከታች ማንኛውንም ቀን ከኢትዮጵያ ወደ ፈረንጅ፣ ከፈረንጅ ወደ ኢትዮጵያ ይቀይሩ።</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="ከፈረንጅ ወደ ኢትዮጵያ">
+      <label for="gDate">ከፈረንጅ ወደ ኢትዮጵያ</label>
+      <div class="converter-row">
+        <input id="gDate" type="date" autocomplete="off">
+        <button type="button" class="tool-btn" data-copy-from="gOut">ቅዳ</button>
+      </div>
+      <div id="gOut" class="converter-out date" aria-live="polite" style="margin-top:16px"></div>
+      <p id="gSub" class="converter-sub"></p>
+    </section>
+
+    <section class="converter" aria-label="ከኢትዮጵያ ወደ ፈረንጅ">
+      <label for="eDay">ከኢትዮጵያ ወደ ፈረንጅ</label>
+      <div class="converter-row">
+        <div class="date-fields">
+          <input id="eDay" type="number" min="1" max="30" inputmode="numeric" aria-label="ቀን">
+          <select id="eMonth" aria-label="ወር"></select>
+          <input id="eYear" class="wide" type="number" min="1" max="9999" inputmode="numeric" aria-label="ዓመት (ዓ.ም.)">
+        </div>
+        <button type="button" class="tool-btn" data-copy-from="eOut">ቅዳ</button>
+      </div>
+      <div id="eOut" class="converter-out date" aria-live="polite" style="margin-top:16px"></div>
+      <p id="eSub" class="converter-sub"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>13ቱ ወራት</h2>
+      <table>
+        <thead><tr><th>ወር</th><th>የሚጀምረው (2019 ዓ.ም.)</th></tr></thead>
+        <tbody>
+          <tr><td>መስከረም</td><td>11 September 2026</td></tr>
+          <tr><td>ጥቅምት</td><td>11 October 2026</td></tr>
+          <tr><td>ኅዳር</td><td>10 November 2026</td></tr>
+          <tr><td>ታኅሣሥ</td><td>10 December 2026</td></tr>
+          <tr><td>ጥር</td><td>9 January 2027</td></tr>
+          <tr><td>የካቲት</td><td>8 February 2027</td></tr>
+          <tr><td>መጋቢት</td><td>10 March 2027</td></tr>
+          <tr><td>ሚያዝያ</td><td>9 April 2027</td></tr>
+          <tr><td>ግንቦት</td><td>9 May 2027</td></tr>
+          <tr><td>ሰኔ</td><td>8 June 2027</td></tr>
+          <tr><td>ሐምሌ</td><td>8 July 2027</td></tr>
+          <tr><td>ነሐሴ</td><td>7 August 2027</td></tr>
+          <tr><td>ጳጉሜ</td><td>6 September 2027</td></tr>
+        </tbody>
+      </table>
+
+      <h2>የ2019 ዓ.ም. በዓላት</h2>
+      <table>
+        <thead><tr><th>በዓል</th><th>ቀን</th><th>በፈረንጅ</th></tr></thead>
+        <tbody>
+          <tr><td>እንቁጣጣሽ</td><td>መስከረም 1</td><td>11 September 2026</td></tr>
+          <tr><td>መስቀል</td><td>መስከረም 17</td><td>27 September 2026</td></tr>
+          <tr><td>ገና</td><td>ታኅሣሥ 29</td><td>7 January 2027</td></tr>
+          <tr><td>ጥምቀት</td><td>ጥር 11</td><td>19 January 2027</td></tr>
+          <tr><td>የዓድዋ ድል በዓል</td><td>የካቲት 23</td><td>2 March 2027</td></tr>
+        </tbody>
+      </table>
+      <p>2019 ዓ.ም. ዘመነ ሉቃስ ስለሆነ ጳጉሜ 6 ቀናት አሏት። ቀኑን በግዕዝ ቁጥር ለመጻፍ <a href="/am/geez-numbers">የግዕዝ ቁጥሮች መቀየሪያን</a> ይጠቀሙ።</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/am/geez-numbers,/am/amharic-typing,/am/amharic-alphabet-->
+    <!--cta-->
+  </div>
+</div>
+</main>

@@ -1,0 +1,81 @@
+<!--meta
+{
+  "path": "/ethiopian-time",
+  "lang": "en",
+  "title": "Ethiopian Time Converter – What Time Is It in Ethiopian Time?",
+  "h1": "Ethiopian time converter",
+  "cardTitle": "Ethiopian time converter",
+  "cardText": "Turn 8:00 a.m. into <span class=\"eth\">ከጠዋቱ 2 ሰዓት</span>, and learn how the Ethiopian clock counts the hours.",
+  "description": "Convert clock time to Ethiopian time, like 8:00 a.m. → ከጠዋቱ 2 ሰዓት. A full 24-hour chart and a simple explanation of why the Ethiopian day starts at 6 a.m.",
+  "updated": "2026-10-14",
+  "scripts": ["/js/ethiopian-time.js"],
+  "breadcrumbs": [["Ethiopian time converter", null]],
+  "article": true,
+  "faq": [
+    ["How does Ethiopian time work?", "The Ethiopian clock counts 12 hours of day from sunrise and 12 hours of night from sunset. Sunrise, about 6 a.m., is 12 o&#8217;clock, 7 a.m. is 1 o&#8217;clock, and noon is 6 o&#8217;clock."],
+    ["How do I convert to Ethiopian time?", "Subtract 6 hours from the clock time. 9 a.m. becomes 3 (<span class=\"eth\">ከጠዋቱ 3 ሰዓት</span>), 3 p.m. becomes 9 (<span class=\"eth\">ከቀኑ 9 ሰዓት</span>), and 8 p.m. becomes 2 (<span class=\"eth\">ከምሽቱ 2 ሰዓት</span>)."],
+    ["What is 12 o&#8217;clock in Ethiopian time?", "Noon is 6 o&#8217;clock in the day (<span class=\"eth\">ከቀኑ 6 ሰዓት</span>) and midnight is 6 o&#8217;clock at night (<span class=\"eth\">ከሌሊቱ 6 ሰዓት</span>)."],
+    ["Do Ethiopian phones use Ethiopian time?", "Most phones show international time. People say times in Ethiopian time, so when you agree to meet at &#8220;3 o&#8217;clock&#8221;, ask whether it is Ethiopian time (9 a.m.) or international time."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Ethiopian time converter</h1>
+    <p class="standfirst">Pick a time to see it the way people say it in Ethiopia. The Ethiopian day starts at 6 a.m., so 8:00 a.m. is <span class="eth">ከጠዋቱ 2 ሰዓት</span>, &#8220;2 o&#8217;clock in the morning&#8221;.</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="Time converter">
+      <label for="clockIn">International time</label>
+      <div class="converter-row">
+        <input id="clockIn" type="time" autocomplete="off">
+        <button type="button" id="etCopy" class="tool-btn">Copy</button>
+      </div>
+      <div id="etOut" class="converter-out date eth" aria-live="polite" style="margin-top:16px"></div>
+      <p id="etSub" class="converter-sub"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>Ethiopian time chart</h2>
+      <table>
+        <thead><tr><th>International</th><th>Ethiopian</th><th>Said as</th></tr></thead>
+        <tbody>
+          <tr><td>6:00 a.m.</td><td>12:00</td><td><span class="eth">ከጠዋቱ 12 ሰዓት</span></td></tr>
+          <tr><td>7:00 a.m.</td><td>1:00</td><td><span class="eth">ከጠዋቱ 1 ሰዓት</span></td></tr>
+          <tr><td>8:00 a.m.</td><td>2:00</td><td><span class="eth">ከጠዋቱ 2 ሰዓት</span></td></tr>
+          <tr><td>9:00 a.m.</td><td>3:00</td><td><span class="eth">ከጠዋቱ 3 ሰዓት</span></td></tr>
+          <tr><td>10:00 a.m.</td><td>4:00</td><td><span class="eth">ከጠዋቱ 4 ሰዓት</span></td></tr>
+          <tr><td>11:00 a.m.</td><td>5:00</td><td><span class="eth">ከጠዋቱ 5 ሰዓት</span></td></tr>
+          <tr><td>12:00 noon</td><td>6:00</td><td><span class="eth">ከቀኑ 6 ሰዓት</span></td></tr>
+          <tr><td>1:00 p.m.</td><td>7:00</td><td><span class="eth">ከቀኑ 7 ሰዓት</span></td></tr>
+          <tr><td>3:00 p.m.</td><td>9:00</td><td><span class="eth">ከቀኑ 9 ሰዓት</span></td></tr>
+          <tr><td>5:00 p.m.</td><td>11:00</td><td><span class="eth">ከቀኑ 11 ሰዓት</span></td></tr>
+          <tr><td>6:00 p.m.</td><td>12:00</td><td><span class="eth">ከምሽቱ 12 ሰዓት</span></td></tr>
+          <tr><td>8:00 p.m.</td><td>2:00</td><td><span class="eth">ከምሽቱ 2 ሰዓት</span></td></tr>
+          <tr><td>10:00 p.m.</td><td>4:00</td><td><span class="eth">ከምሽቱ 4 ሰዓት</span></td></tr>
+          <tr><td>12:00 midnight</td><td>6:00</td><td><span class="eth">ከሌሊቱ 6 ሰዓት</span></td></tr>
+          <tr><td>3:00 a.m.</td><td>9:00</td><td><span class="eth">ከሌሊቱ 9 ሰዓት</span></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Morning, day, evening and night</h2>
+      <ul>
+        <li><span class="eth">ከጠዋቱ</span>, in the morning: 6 a.m. to noon</li>
+        <li><span class="eth">ከቀኑ</span>, in the day: noon to 6 p.m.</li>
+        <li><span class="eth">ከምሽቱ</span>, in the evening: 6 p.m. to midnight</li>
+        <li><span class="eth">ከሌሊቱ</span>, at night: midnight to 6 a.m.</li>
+      </ul>
+      <p>Half past is <span class="eth">ተኩል</span>: 8:30 a.m. is <span class="eth">ከጠዋቱ 2 ሰዓት ተኩል</span>. Minutes are <span class="eth">ደቂቃ</span>: 8:15 a.m. is <span class="eth">ከጠዋቱ 2 ሰዓት ከ15 ደቂቃ</span>.</p>
+
+      <h2>Write times in Amharic on your phone</h2>
+      <p><a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener">Addiyon Keyboard</a> types these words from English letters as you go: <code>keTewatu 2 se`at</code> → <span class="eth">ከጠዋቱ 2 ሰዓት</span>. The backtick (<code>`</code>) gives the <span class="eth">ዐ</span> letters, as in <span class="eth">ሰዓት</span>. For dates, use the <a href="/ethiopian-calendar-converter">Ethiopian calendar converter</a>.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/ethiopian-calendar-converter,/geez-numbers,/amharic-typing,/guides/amharic-typing-rules-->
+    <!--cta-->
+  </div>
+</div>
+</main>

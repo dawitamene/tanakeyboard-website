@@ -1,0 +1,108 @@
+<!--meta
+{
+  "path": "/ethiopian-calendar-converter",
+  "lang": "en",
+  "translationKey": "calendar",
+  "title": "Ethiopian Calendar Converter – Today's Ethiopian Date (E.C.)",
+  "h1": "Ethiopian calendar converter",
+  "cardTitle": "Ethiopian calendar converter",
+  "cardText": "Convert any date between the Ethiopian and Gregorian calendars, and see today&#8217;s date in E.C.",
+  "description": "Convert dates between the Ethiopian (E.C.) and Gregorian calendars, see today's Ethiopian date, and learn how the 13 months, Pagume and the Ethiopian new year work.",
+  "updated": "2026-10-14",
+  "scripts": ["/js/fidel.js", "/js/calendar.js"],
+  "breadcrumbs": [["Ethiopian calendar converter", null]],
+  "article": true,
+  "faq": [
+    ["What year is it in the Ethiopian calendar?", "It is 2019 E.C. (<span class=\"eth\">፳፻፲፱ ዓ.ም.</span>). The year began on <span class=\"eth\">መስከረም</span> 1, which was 11 September 2026, and 2020 E.C. begins on 12 September 2027."],
+    ["Why is the Ethiopian calendar 7 or 8 years behind?", "The Ethiopian Orthodox Church dates the birth of Christ differently from the Western churches, so its year count starts later. From September to December the gap is 7 years; from January to early September it is 8."],
+    ["How many months are in the Ethiopian calendar?", "Thirteen. Twelve months have 30 days each, and the short thirteenth month, <span class=\"eth\">ጳጉሜ</span> (Pagume), has 5 days, or 6 in a leap year."],
+    ["When is the Ethiopian new year?", "Enkutatash (<span class=\"eth\">እንቁጣጣሽ</span>) falls on <span class=\"eth\">መስከረም</span> 1, which is 11 September, or 12 September in the year before a Gregorian leap year."],
+    ["How do I write an Ethiopian date in Amharic?", "Write the month, the day, <span class=\"eth\">ቀን</span>, the year, then <span class=\"eth\">ዓ.ም.</span>: <span class=\"eth\">ጥቅምት 4 ቀን 2019 ዓ.ም.</span> On your phone, Addiyon Keyboard types it from English letters, and its <span class=\"eth\">፩፪</span> key gives Ge&#8217;ez numerals for formal dates."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Ethiopian calendar converter</h1>
+    <p class="standfirst">Today in the Ethiopian calendar: <strong id="todayEt" class="eth">2019 E.C.</strong> Convert any date between the Ethiopian and Gregorian calendars below.</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="Gregorian to Ethiopian">
+      <label for="gDate">Gregorian date → Ethiopian</label>
+      <div class="converter-row">
+        <input id="gDate" type="date" autocomplete="off">
+        <button type="button" class="tool-btn" data-copy-from="gOut">Copy</button>
+      </div>
+      <div id="gOut" class="converter-out date eth" aria-live="polite" style="margin-top:16px"></div>
+      <p id="gSub" class="converter-sub eth"></p>
+    </section>
+
+    <section class="converter" aria-label="Ethiopian to Gregorian">
+      <label for="eDay">Ethiopian date → Gregorian</label>
+      <div class="converter-row">
+        <div class="date-fields">
+          <input id="eDay" type="number" min="1" max="30" inputmode="numeric" aria-label="Day">
+          <select id="eMonth" aria-label="Month"></select>
+          <input id="eYear" class="wide" type="number" min="1" max="9999" inputmode="numeric" aria-label="Year (E.C.)">
+        </div>
+        <button type="button" class="tool-btn" data-copy-from="eOut">Copy</button>
+      </div>
+      <div id="eOut" class="converter-out date" aria-live="polite" style="margin-top:16px"></div>
+      <p id="eSub" class="converter-sub eth"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>The 13 Ethiopian months</h2>
+      <table>
+        <thead><tr><th>#</th><th>Month</th><th>Amharic</th><th>Starts on (Gregorian)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Meskerem</td><td><span class="eth">መስከረም</span></td><td>11 September</td></tr>
+          <tr><td>2</td><td>Tikimt</td><td><span class="eth">ጥቅምት</span></td><td>11 October</td></tr>
+          <tr><td>3</td><td>Hidar</td><td><span class="eth">ኅዳር</span></td><td>10 November</td></tr>
+          <tr><td>4</td><td>Tahsas</td><td><span class="eth">ታኅሣሥ</span></td><td>10 December</td></tr>
+          <tr><td>5</td><td>Tir</td><td><span class="eth">ጥር</span></td><td>9 January</td></tr>
+          <tr><td>6</td><td>Yekatit</td><td><span class="eth">የካቲት</span></td><td>8 February</td></tr>
+          <tr><td>7</td><td>Megabit</td><td><span class="eth">መጋቢት</span></td><td>10 March</td></tr>
+          <tr><td>8</td><td>Miyazya</td><td><span class="eth">ሚያዝያ</span></td><td>9 April</td></tr>
+          <tr><td>9</td><td>Ginbot</td><td><span class="eth">ግንቦት</span></td><td>9 May</td></tr>
+          <tr><td>10</td><td>Sene</td><td><span class="eth">ሰኔ</span></td><td>8 June</td></tr>
+          <tr><td>11</td><td>Hamle</td><td><span class="eth">ሐምሌ</span></td><td>8 July</td></tr>
+          <tr><td>12</td><td>Nehase</td><td><span class="eth">ነሐሴ</span></td><td>7 August</td></tr>
+          <tr><td>13</td><td>Pagume</td><td><span class="eth">ጳጉሜ</span></td><td>6 September</td></tr>
+        </tbody>
+      </table>
+      <p>Dates shown are for 2019 E.C. (2026–27). In the year after an Ethiopian leap year, every month starts one day later until the end of February.</p>
+
+      <h2>How the Ethiopian calendar works</h2>
+      <ul>
+        <li><strong>Twelve months of 30 days</strong>, then <span class="eth">ጳጉሜ</span> with 5 days, or 6 every fourth year. 2019 E.C. is a leap year, so it ends with <span class="eth">ጳጉሜ</span> 6.</li>
+        <li><strong>The year starts in September</strong>, on Enkutatash, <span class="eth">መስከረም</span> 1.</li>
+        <li><strong>Years are written with ዓ.ም.</strong> (<span class="eth">ዓመተ ምሕረት</span>, &#8220;year of mercy&#8221;), shortened to E.C. in English.</li>
+        <li><strong>Formal dates often use Ge&#8217;ez numerals</strong>, for example <span class="eth">ጥቅምት ፬ ቀን ፳፻፲፱ ዓ.ም.</span> Use the <a href="/geez-numbers">Ge&#8217;ez number converter</a> for any number.</li>
+      </ul>
+
+      <h2>Holidays in 2019 E.C.</h2>
+      <table>
+        <thead><tr><th>Holiday</th><th>Ethiopian date</th><th>Gregorian date</th></tr></thead>
+        <tbody>
+          <tr><td>Enkutatash (New Year)</td><td><span class="eth">መስከረም 1</span></td><td>11 September 2026</td></tr>
+          <tr><td>Meskel</td><td><span class="eth">መስከረም 17</span></td><td>27 September 2026</td></tr>
+          <tr><td>Genna (Christmas)</td><td><span class="eth">ታኅሣሥ 29</span></td><td>7 January 2027</td></tr>
+          <tr><td>Timket (Epiphany)</td><td><span class="eth">ጥር 11</span></td><td>19 January 2027</td></tr>
+          <tr><td>Adwa Victory Day</td><td><span class="eth">የካቲት 23</span></td><td>2 March 2027</td></tr>
+        </tbody>
+      </table>
+      <p>Fasika (Easter) and the Muslim holidays move each year, so they are not listed here.</p>
+
+      <h2>Type Ethiopian dates on your phone</h2>
+      <p>With <a href="https://play.google.com/store/apps/details?id=com.addiyon.keyboard" target="_blank" rel="noopener">Addiyon Keyboard</a> you type month names from English letters (<code>meskerem</code> → <span class="eth">መስከረም</span>), and the <span class="eth">፩፪</span> key on the number page gives every Ge&#8217;ez numeral. For the time of day, see the <a href="/ethiopian-time">Ethiopian time converter</a>.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/ethiopian-time,/geez-numbers,/amharic-alphabet,/amharic-typing-->
+    <!--cta-->
+  </div>
+</div>
+</main>

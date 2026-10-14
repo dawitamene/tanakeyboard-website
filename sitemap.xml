@@ -25,6 +25,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/amharic-typing"/>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/am/ethiopian-calendar-converter</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-calendar-converter"/>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/am/geez-numbers</loc>
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/geez-numbers"/>
@@ -35,6 +41,10 @@
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/amharic-alphabet"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/amharic-alphabet"/>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/amharic-phrases</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/amharic-typing</loc>
@@ -55,6 +65,16 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/ethiopian-calendar-converter</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-calendar-converter"/>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/ethiopian-time</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/features</loc>
     <lastmod>2026-10-09</lastmod>
   </url>
@@ -67,6 +87,10 @@
   <url>
     <loc>https://addiyonkeyboard.com/guides/</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-download</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-for-pc</loc>
@@ -87,6 +111,10 @@
   <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-tecno-infinix</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/guides/amharic-on-facebook-instagram-tiktok</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-typing-rules</loc>
