@@ -1,0 +1,57 @@
+<!--meta
+{
+  "path": "/ethiopian-age-calculator",
+  "lang": "en",
+  "title": "Ethiopian Age Calculator – How Old Am I in the Ethiopian Calendar?",
+  "h1": "Ethiopian age calculator",
+  "cardTitle": "Ethiopian age calculator",
+  "cardText": "Your age and birthday in the Ethiopian calendar, from a date in either calendar.",
+  "description": "Find your age in the Ethiopian calendar and your birth date in E.C. Enter a Gregorian or Ethiopian birth date and see when your next Ethiopian birthday falls.",
+  "updated": "2026-10-14",
+  "scripts": ["/js/ethiopic-date.js", "/js/age.js"],
+  "breadcrumbs": [["Ethiopian calendar converter", "/ethiopian-calendar-converter"], ["Age calculator", null]],
+  "article": true,
+  "faq": [
+    ["Is my age different in the Ethiopian calendar?", "Usually not. You turn a year older on your Ethiopian birthday instead of your Gregorian one, and the two fall on the same day for most of the year. Only your birth year looks different, because Ethiopian years are 7 or 8 behind."],
+    ["How do I find my birth date in the Ethiopian calendar?", "Enter your Gregorian birth date above. The calculator shows it in E.C., for example 1 January 2000 is <span class=\"eth\">ታኅሣሥ</span> 22, 1992 E.C."],
+    ["What if I was born in Pagume?", "<span class=\"eth\">ጳጉሜ</span> 6 only exists in leap years. In other years the calculator uses <span class=\"eth\">ጳጉሜ</span> 5 as your birthday."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Ethiopian age calculator</h1>
+    <p class="standfirst">Enter your birth date in the Gregorian or the Ethiopian calendar. You will see your age, your birth date in E.C., and your next Ethiopian birthday.</p>
+    <!--updated-->
+
+    <section class="converter" aria-label="Age calculator">
+      <label for="birthG">Birth date (Gregorian)</label>
+      <div class="converter-row">
+        <input id="birthG" type="date" autocomplete="bday">
+      </div>
+      <label for="birthDay" style="margin-top:20px">or birth date (Ethiopian)</label>
+      <div class="converter-row">
+        <div class="date-fields">
+          <input id="birthDay" type="number" min="1" max="30" inputmode="numeric" aria-label="Day">
+          <select id="birthMonth" aria-label="Month"></select>
+          <input id="birthYear" class="wide" type="number" min="1" inputmode="numeric" aria-label="Year (E.C.)">
+        </div>
+      </div>
+      <div id="ageOut" class="converter-out date" aria-live="polite" style="margin-top:20px"></div>
+      <p id="ageDetail" class="converter-sub"></p>
+    </section>
+
+    <div class="prose lead-block">
+      <h2>How Ethiopian birthdays work</h2>
+      <p>Your Ethiopian birthday is the same Ethiopian date every year, so its Gregorian date can move by a day after a leap year. Someone born on <span class="eth">መስከረም</span> 1 celebrates on 11 September in most years and 12 September in others.</p>
+      <p>To change any single date between calendars, use the <a href="/ethiopian-calendar-converter">Ethiopian calendar converter</a>. To see the whole year, open the <a href="/ethiopian-calendar-2019">2019 E.C. calendar</a>.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/ethiopian-calendar-converter,/ethiopian-calendar-2019,/amharic-days-and-months,/amharic-holiday-greetings-->
+    <!--cta-->
+  </div>
+</div>
+</main>

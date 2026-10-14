@@ -29,7 +29,8 @@ const copy = {
     footCols: [
       ['Product', [['/features', 'Features'], ['/privacy', 'Privacy Policy'], [PLAY_URL, 'Google Play']]],
       ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/ethiopian-calendar-2019', 'Ethiopian calendar 2019'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/amharic-name', 'Your name in Amharic'], ['/amharic-numbers', 'Amharic numbers'], ['/amharic-days-and-months', 'Days and months'], ['/am/', 'በአማርኛ']]],
-      ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/compare/', 'Compare keyboards']]]
+      ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/guides/amharic-keyboard-xiaomi-redmi', 'Amharic on Xiaomi'], ['/compare/', 'Compare keyboards']]],
+      ['Ethiopian calendar', [['/holidays/', 'Ethiopian holidays'], ['/ethiopian-age-calculator', 'Age calculator'], ['/ethiopian-calendar-2020', 'Calendar 2020 E.C.'], ['/learn/', 'Learn Amharic'], ['/amharic-holiday-greetings', 'Holiday greetings']]]
     ],
     contact: 'Contact',
     telegram: 'Join our Telegram group',
@@ -77,24 +78,14 @@ const PLAY_ICON = `<svg width="17" height="18" viewBox="30 336.7 120.9 129.2" ar
           <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"/>
         </svg>`;
 
-const ETHIOPIAN_EPOCH = 1724221;
-const ET_MONTHS = [['መስከረም', 'Meskerem'], ['ጥቅምት', 'Tikimt'], ['ኅዳር', 'Hidar'], ['ታኅሣሥ', 'Tahsas'], ['ጥር', 'Tir'], ['የካቲት', 'Yekatit'], ['መጋቢት', 'Megabit'], ['ሚያዝያ', 'Miyazya'], ['ግንቦት', 'Ginbot'], ['ሰኔ', 'Sene'], ['ሐምሌ', 'Hamle'], ['ነሐሴ', 'Nehase'], ['ጳጉሜ', 'Pagume']];
+const EthiopicDate = require('../js/ethiopic-date.js');
+const { jdnToGregorian, ethiopianToJdn } = EthiopicDate;
+const ET_MONTHS = EthiopicDate.MONTHS_AM.map((amName, index) => [amName, EthiopicDate.MONTHS_EN[index]]);
 const ET_WEEKDAYS = [['እሑድ', 'Sun'], ['ሰኞ', 'Mon'], ['ማክሰኞ', 'Tue'], ['ረቡዕ', 'Wed'], ['ሐሙስ', 'Thu'], ['ዓርብ', 'Fri'], ['ቅዳሜ', 'Sat']];
 const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 // Holidays fixed in the Ethiopian calendar, then those fixed in the Gregorian calendar.
 const ET_HOLIDAYS = { '1-1': 'Enkutatash', '1-17': 'Meskel', '5-11': 'Timket' };
 const GREGORIAN_HOLIDAYS = { '1-7': 'Genna', '3-2': 'Adwa', '5-1': 'Labour Day', '5-5': 'Patriots&#8217; Day', '5-28': 'Derg Downfall Day' };
-
-function gregorianToJdn(y, m, d) {
-  const a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
-  return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-}
-function jdnToGregorian(j) {
-  const a = j + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
-  const d = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d / 4), m = Math.floor((5 * e + 2) / 153);
-  return { y: 100 * b + d - 4800 + Math.floor(m / 10), m: m + 3 - 12 * Math.floor(m / 10), d: e - Math.floor((153 * m + 2) / 5) + 1 };
-}
-const ethiopianToJdn = (y, m, d) => ETHIOPIAN_EPOCH + 365 * (y - 1) + Math.floor(y / 4) + 30 * (m - 1) + d - 1;
 
 function renderEthiopianYear(year) {
   const months = ET_MONTHS.map(([amName, enName], index) => {

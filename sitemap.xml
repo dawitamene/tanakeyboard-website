@@ -25,6 +25,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/amharic-typing"/>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/am/ethiopian-calendar-2019</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-2019"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-calendar-2019"/>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/am/ethiopian-calendar-converter</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-converter"/>
@@ -43,6 +49,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/geez-numbers"/>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/am/guides/how-to-type-amharic-on-android</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/guides/how-to-type-amharic-on-android"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/guides/how-to-type-amharic-on-android"/>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/amharic-alphabet</loc>
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/amharic-alphabet"/>
@@ -50,6 +62,10 @@
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/amharic-days-and-months</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/amharic-holiday-greetings</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
@@ -75,6 +91,18 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/compare/addiyon-vs-agerigna</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/compare/addiyon-vs-desh-amharic-keyboard</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/compare/addiyon-vs-fyn-geez</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/compare/addiyon-vs-gboard</loc>
     <lastmod>2026-10-13</lastmod>
   </url>
@@ -83,7 +111,17 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/ethiopian-age-calculator</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/ethiopian-calendar-2019</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/ethiopian-calendar-2019"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/ethiopian-calendar-2019"/>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/ethiopian-calendar-2020</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
@@ -129,12 +167,20 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
+    <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-oppo-realme</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-samsung</loc>
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-tecno-infinix</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/guides/amharic-keyboard-xiaomi-redmi</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/guides/amharic-on-facebook-instagram-tiktok</loc>
@@ -147,6 +193,48 @@
   <url>
     <loc>https://addiyonkeyboard.com/guides/how-to-type-amharic-on-android</loc>
     <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="am" href="https://addiyonkeyboard.com/am/guides/how-to-type-amharic-on-android"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://addiyonkeyboard.com/guides/how-to-type-amharic-on-android"/>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/enkutatash</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/fasika</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/genna</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/meskel</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/holidays/timket</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/learn/</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/learn/amharic-colors</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/learn/amharic-family-words</loc>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://addiyonkeyboard.com/learn/amharic-food-words</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://addiyonkeyboard.com/privacy</loc>

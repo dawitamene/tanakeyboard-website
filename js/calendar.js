@@ -1,32 +1,12 @@
-/* Ethiopian ⇄ Gregorian date converter. Dates go through the Julian Day Number; 1 Meskerem 1 E.C. is JDN 1724221. */
+/* Ethiopian ⇄ Gregorian date converter, using the calendar math in js/ethiopic-date.js. */
 (function(){
   'use strict';
-  var ETHIOPIAN_EPOCH = 1724221;
+  if(!window.EthiopicDate) return;
+  var E = window.EthiopicDate;
   var am = document.documentElement.lang === 'am';
-  var MONTHS_AM = ['መስከረም', 'ጥቅምት', 'ኅዳር', 'ታኅሣሥ', 'ጥር', 'የካቲት', 'መጋቢት', 'ሚያዝያ', 'ግንቦት', 'ሰኔ', 'ሐምሌ', 'ነሐሴ', 'ጳጉሜ'];
-  var MONTHS_EN = ['Meskerem', 'Tikimt', 'Hidar', 'Tahsas', 'Tir', 'Yekatit', 'Megabit', 'Miyazya', 'Ginbot', 'Sene', 'Hamle', 'Nehase', 'Pagume'];
-  var WEEKDAYS_AM = ['ሰኞ', 'ማክሰኞ', 'ረቡዕ', 'ሐሙስ', 'ዓርብ', 'ቅዳሜ', 'እሑድ'];
-  var WEEKDAYS_EN = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-  function gregorianToJdn(y, m, d){
-    var a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
-    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-  }
-  function jdnToGregorian(j){
-    var a = j + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
-    var d = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d / 4), m = Math.floor((5 * e + 2) / 153);
-    return { y: 100 * b + d - 4800 + Math.floor(m / 10), m: m + 3 - 12 * Math.floor(m / 10), d: e - Math.floor((153 * m + 2) / 5) + 1 };
-  }
-  function ethiopianToJdn(y, m, d){
-    return ETHIOPIAN_EPOCH + 365 * (y - 1) + Math.floor(y / 4) + 30 * (m - 1) + d - 1;
-  }
-  function jdnToEthiopian(j){
-    var y = Math.floor((4 * (j - ETHIOPIAN_EPOCH) + 1463) / 1461);
-    var day = j - ethiopianToJdn(y, 1, 1);
-    return { y: y, m: Math.floor(day / 30) + 1, d: (day % 30) + 1 };
-  }
-  function pagumeDays(y){ return y % 4 === 3 ? 6 : 5; }
-  function weekday(j){ return j % 7; }
+  var MONTHS_AM = E.MONTHS_AM, MONTHS_EN = E.MONTHS_EN, WEEKDAYS_AM = E.WEEKDAYS_AM, WEEKDAYS_EN = E.WEEKDAYS_EN;
+  var gregorianToJdn = E.gregorianToJdn, jdnToGregorian = E.jdnToGregorian, ethiopianToJdn = E.ethiopianToJdn;
+  var jdnToEthiopian = E.jdnToEthiopian, pagumeDays = E.pagumeDays, weekday = E.weekday;
   function geez(n){ return window.Fidel ? Fidel.toGeez(String(n)) : ''; }
 
   function amharicDate(e, j){
