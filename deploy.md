@@ -1,12 +1,13 @@
 # Deploying addiyonkeyboard-website to Cloudflare Pages
 
-> **Current setup (October 2026):** the public site is **https://addiyon.com/keyboard/**. The Pages
-> project (`tanakeyboard-website`, deployed from this repo on every push to `main`) is only the origin.
-> The Worker in `worker/` (`addiyon-keyboard-router`, routes `addiyon.com/keyboard*` and
-> `keyboard.addiyon.com/*`) proxies `/keyboard/*` to Pages and 301-redirects the old
-> `keyboard.addiyon.com` URLs. Deploy it with `npx wrangler deploy` from `worker/` and test it with `node worker/test.mjs`.
+> **Current setup (October 2026):** the public site is **https://addiyonkeyboard.com/**, served directly by the
+> Cloudflare Pages project `addiyon-keyboard` (host `tanakeyboard-website.pages.dev`, deployed from this repo on
+> every push to `main`; apex CNAME in the `addiyonkeyboard.com` zone). The Worker in `worker/`
+> (`addiyon-keyboard-router`) only 301-redirects the old addresses (`addiyon.com/keyboard/*`,
+> `keyboard.addiyon.com/*`) and `www.addiyonkeyboard.com/*` to the same path on the new domain. Deploy it with
+> `npx wrangler deploy` from `worker/` and test it with `node worker/test.mjs`.
 > Pages are generated from `src/pages/` with `node tools/build.mjs`; preview locally with `node tools/serve.mjs`
-> (http://127.0.0.1:3311/keyboard/). The typing tool's word suggestions come from `engine/<hash>/`, which
+> (http://127.0.0.1:3311/). The typing tool's word suggestions come from `engine/<hash>/`, which
 > `node tools/sync-engine.mjs` fills from the preener repo's `android/web-engine` build (see its README).
 > The rest of this guide describes the original subdomain setup.
 

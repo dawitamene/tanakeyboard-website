@@ -1,4 +1,4 @@
-// Local preview server mirroring production: the site lives under /keyboard with clean URLs (/keyboard/features -> features.html).
+// Local preview server mirroring production: the site lives at the root with clean URLs (/features -> features.html).
 // Run: node tools/serve.mjs [port]
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
@@ -28,13 +28,7 @@ async function resolvePath(urlPath) {
 }
 
 createServer(async (request, response) => {
-  const fullPath = new URL(request.url, 'http://localhost').pathname;
-  if (!fullPath.startsWith('/keyboard/')) {
-    response.writeHead(302, { Location: '/keyboard/' });
-    response.end();
-    return;
-  }
-  const urlPath = fullPath.slice('/keyboard'.length);
+  const urlPath = new URL(request.url, 'http://localhost').pathname;
   const file = await resolvePath(urlPath);
   const target = file && await isFile(file) ? file : join(ROOT, '404.html');
   const body = await readFile(target);

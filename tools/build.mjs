@@ -10,9 +10,8 @@ const require = createRequire(import.meta.url);
 const Fidel = require('../js/fidel.js');
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'src', 'pages');
-// The site is served at addiyon.com/keyboard through a Cloudflare Worker (worker/), which proxies the Pages project.
-const BASE_PATH = '/keyboard';
-const ORIGIN = `https://addiyon.com${BASE_PATH}`;
+// The site is served at the root of addiyonkeyboard.com by the Cloudflare Pages project.
+const ORIGIN = 'https://addiyonkeyboard.com';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
 const ASSET_VERSION = '20261014';
 // Set to the GA4 web stream ID (G-XXXXXXX) to turn on website analytics; empty keeps the site analytics-free.
@@ -387,7 +386,7 @@ function renderNumbers100() {
 function engineWorkerPath() {
   const versionFile = join(ROOT, 'engine', 'VERSION');
   try {
-    return `${BASE_PATH}/engine/${readFileSync(versionFile, 'utf8').trim()}/worker.mjs`;
+    return `/engine/${readFileSync(versionFile, 'utf8').trim()}/worker.mjs`;
   } catch {
     return '';
   }
@@ -412,10 +411,6 @@ function checkInternalLinks(page, html, byPath) {
     .map((match) => match[1])
     .filter((href) => !href.match(/\.(svg|png|webp|jpg|css|js|xml|txt|ico)$/) && !byPath.has(href));
   if (missing.length) throw new Error(`${page.meta.path} has broken internal links: ${[...new Set(missing)].join(', ')}`);
-}
-
-function withBasePath(html) {
-  return html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE_PATH}/`);
 }
 
 function renderSitemap(pages) {
@@ -459,7 +454,7 @@ ${renderFooter(page.meta.lang)}
   checkInternalLinks(page, html, byPath);
   const out = outputFile(page.meta.path);
   mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, withBasePath(html));
+  writeFileSync(out, html);
 }
 writeFileSync(join(ROOT, 'sitemap.xml'), renderSitemap(pages));
 console.log(`Built ${pages.length} pages and sitemap.xml`);

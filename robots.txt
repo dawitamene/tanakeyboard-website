@@ -4,4 +4,4 @@ Disallow: /src/
 Disallow: /tools/
 Disallow: /worker/
 
-Sitemap: https://addiyon.com/keyboard/sitemap.xml
+Sitemap: https://addiyonkeyboard.com/sitemap.xml

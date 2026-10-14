@@ -20,7 +20,7 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
-# The pages.dev host is only the Worker's origin; addiyon.com/keyboard is the public site.
+# addiyonkeyboard.com is the public site; keep the pages.dev host out of search results.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
 
