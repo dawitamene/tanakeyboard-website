@@ -23,7 +23,9 @@ builds and deploys production; other branches get preview URLs (`<branch>.tanake
 - **After `next build`**, `tools/strip-next-runtime.mjs` removes Next's client runtime from `out/`: the pages
   are static and need no React in the browser.
 - **Analytics**: GA4 property "Addiyon Keyboard Web" (`G-HVXJCY4MR8`), on by default on the live domain only,
-  without Google Signals or ad personalization. Visitors can turn it off on `/privacy`.
+  without Google Signals or ad personalization. `public/js/analytics.js` fetches gtag.js only after a
+  trusted input gesture from a browser that passes the automation checks (ported from addiyon.com's
+  `features/bot-guard`), so crawlers and headless bots never reach GA4. Visitors can turn it off on `/privacy`.
 - `public/_headers` and `public/_redirects` are copied into `out/` (security and cache headers, the hub
   trailing-slash 301s, and `/t/*` → the shared-theme page).
 - The Worker in `worker/` (`addiyon-keyboard-router`) 301-redirects the old `addiyon.com/keyboard/*`,

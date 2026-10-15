@@ -42,6 +42,9 @@ test('pages carry structured data and analytics only when indexable', () => {
   const home = read('/');
   assert.match(home, /"@type":"Organization"/);
   assert.match(home, /G-HVXJCY4MR8/);
+  // gtag.js is fetched only by the bot gate in /js/analytics.js, never straight from the HTML.
+  assert.match(home, /\/js\/analytics\.js/);
+  assert.doesNotMatch(home, /googletagmanager/);
   assert.doesNotMatch(read('/theme-link'), /G-HVXJCY4MR8/);
   assert.match(read('/holidays/fasika'), /"@type":"FAQPage"/);
   assert.match(read('/guides/amharic-keyboard-samsung'), /"@type":"BreadcrumbList"/);

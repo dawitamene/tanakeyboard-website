@@ -1,7 +1,7 @@
 // Site-wide constants and the English and Amharic interface copy.
 export const ORIGIN = 'https://addiyonkeyboard.com';
 export const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
-export const ASSET_VERSION = '20261015c';
+export const ASSET_VERSION = '20261015d';
 export const GA_MEASUREMENT_ID = 'G-HVXJCY4MR8';
 export const SITE_NAME = 'Addiyon Keyboard';
 export const DEFAULT_IMAGE = '/img/feature-graphic-v2.webp';
