@@ -1,13 +1,13 @@
 // The site nav and footer, rendered as HTML so the page scripts can enhance them without React re-rendering.
 import { alternatesFor, canonicalPath, type Page } from './content';
-import { copy, PLAY_URL, type Lang } from './site';
+import { copy, LANGS, PLAY_URL, type Lang } from './site';
 
 const LOGO = '/img/logo.svg?v=20261009';
 const isExternal = (href: string) => /^https?:/.test(href);
 const linkAttrs = (href: string) => (isExternal(href) ? ' target="_blank" rel="noopener"' : '');
 
 export function homePath(lang: Lang): string {
-  return lang === 'am' ? '/am' : '/';
+  return LANGS[lang].home;
 }
 
 export function alternatePath(page: Page, lang: Lang): string {
@@ -16,7 +16,8 @@ export function alternatePath(page: Page, lang: Lang): string {
 }
 
 function isActive(current: string, href: string): boolean {
-  return current === href || (href !== '/' && href !== '/am' && current.startsWith(`${href}/`));
+  const isHome = Object.values(LANGS).some((lang) => lang.home === href);
+  return current === href || (!isHome && current.startsWith(`${href}/`));
 }
 
 export function renderNav(page: Page): string {
@@ -25,7 +26,10 @@ export function renderNav(page: Page): string {
     const href = canonicalPath(rawHref);
     return `<a href="${href}" class="nav-link"${isActive(page.meta.path, href) ? ' aria-current="page"' : ''}>${label}</a>`;
   }).join('\n      ');
-  const [lang, label, title] = t.switchLang;
+  const [defaultLang] = t.switchLang;
+  const translated = alternatesFor(page).map((alt) => alt.meta.lang).filter((lang) => lang !== page.meta.lang);
+  const langLinks = (translated.length ? translated : [defaultLang]).map((lang) =>
+    `<a href="${alternatePath(page, lang)}" class="nav-link nav-lang" hreflang="${lang}" lang="${lang}" title="${copy[lang].readIn}">${LANGS[lang].label}</a>`).join('\n      ');
   return `<div class="nav-inner">
     <a href="${homePath(page.meta.lang)}" class="nav-brand">
       <img src="${LOGO}" width="30" height="30" alt="Addiyon Keyboard logo">
@@ -34,7 +38,7 @@ export function renderNav(page: Page): string {
     <div class="nav-spacer"></div>
     <div class="nav-right">
       ${links}
-      <a href="${alternatePath(page, lang)}" class="nav-link nav-lang" hreflang="${lang}" lang="${lang}" title="${title}">${label}</a>
+      ${langLinks}
       <button id="themeToggle" class="theme-toggle" aria-label="${t.toggleTheme}">☾</button>
       <a href="${PLAY_URL}" target="_blank" rel="noopener" class="nav-cta" data-install="nav" aria-label="${t.getAppLabel}">${t.getApp}</a>
     </div>

@@ -1,7 +1,7 @@
 // Next.js metadata for a page: title, description, canonical URL, hreflang alternates and social cards.
 import type { Metadata } from 'next';
 import { alternatesFor, type Page } from './content';
-import { DEFAULT_IMAGE, ORIGIN, SITE_NAME } from './site';
+import { DEFAULT_IMAGE, LANGS, ORIGIN, SITE_NAME } from './site';
 
 export function pageMetadata(page: Page): Metadata {
   const { meta } = page;
@@ -21,13 +21,13 @@ export function pageMetadata(page: Page): Metadata {
     alternates: meta.noindex ? undefined : { canonical: meta.path, languages },
     robots: meta.noindex ? { index: false, follow: true } : { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     openGraph: {
-      type: meta.path === '/' || meta.path === '/am' ? 'website' : 'article',
+      type: meta.path === LANGS[meta.lang].home ? 'website' : 'article',
       url: meta.path,
       title,
       description: meta.description,
       siteName: SITE_NAME,
-      locale: meta.lang === 'am' ? 'am_ET' : 'en_US',
-      alternateLocale: alternates.filter((alt) => alt.meta.lang !== meta.lang).map((alt) => (alt.meta.lang === 'am' ? 'am_ET' : 'en_US')),
+      locale: LANGS[meta.lang].locale,
+      alternateLocale: alternates.filter((alt) => alt.meta.lang !== meta.lang).map((alt) => LANGS[alt.meta.lang].locale),
       images: [{ url: image, alt: SITE_NAME }],
       ...(meta.article ? { modifiedTime: meta.updated } : {})
     },

@@ -1,12 +1,20 @@
 // Site-wide constants and the English and Amharic interface copy.
 export const ORIGIN = 'https://addiyonkeyboard.com';
 export const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.addiyon.keyboard';
-export const ASSET_VERSION = '20261015d';
+export const ASSET_VERSION = '20261018';
 export const GA_MEASUREMENT_ID = 'G-HVXJCY4MR8';
 export const SITE_NAME = 'Addiyon Keyboard';
 export const DEFAULT_IMAGE = '/img/feature-graphic-v2.webp';
 
-export type Lang = 'en' | 'am';
+export type Lang = 'en' | 'am' | 'om' | 'ti';
+
+/** Each language's home page, Open Graph locale and the short label used by the nav's language links. */
+export const LANGS: Record<Lang, { home: string; locale: string; label: string }> = {
+  en: { home: '/', locale: 'en_US', label: 'EN' },
+  am: { home: '/am', locale: 'am_ET', label: 'አማ' },
+  om: { home: '/om', locale: 'om_ET', label: 'AO' },
+  ti: { home: '/ti', locale: 'ti_ET', label: 'ትግ' }
+};
 type Link = [string, string];
 
 export interface SiteCopy {
@@ -16,6 +24,7 @@ export interface SiteCopy {
   playButton: string;
   toggleTheme: string;
   switchLang: [Lang, string, string];
+  readIn: string;
   footDesc: string;
   footCols: [string, Link[]][];
   contact: string;
@@ -39,9 +48,11 @@ export const copy: Record<Lang, SiteCopy> = {
     playButton: 'Get it on Google Play',
     toggleTheme: 'Toggle dark mode',
     switchLang: ['am', 'አማ', 'ይህን ገጽ በአማርኛ ያንብቡ'],
+    readIn: 'Read this page in English',
     footDesc: 'The fast, private way to type Amharic in the Ge&#8217;ez script.',
     footCols: [
       ['Product', [['/features', 'Features'], ['/privacy', 'Privacy Policy'], [PLAY_URL, 'Google Play']]],
+      ['Languages', [['/', 'Amharic keyboard'], ['/afaan-oromoo-keyboard', 'Afaan Oromoo keyboard'], ['/tigrinya-keyboard', 'Tigrinya keyboard'], ['/ethiopian-keyboard', 'Ethiopian keyboard'], ['/tigrinya-typing', 'Type Tigrinya online'], ['/om', 'Afaan Oromoo'], ['/ti', 'ትግርኛ']]],
       ['Free tools', [['/amharic-typing', 'Type Amharic online'], ['/amharic-alphabet', 'Amharic alphabet chart'], ['/ethiopian-calendar-converter', 'Ethiopian calendar converter'], ['/ethiopian-time', 'Ethiopian time'], ['/ethiopian-calendar-2019', 'Ethiopian calendar 2019'], ['/geez-numbers', 'Ge&#8217;ez number converter'], ['/amharic-phrases', 'Amharic phrases'], ['/amharic-name', 'Your name in Amharic'], ['/amharic-numbers', 'Amharic numbers'], ['/amharic-days-and-months', 'Days and months'], ['/am/', 'በአማርኛ']]],
       ['Guides', [['/guides/how-to-type-amharic-on-android', 'Type Amharic on Android'], ['/guides/amharic-typing-rules', 'Amharic spelling rules'], ['/guides/amharic-keyboard-for-whatsapp', 'Amharic on WhatsApp'], ['/guides/amharic-keyboard-xiaomi-redmi', 'Amharic on Xiaomi'], ['/compare/', 'Compare keyboards']]],
       ['Ethiopian calendar', [['/holidays/', 'Ethiopian holidays'], ['/ethiopian-age-calculator', 'Age calculator'], ['/ethiopian-calendar-2020', 'Calendar 2020 E.C.'], ['/learn/', 'Learn Amharic'], ['/amharic-holiday-greetings', 'Holiday greetings']]]
@@ -65,10 +76,12 @@ export const copy: Record<Lang, SiteCopy> = {
     playButton: 'ከGoogle Play ያውርዱ',
     toggleTheme: 'ጨለማ ገጽታ',
     switchLang: ['en', 'EN', 'Read this page in English'],
+    readIn: 'ይህን ገጽ በአማርኛ ያንብቡ',
     footDesc: 'አማርኛን በግዕዝ ፊደል በፍጥነትና በግል ለመጻፍ።',
     footCols: [
       ['አዲዮን ኪቦርድ', [['/am/', 'መነሻ'], ['/features', 'ባህሪያት (English)'], ['/privacy', 'የግላዊነት መመሪያ (English)'], [PLAY_URL, 'Google Play']]],
       ['ነጻ መሣሪያዎች', [['/am/amharic-typing', 'አማርኛ በኦንላይን መጻፊያ'], ['/am/amharic-alphabet', 'የአማርኛ ፊደል ገበታ'], ['/am/ethiopian-calendar-converter', 'የቀን መቀየሪያ'], ['/am/ethiopian-time', 'የኢትዮጵያ ሰዓት'], ['/am/geez-numbers', 'የግዕዝ ቁጥሮች መቀየሪያ']]],
+      ['ቋንቋዎች', [['/am/ethiopian-keyboard', 'አማርኛ፣ ኦሮምኛ፣ ትግርኛ'], ['/om', 'Afaan Oromoo'], ['/ti', 'ትግርኛ']]],
       ['English', [['/', 'Home'], ['/amharic-typing', 'Type Amharic online'], ['/guides/', 'Guides']]]
     ],
     contact: 'ያግኙን',
@@ -82,6 +95,56 @@ export const copy: Record<Lang, SiteCopy> = {
     relatedTitle: 'ተጨማሪ ያንብቡ',
     updated: 'የተሻሻለው',
     home: 'አዲዮን ኪቦርድ'
+  },
+  om: {
+    nav: [['/guides/oromo-apostrophe-hudhaa', 'Hudhaa']],
+    getApp: 'Buusi',
+    getAppLabel: 'Addiyon Keyboard Google Play irraa buusi',
+    playButton: 'Google Play irraa buusi',
+    toggleTheme: 'Halluu dukkanaa',
+    switchLang: ['en', 'EN', 'Read this page in English'],
+    readIn: 'Fuula kana Afaan Oromootiin dubbisi',
+    footDesc: 'Kiyboordii Android bilisaa: Afaan Oromoo, Amaariffaa, Tigrinyaa fi Ingiliffaa.',
+    footCols: [
+      ['Addiyon Keyboard', [['/om', 'Fuula jalqabaa'], ['/afaan-oromoo-keyboard', 'Oromo keyboard (English)'], ['/privacy', 'Privacy Policy (English)'], [PLAY_URL, 'Google Play']]],
+      ['Afaanota', [['/ethiopian-keyboard', 'Ethiopian keyboard (English)'], ['/am', 'አማርኛ'], ['/ti', 'ትግርኛ'], ['/', 'English']]]
+    ],
+    contact: 'Nu quunnamaa',
+    telegram: 'Garee Telegram keenyatti makamaa',
+    rights: '© 2026 Addiyon LLC. Mirgi hundi seeraan eegamaadha.',
+    madeWith: 'Afaan keessaniin akka barreessitaniif kan hojjetame.',
+    ctaTitle: 'Appii hunda keessatti Afaan Oromoon barreessi.',
+    ctaBody: 'Addiyon Keyboard Google Play irraa bilisaan argama. Afaan Oromoo appii keessaa Settings › Languages irraa bilisaan buufadhu.',
+    ctaSecondary: ['/afaan-oromoo-keyboard', 'Ibsa guutuu (English)'],
+    faqTitle: 'Gaaffilee yeroo baay&#8217;ee gaafataman.',
+    relatedTitle: 'Dabalataan dubbisi',
+    updated: 'Kan haaromfame',
+    home: 'Addiyon Keyboard'
+  },
+  ti: {
+    nav: [['/tigrinya-typing', 'ኦንላይን ጽሓፍ']],
+    getApp: 'ኣውርድ',
+    getAppLabel: 'ኣዲዮን ኪቦርድ ካብ Google Play ኣውርድ',
+    playButton: 'ካብ Google Play ኣውርድ',
+    toggleTheme: 'ጸልማት ገጽታ',
+    switchLang: ['en', 'EN', 'Read this page in English'],
+    readIn: 'ነዚ ገጽ ብትግርኛ ኣንብቦ',
+    footDesc: 'ትግርኛ ብግእዝ ፊደል ብቐሊሉ ንምጽሓፍ ናይ Android ኪቦርድ።',
+    footCols: [
+      ['ኣዲዮን ኪቦርድ', [['/ti', 'መእተዊ'], ['/tigrinya-keyboard', 'Tigrinya keyboard (English)'], ['/tigrinya-typing', 'ትግርኛ ኦንላይን ጽሓፍ'], ['/privacy', 'Privacy Policy (English)'], [PLAY_URL, 'Google Play']]],
+      ['ቋንቋታት', [['/ethiopian-keyboard', 'Ethiopian keyboard (English)'], ['/am', 'አማርኛ'], ['/om', 'Afaan Oromoo'], ['/', 'English']]]
+    ],
+    contact: 'ርኸቡና',
+    telegram: 'ናብ ጉጅለ ቴሌግራምና ተጸንበሩ',
+    rights: '© 2026 Addiyon LLC። ኩሉ መሰል ብሕጊ ዝተሓለወ እዩ።',
+    madeWith: 'ብቋንቋኹም ክትጽሕፉ ተባሂሉ ዝተሰርሐ።',
+    ctaTitle: 'ኣብ ኩሉ ኣፕ ብትግርኛ ጽሓፍ።',
+    ctaBody: 'ኣዲዮን ኪቦርድ ኣብ Google Play ብነጻ ይርከብ። ትግርኛ ኣብቲ ኣፕ ካብ Settings › Languages ብነጻ ኣውርዶ።',
+    ctaSecondary: ['/tigrinya-typing', 'ኦንላይን ፈትኖ'],
+    faqTitle: 'ብተደጋጋሚ ዝሕተቱ ሕቶታት።',
+    relatedTitle: 'ተወሳኺ ኣንብብ',
+    updated: 'ዝተሓደሰሉ',
+    home: 'ኣዲዮን ኪቦርድ'
   }
 };
 

@@ -4,17 +4,20 @@ import { allPages, pageByPath, type Page } from './content';
 
 const NOT_ROUTED = new Set(['/404']);
 
-const isAmharicPath = (path: string) => path === '/am' || path.startsWith('/am/');
+const PREFIXED = ['/am', '/om', '/ti'];
+
+const hasPrefix = (path: string, prefix: string) => path === prefix || path.startsWith(`${prefix}/`);
 
 export function englishParams(): { slug: string[] }[] {
   return allPages()
-    .filter((page) => !isAmharicPath(page.meta.path) && !NOT_ROUTED.has(page.meta.path))
+    .filter((page) => !PREFIXED.some((prefix) => hasPrefix(page.meta.path, prefix)) && !NOT_ROUTED.has(page.meta.path))
     .map((page) => ({ slug: page.meta.path.split('/').filter(Boolean) }));
 }
 
-export function amharicParams(): { slug: string[] }[] {
+/** Route params for the pages under a language prefix such as /am. */
+export function prefixedParams(prefix: string): { slug: string[] }[] {
   return allPages()
-    .filter((page) => isAmharicPath(page.meta.path))
+    .filter((page) => hasPrefix(page.meta.path, prefix))
     .map((page) => ({ slug: page.meta.path.split('/').filter(Boolean).slice(1) }));
 }
 

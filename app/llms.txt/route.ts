@@ -5,6 +5,7 @@ import { ORIGIN, PLAY_URL } from '@/lib/site';
 export const dynamic = 'force-static';
 
 const SECTIONS: [string, (path: string) => boolean][] = [
+  ['Languages', (path) => ['/ethiopian-keyboard', '/afaan-oromoo-keyboard', '/tigrinya-keyboard', '/tigrinya-typing', '/guides/oromo-apostrophe-hudhaa'].includes(path)],
   ['Free tools', (path) => ['/amharic-typing', '/amharic-alphabet', '/geez-numbers', '/ethiopian-calendar-converter', '/ethiopian-time', '/ethiopian-age-calculator', '/amharic-name'].includes(path) || path.startsWith('/ethiopian-calendar-20')],
   ['Learn Amharic', (path) => path.startsWith('/learn') || ['/amharic-phrases', '/amharic-numbers', '/amharic-days-and-months', '/amharic-holiday-greetings'].includes(path)],
   ['Ethiopian holidays', (path) => path.startsWith('/holidays')],
@@ -18,9 +19,9 @@ export function GET() {
   const lines = [
     '# Addiyon Keyboard',
     '',
-    `> Addiyon Keyboard is a free Android keyboard for typing Amharic in the Ge'ez (Fidel) script by sound with English letters (selam → ሰላም), with offline suggestions, Ge'ez numerals and optional AI edits. Get it on Google Play: ${PLAY_URL}`,
+    `> Addiyon Keyboard is a free Android keyboard for typing Amharic in the Ge'ez (Fidel) script by sound with English letters (selam → ሰላም), with offline suggestions, Ge'ez numerals and optional AI edits. Afaan Oromoo (Qubee, with its own hudhaa key) and Tigrinya (same phonetic keys as Amharic) are free downloadable languages in Settings › Languages. Get it on Google Play: ${PLAY_URL}`,
     '',
-    'This site also offers free Amharic tools (online typing, alphabet chart, Ge\'ez numbers, Ethiopian calendar and time converters) and guides. Amharic versions of key pages live under /am.',
+    'This site also offers free Amharic tools (online typing, alphabet chart, Ge\'ez numbers, Ethiopian calendar and time converters) and guides. Amharic versions of key pages live under /am, an Afaan Oromoo page at /om and a Tigrinya page at /ti.',
     ''
   ];
   for (const [title, matches] of SECTIONS) {

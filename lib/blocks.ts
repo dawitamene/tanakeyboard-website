@@ -11,11 +11,12 @@ function renderPlayButton(lang: Lang, className = 'btn btn-solid'): string {
       </a>`;
 }
 
-function renderCta(lang: Lang): string {
+function renderCta(page: Page): string {
+  const lang = page.meta.lang;
   const t = copy[lang];
   return `<div class="cta-panel">
-      <h2>${t.ctaTitle}</h2>
-      <p>${t.ctaBody}</p>
+      <h2>${page.meta.cta?.title ?? t.ctaTitle}</h2>
+      <p>${page.meta.cta?.body ?? t.ctaBody}</p>
       <div class="cta-row">
       ${renderPlayButton(lang, 'btn btn-paper')}
         <a href="${canonicalPath(t.ctaSecondary[0])}" class="btn btn-ghost" style="color:var(--panel-text);border-color:var(--panel-line)">${t.ctaSecondary[1]}</a>
@@ -61,7 +62,7 @@ function renderCrumbs(page: Page): string {
 }
 
 export function formatUpdated(page: Page): string {
-  return new Date(`${page.meta.updated}T00:00:00Z`).toLocaleDateString(page.meta.lang === 'am' ? 'en-GB' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  return new Date(`${page.meta.updated}T00:00:00Z`).toLocaleDateString(page.meta.lang === 'en' ? 'en-US' : 'en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 }
 
 function renderUpdated(page: Page): string {
@@ -90,7 +91,7 @@ export function renderBody(page: Page): string {
     .replace(/^<main>\s*/, '')
     .replace(/\s*<\/main>$/, '')
     .replace(/\{\{ENGINE_WORKER\}\}/g, () => engineWorkerPath())
-    .replace(/<!--cta-->/g, () => renderCta(page.meta.lang))
+    .replace(/<!--cta-->/g, () => renderCta(page))
     .replace(/<!--faq-->/g, () => renderFaq(page))
     .replace(/<!--play-->/g, () => renderPlayButton(page.meta.lang))
     .replace(/<!--crumbs-->/g, () => renderCrumbs(page))

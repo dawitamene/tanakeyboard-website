@@ -1,5 +1,7 @@
 # Hub pages used to end in a slash; their canonical URLs no longer do.
 /am/        /am        301
+/om/        /om        301
+/ti/        /ti        301
 /guides/    /guides    301
 /compare/   /compare   301
 /holidays/  /holidays  301

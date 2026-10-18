@@ -73,3 +73,15 @@ test('pages ship without the Next.js client runtime', () => {
   assert.ok(!existsSync(join(OUT, '_next')));
   assert.ok(!existsSync(join(OUT, 'am.txt')));
 });
+
+test('Afaan Oromoo and Tigrinya pages link their translations with hreflang', () => {
+  const sitemap = readFileSync(join(OUT, 'sitemap.xml'), 'utf8');
+  assert.match(sitemap, /hreflang="om" href="https:\/\/addiyonkeyboard.com\/om"/);
+  assert.match(sitemap, /hreflang="ti" href="https:\/\/addiyonkeyboard.com\/ti"/);
+  const oromo = read('/afaan-oromoo-keyboard');
+  assert.match(oromo, /<link rel="alternate" hrefLang="om" href="https:\/\/addiyonkeyboard.com\/om"\/>/);
+  assert.match(oromo, /"@type":"MobileApplication"/);
+  assert.match(read('/om'), /<a href="\/afaan-oromoo-keyboard" class="nav-link nav-lang" hreflang="en"/);
+  assert.match(read('/ti'), /<meta property="og:locale" content="ti_ET"\/>/);
+  assert.match(read('/tigrinya-typing'), /data-spelling="ti"/);
+});

@@ -23,6 +23,8 @@ export interface PageMeta {
   article?: boolean;
   noindex?: boolean;
   bodyPage?: string;
+  /** Replaces the language's default closing call-to-action title and text. */
+  cta?: { title: string; body: string };
 }
 
 export interface Page {

@@ -27,7 +27,7 @@ const siteNodes: Node[] = [
     '@id': WEBSITE_ID,
     name: SITE_NAME,
     url: `${ORIGIN}/`,
-    inLanguage: ['en', 'am'],
+    inLanguage: ['en', 'am', 'om', 'ti'],
     publisher: { '@id': ORGANIZATION_ID }
   }
 ];

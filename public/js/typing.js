@@ -10,7 +10,9 @@
   if(!input || !output || !window.Fidel) return;
 
   var am = document.documentElement.lang === 'am';
-  var STORAGE_KEY = 'addiyon-typing-draft';
+  // data-spelling="ti" applies the Tigrinya keyboard's one spelling difference: a bare vowel a is ኣ, not አ.
+  var tigrinya = !!tool && tool.getAttribute('data-spelling') === 'ti';
+  var STORAGE_KEY = tigrinya ? 'addiyon-typing-draft-ti' : 'addiyon-typing-draft';
   var LATIN = /[A-Za-z]/;
   var choices = {};
   var commits = {};
@@ -52,6 +54,19 @@
     renderBar();
   }
 
+  function spell(fidel){
+    return tigrinya ? fidel.replace(/አ/g, 'ኣ') : fidel;
+  }
+
+  function readings(latin){
+    var seen = {};
+    return Fidel.readings(latin).map(spell).filter(function(option){
+      if(seen[option]) return false;
+      seen[option] = true;
+      return true;
+    });
+  }
+
   function tokens(value){
     return value.split(/(\s+)/);
   }
@@ -73,7 +88,7 @@
     var chosen = choices[choiceKey(index, latin)];
     if(chosen) return chosen;
     if(isFinished(parts, index) && commits[latin]) return commits[latin];
-    return Fidel.transliterate(latin);
+    return spell(Fidel.transliterate(latin));
   }
 
   function render(){
@@ -151,7 +166,7 @@
       return;
     }
     var latin = parts[index];
-    var options = Fidel.readings(latin);
+    var options = readings(latin);
     if(options.length < 2){
       clearBar();
       return;

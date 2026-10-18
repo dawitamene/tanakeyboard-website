@@ -1,0 +1,118 @@
+<!--meta
+{
+  "path": "/tigrinya-typing",
+  "lang": "en",
+  "title": "Tigrinya Typing Online – Free Tigrinya Keyboard, English to Ge'ez",
+  "h1": "Type Tigrinya online",
+  "cardTitle": "Type Tigrinya online",
+  "cardText": "Type <code>kemey alekha</code>, get <span class=\"eth\">ከመይ ኣለኻ</span>. A free Tigrinya keyboard in your browser.",
+  "description": "Free online Tigrinya keyboard. Type Tigrinya with English letters (selam → ሰላም, kemey alekha → ከመይ ኣለኻ) and copy the Ge'ez text into any app. No download.",
+  "updated": "2026-10-18",
+  "published": "2026-10-18",
+  "bodyPage": "tool",
+  "scripts": ["/js/fidel.js", "/js/typing.js"],
+  "breadcrumbs": [["Tigrinya keyboard", "/tigrinya-keyboard"], ["Type Tigrinya online", null]],
+  "cta": { "title": "Type ትግርኛ on your phone too.", "body": "Addiyon Keyboard uses these same keys in every Android app and adds Tigrinya word suggestions. It is free on Google Play, and Tigrinya is a free download in Settings › Languages." },
+  "schema": [
+    {
+      "@type": "WebApplication",
+      "name": "Addiyon online Tigrinya typing tool",
+      "url": "https://addiyonkeyboard.com/tigrinya-typing",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": ["en", "ti"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@id": "https://addiyonkeyboard.com/#organization" }
+    }
+  ],
+  "faq": [
+    ["How do I type Tigrinya online?", "Type the Tigrinya sound with English letters in the left box. The Ge&#8217;ez text appears on the right as you type. Press <strong>Copy</strong> and paste it into Word, Google Docs, Facebook, Telegram or email."],
+    ["How is this different from the Amharic typing tool?", "The keys are the same. The one difference is that a vowel <code>a</code> on its own writes <span class=\"eth\">ኣ</span>, as Tigrinya spells it, instead of Amharic&#8217;s <span class=\"eth\">አ</span>: <code>ab</code> → <span class=\"eth\">ኣብ</span>, <code>adey</code> → <span class=\"eth\">ኣደይ</span>."],
+    ["How do I type <span class=\"eth\">ቐ</span> and <span class=\"eth\">ኸ</span>?", "Capital <code>Q</code> writes the <span class=\"eth\">ቐ</span> row (<code>tsbuQ</code> → <span class=\"eth\">ጽቡቕ</span>) and <code>kh</code> writes the <span class=\"eth\">ኸ</span> row (<code>alekha</code> → <span class=\"eth\">ኣለኻ</span>)."],
+    ["Is my text saved or sent anywhere?", "No. Everything runs in your browser. Your last text is kept only in this browser so it is still there if you reload."],
+    ["Can I type Tigrinya like this on my phone?", "Yes. <a href=\"/tigrinya-keyboard\">Addiyon Keyboard</a> uses the same keys in every Android app and adds Tigrinya word suggestions and next-word predictions."]
+  ]
+}
+-->
+<main>
+<div class="wrap">
+  <div class="page">
+    <!--crumbs-->
+    <h1>Type Tigrinya online</h1>
+    <p class="standfirst">Type the sound with English letters and get Tigrinya in Ge&#8217;ez instantly: <code>kemey alekha</code> becomes <span class="eth">ከመይ ኣለኻ</span>. Copy it into any document, chat or post. Free, and nothing is uploaded.</p>
+
+    <section class="tool" data-spelling="ti" aria-label="Tigrinya typing tool">
+      <div class="tool-panes">
+        <div class="tool-pane">
+          <label class="tool-label" for="latinIn"><span>English letters</span></label>
+          <textarea id="latinIn" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="selam, kemey alekha?"></textarea>
+        </div>
+        <div class="tool-pane">
+          <label class="tool-label" for="fidelOut"><span>Tigrinya (<span class="eth" lang="ti">ትግርኛ</span>)</span></label>
+          <textarea id="fidelOut" class="tool-out" lang="ti" readonly placeholder="ሰላም፣ ከመይ ኣለኻ፧"></textarea>
+        </div>
+      </div>
+      <div class="tool-bar">
+        <div id="alts" class="alts" aria-live="polite"></div>
+        <div class="tool-actions">
+          <button type="button" id="clearIn" class="tool-btn ghost">Clear</button>
+          <button type="button" id="copyOut" class="tool-btn">Copy Tigrinya</button>
+        </div>
+      </div>
+    </section>
+    <p class="tool-note">The letters follow Addiyon Keyboard&#8217;s Tigrinya layout. Word suggestions from the Tigrinya dictionary are in the Android app.</p>
+
+    <div class="prose lead-block">
+      <h2>Try an example</h2>
+      <ul class="cheat examples">
+        <li><button type="button" class="alt-chip" data-example="selam">selam</button><span class="eth">ሰላም</span></li>
+        <li><button type="button" class="alt-chip" data-example="kemey alekha?">kemey alekha?</button><span class="eth">ከመይ ኣለኻ፧</span></li>
+        <li><button type="button" class="alt-chip" data-example="yeQenyeley">yeQenyeley</button><span class="eth">የቐንየለይ</span></li>
+        <li><button type="button" class="alt-chip" data-example="tsbuQ">tsbuQ</button><span class="eth">ጽቡቕ</span></li>
+        <li><button type="button" class="alt-chip" data-example="deHan">deHan</button><span class="eth">ደሓን</span></li>
+        <li><button type="button" class="alt-chip" data-example="adey">adey</button><span class="eth">ኣደይ</span></li>
+        <li><button type="button" class="alt-chip" data-example="iertra">iertra</button><span class="eth">ኤርትራ</span></li>
+        <li><button type="button" class="alt-chip" data-example="tgrNa">tgrNa</button><span class="eth">ትግርኛ</span></li>
+      </ul>
+
+      <h2>How it works</h2>
+      <p>Each Ge&#8217;ez letter is a consonant plus a vowel. Type the consonant, then the vowel. The tool re-reads the whole word on every keystroke, so a later letter can still change an earlier one: <code>k</code> is <span class="eth">ክ</span>, <code>kh</code> is <span class="eth">ኽ</span>, and <code>kha</code> is <span class="eth">ኻ</span>.</p>
+      <table>
+        <thead><tr><th>Type after a consonant</th><th>You get</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>e</code></td><td>1st form</td><td><code>se</code> → <span class="eth">ሰ</span></td></tr>
+          <tr><td><code>u</code></td><td>2nd form</td><td><code>su</code> → <span class="eth">ሱ</span></td></tr>
+          <tr><td><code>i</code></td><td>3rd form</td><td><code>si</code> → <span class="eth">ሲ</span></td></tr>
+          <tr><td><code>a</code></td><td>4th form</td><td><code>sa</code> → <span class="eth">ሳ</span></td></tr>
+          <tr><td><code>ie</code></td><td>5th form</td><td><code>sie</code> → <span class="eth">ሴ</span></td></tr>
+          <tr><td>nothing</td><td>6th form</td><td><code>s</code> → <span class="eth">ስ</span></td></tr>
+          <tr><td><code>o</code></td><td>7th form</td><td><code>so</code> → <span class="eth">ሶ</span></td></tr>
+        </tbody>
+      </table>
+      <p>A vowel with no consonant before it writes the <span class="eth">ኣ</span> row: <code>a</code> → <span class="eth">ኣ</span>, <code>e</code> → <span class="eth">እ</span>, <code>i</code> → <span class="eth">ኢ</span>, <code>o</code> → <span class="eth">ኦ</span>. A comma becomes <span class="eth">፣</span>, a full stop <span class="eth">።</span>, and a question mark <span class="eth">፧</span>.</p>
+
+      <h2>Tigrinya letters</h2>
+      <ul class="cheat">
+        <li><code>Q</code><span class="eth">ቕ</span></li>
+        <li><code>kh</code><span class="eth">ኽ</span></li>
+        <li><code>H</code><span class="eth">ሕ</span></li>
+        <li><code>T</code><span class="eth">ጥ</span></li>
+        <li><code>C</code><span class="eth">ጭ</span></li>
+        <li><code>ts</code><span class="eth">ጽ</span></li>
+        <li><code>N</code> or <code>gn</code><span class="eth">ኝ</span></li>
+        <li><code>A</code><span class="eth">ዐ</span></li>
+        <li><code>W</code> + vowel<span class="eth">ቈ ኰ ጐ</span></li>
+      </ul>
+      <p>Other pairs: <code>sh</code> <span class="eth">ሽ</span>, <code>ch</code> <span class="eth">ች</span>, <code>zh</code> <span class="eth">ዥ</span>, <code>P</code> <span class="eth">ጵ</span>. Every row of the script, with the keys that type it, is on the <a href="/amharic-alphabet">Ge&#8217;ez alphabet chart</a>.</p>
+
+      <h2>Typing on a phone?</h2>
+      <p>Copying from a website gets old fast. <a href="/tigrinya-keyboard">Addiyon Keyboard</a> is a free Android keyboard that uses exactly these keys in WhatsApp, Telegram, Facebook and every other app, and suggests whole Tigrinya words as you type.</p>
+    </div>
+
+    <!--faq-->
+    <!--related:/tigrinya-keyboard,/ti,/amharic-alphabet,/geez-numbers-->
+    <!--cta-->
+  </div>
+</div>
+</main>
